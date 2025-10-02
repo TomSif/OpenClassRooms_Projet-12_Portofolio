@@ -1,0 +1,34 @@
+// ===================================
+// 📦 ABSTRACTS (Variables, Mixins, Functions)
+// ===================================
+@import "./abstracts/variables";
+@import "./abstracts/mixins";
+@import "./abstracts/functions";
+
+// ===================================
+// 🎨 BASE (Reset, Typography, Animations)
+// ===================================
+@import "./base/reset";
+@import "./base/typography";
+@import "./base/animations";
+
+// ===================================
+// 📐 LAYOUT (Structure globale)
+// ===================================
+@import "./layout/navbar";
+@import "./layout/footer";
+@import "./layout/grid";
+
+// ===================================
+// 🧩 COMPONENTS (Éléments réutilisables)
+// ===================================
+@import "./components/buttons";
+@import "./components/cards";
+@import "./components/forms";
+
+// ===================================
+// 📄 PAGES (Styles spécifiques)
+// ===================================
+@import "./pages/home";
+@import "./pages/projects";
+@import "./pages/contact";
