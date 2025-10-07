@@ -1,0 +1,73 @@
+// ===================================
+// 🧩 COMPONENTS - _cards.scss
+// ===================================
+// Fichier : src/styles/components/_cards.scss
+
+.card {
+  @include card-base;
+
+  &:hover {
+    @include card-hover;
+  }
+
+  &__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: $border-radius-md;
+    margin-bottom: $spacing-4;
+  }
+
+  &__title {
+    @include heading-secondary;
+    font-size: $font-size-xl;
+    margin-bottom: $spacing-3;
+  }
+
+  &__description {
+    @include body-text;
+    margin-bottom: $spacing-4;
+  }
+
+  &__footer {
+    @include flex-between;
+    margin-top: $spacing-6;
+  }
+
+  &__tags {
+    display: flex;
+    gap: $spacing-2;
+    flex-wrap: wrap;
+  }
+}
+
+// Badges
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: $spacing-1 $spacing-4;
+  font-family: $font-accent;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  border-radius: $border-radius-full;
+
+  &--primary {
+    background-color: $color-primary;
+    color: $color-text-white;
+  }
+
+  &--purple {
+    background-color: $color-accent-purple;
+    color: $color-text-white;
+  }
+
+  &--cyan {
+    background-color: $color-accent-cyan;
+    color: $color-text-primary;
+  }
+
+  &--blue {
+    background-color: $color-secondary;
+    color: $color-text-white;
+  }
+}

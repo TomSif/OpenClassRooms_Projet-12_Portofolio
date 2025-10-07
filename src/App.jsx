@@ -1,34 +1,40 @@
-import React from "react";
+// ===================================
+// 🛣️ APP.JSX - ROUTER HYBRIDE
+// ===================================
+// Fichier : src/App.jsx
+
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import About from "./pages/About";
-import Skills from "./pages/Skills";
-import Projects from "./pages/Projects";
-import ProjectDetail from "./pages/ProjectDetail";
-import Contact from "./pages/Contact";
+import ProjectDetail from "./components/ProjectDetail";
+import "./styles/main.scss";
 
 function App() {
   return (
     <div className="app">
-      <Navbar />
+      <Routes>
+        {/* Page principale one-page */}
+        <Route path="/" element={<Home />} />
 
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/projects/:id" element={<ProjectDetail />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<Home />} /> {/* 404 redirect */}
-        </Routes>
-      </main>
+        {/* Pages détail des projets */}
+        <Route path="/project/:id" element={<ProjectDetail />} />
 
-      <Footer />
+        {/* Route 404 (optionnel) */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
   );
 }
+
+// Composant 404 simple
+const NotFound = () => (
+  <div className="not-found section">
+    <div className="container">
+      <h1>404 - Page non trouvée</h1>
+      <a href="/" className="btn btn-primary">
+        Retour à l'accueil
+      </a>
+    </div>
+  </div>
+);
 
 export default App;

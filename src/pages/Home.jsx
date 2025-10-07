@@ -1,15 +1,43 @@
-function Home() {
+// ===================================
+// 🏠 HOME.JSX - PAGE PRINCIPALE
+// ===================================
+// Fichier : src/pages/Home/Home.jsx
+
+import Hero from "../components/Hero";
+import Navbar from "../components/Navbar";
+import About from "../components/About";
+import Portofolio from "../components/Portofolio";
+import Works from "../components/Works";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
+
+const Home = () => {
   return (
-    <div className="home">
-      <section className="hero">
-        <h1>Bonjour, je suis [Ton Nom]</h1>
-        <p>Développeur Web Full-Stack passionné</p>
-        <a href="#projects" className="cta-button">
-          Voir mes projets
-        </a>
+    <main className="home">
+      <Navbar />
+      <section id="home" className="section">
+        <Hero />
       </section>
-    </div>
+
+      <section id="about" className="section section-light">
+        <About />
+      </section>
+
+      <section id="portofolio" className="section">
+        <Portofolio />
+      </section>
+
+      <section id="works" className="section section-lavender">
+        <Works />
+      </section>
+
+      <section id="contact" className="section">
+        <Contact />
+      </section>
+
+      <Footer />
+    </main>
   );
-}
+};
 
 export default Home;

@@ -1,0 +1,63 @@
+// ===================================
+// 🧩 COMPONENTS - _forms.scss
+// ===================================
+// Fichier : src/styles/components/_forms.scss
+
+.input,
+.textarea,
+.select {
+  width: 100%;
+  padding: $spacing-3 $spacing-4;
+  font-family: $font-body;
+  font-size: $font-size-base;
+  color: $color-text-primary;
+  background-color: $color-bg-white;
+  border: $border-width-thin solid $color-bg-light-blue-alt;
+  border-radius: $border-radius-md;
+  transition: all $transition-fast;
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+    box-shadow: 0 0 0 3px rgba($color-primary, 0.1);
+  }
+
+  &::placeholder {
+    color: $color-text-secondary;
+    opacity: 0.6;
+  }
+
+  &:disabled {
+    background-color: $color-bg-light-blue;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-group {
+  margin-bottom: $spacing-6;
+}
+
+.label {
+  display: block;
+  margin-bottom: $spacing-2;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+}
+
+.form-error {
+  margin-top: $spacing-2;
+  font-size: $font-size-sm;
+  color: $color-error;
+}
+
+.form-success {
+  margin-top: $spacing-2;
+  font-size: $font-size-sm;
+  color: $color-success;
+}

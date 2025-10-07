@@ -1,0 +1,188 @@
+// ===================================
+// 🎨 BASE - _typography.scss
+// ===================================
+// Fichier : src/styles/base/_typography.scss
+
+// Import des polices Google Fonts
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap");
+
+// Configuration body
+body {
+  font-family: $font-body;
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-relaxed;
+  color: $color-text-primary;
+  background-color: $color-bg-white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Hiérarchie des titres
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: $spacing-4;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+}
+
+h1 {
+  @include heading-primary;
+  font-size: $font-size-4xl;
+
+  @include respond-to(md) {
+    font-size: $font-size-5xl;
+  }
+
+  @include respond-to(lg) {
+    font-size: $font-size-6xl;
+  }
+}
+
+h2 {
+  @include heading-secondary;
+  font-size: $font-size-3xl;
+
+  @include respond-to(md) {
+    font-size: $font-size-4xl;
+  }
+}
+
+h3 {
+  @include heading-secondary;
+  font-size: $font-size-2xl;
+
+  @include respond-to(md) {
+    font-size: $font-size-3xl;
+  }
+}
+
+h4 {
+  @include heading-secondary;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-medium;
+}
+
+h5 {
+  @include heading-secondary;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
+}
+
+h6 {
+  @include heading-secondary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+}
+
+// Paragraphes
+p {
+  @include body-text;
+  margin-bottom: $spacing-4;
+}
+
+// Liens
+a {
+  color: $color-primary;
+  text-decoration: none;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $color-hover-primary;
+  }
+
+  &:focus-visible {
+    @include focus-visible;
+  }
+}
+
+// Classes utilitaires typographiques
+.text-primary {
+  color: $color-primary;
+}
+
+.text-secondary-color {
+  color: $color-secondary;
+}
+
+.text-purple {
+  color: $color-accent-purple;
+}
+
+.text-cyan {
+  color: $color-accent-cyan;
+}
+
+.text-dark {
+  color: $color-text-dark;
+}
+
+.text-muted {
+  color: $color-text-secondary;
+}
+
+.text-white {
+  color: $color-text-white;
+}
+
+// Polices
+.font-montserrat {
+  font-family: $font-heading-primary;
+}
+
+.font-poppins {
+  font-family: $font-heading-secondary;
+}
+
+.font-jakarta {
+  font-family: $font-body;
+}
+
+.font-manrope {
+  font-family: $font-accent;
+}
+
+// Poids
+.font-light {
+  font-weight: $font-weight-light;
+}
+
+.font-regular {
+  font-weight: $font-weight-regular;
+}
+
+.font-medium {
+  font-weight: $font-weight-medium;
+}
+
+.font-semibold {
+  font-weight: $font-weight-semibold;
+}
+
+.font-bold {
+  font-weight: $font-weight-bold;
+}
+
+.font-black {
+  font-weight: $font-weight-black;
+}
+
+// Alignement
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
