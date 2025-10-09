@@ -1,0 +1,123 @@
+// ===================================
+// 🎯 HERO STYLES - VERSION MOBILE
+// ===================================
+// Fichier : src/styles/components/_hero.scss
+
+@use "../abstracts/variables" as v;
+
+.hero {
+  min-height: 34.5rem;
+  display: flex;
+  align-items: flex-start;
+  padding: 2rem 1.5rem;
+  background-color: v.$color-bg-light-blue;
+
+  &__container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  // ===== CONTENU TEXTE =====
+  &__content {
+    margin-bottom: 3rem;
+  }
+
+  &__title {
+    font-family: v.$font-accent;
+    font-size: 2rem;
+    font-weight: 700;
+    color: v.$color-text-primary;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  &__title-highlight {
+    color: v.$color-text-primary;
+    font-weight: 700;
+  }
+
+  &__description {
+    font-family: v.$font-body;
+    font-size: 1rem;
+    color: v.$color-text-secondary;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 400px;
+  }
+
+  // ===== BOUTONS SOCIAUX =====
+  &__social {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  &__social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid v.$color-text-primary;
+    background-color: transparent;
+    color: v.$color-text-primary;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+
+    &:hover {
+      background-color: v.$color-text-primary;
+      color: v.$color-bg-white;
+      transform: translateY(-2px);
+    }
+
+    &:focus-visible {
+      outline: 2px solid v.$color-primary;
+      outline-offset: 4px;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  // ===== ANIMATION / IMAGE =====
+  &__animation {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__animation-placeholder {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__image-circle {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    // Placeholder pour l'image
+    &::before {
+      content: "Image / Animation";
+      color: rgba(0, 0, 0, 0.3);
+      font-family: v.$font-body;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+  }
+}

@@ -2,6 +2,7 @@
 // 🎨 BASE - _typography.scss
 // ===================================
 // Fichier : src/styles/base/_typography.scss
+@use "../abstracts/variables" as variables;
 
 // Import des polices Google Fonts
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap");
@@ -11,12 +12,12 @@
 
 // Configuration body
 body {
-  font-family: $font-body;
-  font-size: $font-size-base;
-  font-weight: $font-weight-regular;
-  line-height: $line-height-relaxed;
-  color: $color-text-primary;
-  background-color: $color-bg-white;
+  font-family: variables.$font-body;
+  font-size: variables.$font-size-base;
+  font-weight: variables.$font-weight-regular;
+  line-height: variables.$line-height-relaxed;
+  color: variables.$color-text-primary;
+  background-color: variables.$color-bg-white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -28,150 +29,127 @@ h3,
 h4,
 h5,
 h6 {
-  margin-bottom: $spacing-4;
-  font-weight: $font-weight-bold;
-  line-height: $line-height-tight;
+  margin-bottom: variables.$spacing-4;
+  font-weight: variables.$font-weight-bold;
+  line-height: variables.$line-height-tight;
 }
 
 h1 {
-  @include heading-primary;
-  font-size: $font-size-4xl;
-
-  @include respond-to(md) {
-    font-size: $font-size-5xl;
-  }
-
-  @include respond-to(lg) {
-    font-size: $font-size-6xl;
-  }
+  font-size: variables.$font-size-4xl;
 }
 
 h2 {
-  @include heading-secondary;
-  font-size: $font-size-3xl;
-
-  @include respond-to(md) {
-    font-size: $font-size-4xl;
-  }
+  font-size: variables.$font-size-3xl;
 }
 
 h3 {
-  @include heading-secondary;
-  font-size: $font-size-2xl;
-
-  @include respond-to(md) {
-    font-size: $font-size-3xl;
-  }
+  font-size: variables.$font-size-2xl;
 }
 
 h4 {
-  @include heading-secondary;
-  font-size: $font-size-xl;
-  font-weight: $font-weight-medium;
+  font-size: variables.$font-size-xl;
+  font-weight: variables.$font-weight-medium;
 }
 
 h5 {
-  @include heading-secondary;
-  font-size: $font-size-lg;
-  font-weight: $font-weight-medium;
+  font-size: variables.$font-size-lg;
+  font-weight: variables.$font-weight-medium;
 }
 
 h6 {
-  @include heading-secondary;
-  font-size: $font-size-base;
-  font-weight: $font-weight-medium;
+  font-size: variables.$font-size-base;
+  font-weight: variables.$font-weight-medium;
 }
 
 // Paragraphes
 p {
-  @include body-text;
-  margin-bottom: $spacing-4;
+  margin-bottom: variables.$spacing-4;
 }
 
 // Liens
+
 a {
-  color: $color-primary;
+  color: variables.$color-primary;
   text-decoration: none;
-  transition: color $transition-fast;
+  transition: color variables.$transition-fast;
 
   &:hover {
-    color: $color-hover-primary;
-  }
-
-  &:focus-visible {
-    @include focus-visible;
+    color: variables.$color-hover-primary;
   }
 }
 
 // Classes utilitaires typographiques
+
 .text-primary {
-  color: $color-primary;
+  color: variables.$color-primary;
 }
 
 .text-secondary-color {
-  color: $color-secondary;
+  color: variables.$color-secondary;
 }
 
 .text-purple {
-  color: $color-accent-purple;
+  color: variables.$color-accent-purple;
 }
 
 .text-cyan {
-  color: $color-accent-cyan;
+  color: variables.$color-accent-cyan;
 }
 
 .text-dark {
-  color: $color-text-dark;
+  color: variables.$color-text-dark;
 }
 
 .text-muted {
-  color: $color-text-secondary;
+  color: variables.$color-text-secondary;
 }
 
 .text-white {
-  color: $color-text-white;
+  color: variables.$color-text-white;
 }
 
 // Polices
+
 .font-montserrat {
-  font-family: $font-heading-primary;
+  font-family: variables.$font-heading-primary;
 }
 
 .font-poppins {
-  font-family: $font-heading-secondary;
+  font-family: variables.$font-heading-secondary;
 }
 
 .font-jakarta {
-  font-family: $font-body;
+  font-family: variables.$font-body;
 }
 
 .font-manrope {
-  font-family: $font-accent;
+  font-family: variables.$font-accent;
 }
 
 // Poids
+
 .font-light {
-  font-weight: $font-weight-light;
+  font-weight: variables.$font-weight-light;
 }
 
 .font-regular {
-  font-weight: $font-weight-regular;
+  font-weight: variables.$font-weight-regular;
 }
 
 .font-medium {
-  font-weight: $font-weight-medium;
+  font-weight: variables.$font-weight-medium;
 }
 
 .font-semibold {
-  font-weight: $font-weight-semibold;
+  font-weight: variables.$font-weight-semibold;
 }
 
 .font-bold {
-  font-weight: $font-weight-bold;
+  font-weight: variables.$font-weight-bold;
 }
 
 .font-black {
-  font-weight: $font-weight-black;
+  font-weight: variables.$font-weight-black;
 }
 
 // Alignement

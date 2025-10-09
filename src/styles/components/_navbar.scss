@@ -1,259 +1,177 @@
 // ===================================
-// 🧭 NAVBAR STYLES
+// 🧭 NAVBAR STYLES - VERSION MOBILE SIMPLE (SANS MIXINS)
 // ===================================
-// Fichier : src/components/Navbar/Navbar.scss
+// Fichier : src/styles/components/_navbar.scss
 
-@import "../../styles/abstracts/variables";
-@import "../../styles/abstracts/mixins";
+@use "../abstracts/variables" as v;
 
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: $z-index-sticky;
-  background-color: $color-bg-white;
-  transition: all $transition-base;
+  z-index: v.$z-index-sticky;
+  background-color: v.$color-bg-white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 
-  // Effet au scroll
-  &--scrolled {
-    box-shadow: $shadow-sm;
-  }
-
+  // Container principal
   &__container {
-    @include container;
-    @include flex-between;
-    padding-top: $spacing-4;
-    padding-bottom: $spacing-4;
-
-    @include respond-to(md) {
-      padding-top: $spacing-6;
-      padding-bottom: $spacing-6;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
   }
 
   // ===== LOGO =====
   &__logo {
-    @include flex-center;
-    text-decoration: none;
-    transition: transform $transition-fast;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: opacity 0.2s ease;
 
     &:hover {
-      transform: scale(1.02);
+      opacity: 0.8;
     }
 
     &:focus-visible {
-      @include focus-visible;
-      border-radius: $border-radius-sm;
+      outline: 2px solid v.$color-primary;
+      outline-offset: 4px;
+      border-radius: 4px;
     }
   }
 
   &__logo-text {
-    font-size: $font-size-xl;
-    font-weight: $font-weight-bold;
-    color: $color-text-primary;
-    white-space: nowrap;
-
-    @include respond-to(md) {
-      font-size: $font-size-2xl;
-    }
+    font-family: v.$font-accent;
+    font-size: v.$font-size-sm;
+    font-weight: 700;
+    color: v.$color-text-primary;
   }
 
-  // ===== MENU DESKTOP =====
-  &__menu {
-    display: none;
-    list-style: none;
-    gap: $spacing-8;
-
-    @include respond-to(md) {
-      @include flex-center;
-    }
-
-    @include respond-to(lg) {
-      gap: $spacing-10;
-    }
-  }
-
-  &__menu-item {
-    position: relative;
-  }
-
-  &__link {
-    font-family: $font-accent;
-    font-size: $font-size-base;
-    font-weight: $font-weight-medium;
-    color: $color-text-secondary;
-    text-decoration: none;
-    padding: $spacing-2 $spacing-3;
-    border-radius: $border-radius-sm;
-    transition: all $transition-fast;
-    position: relative;
-
-    &:hover {
-      color: $color-text-primary;
-    }
-
-    // Indicateur de page active
-    &--active {
-      color: $color-primary;
-      font-weight: $font-weight-semibold;
-
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: -4px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 6px;
-        height: 6px;
-        background-color: $color-primary;
-        border-radius: 50%;
-      }
-    }
-
-    &:focus-visible {
-      @include focus-visible;
-    }
-  }
-
-  // ===== CTA BUTTON =====
-  &__cta {
-    display: none;
-    text-decoration: none;
-
-    @include respond-to(md) {
-      display: block;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: $spacing-2;
-    }
-  }
-
-  &__cta-icon {
-    transition: transform $transition-fast;
-
-    .btn:hover & {
-      transform: translateX(4px);
-    }
-  }
-
-  // ===== MOBILE TOGGLE =====
-  &__toggle {
+  // ===== BURGER MENU =====
+  &__burger {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 28px;
-    height: 22px;
-    background: transparent;
+    width: 18px;
+    height: 12px;
+    background: none;
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: $z-index-fixed;
-
-    @include respond-to(md) {
-      display: none;
-    }
+    z-index: 1001;
+    order: 2;
 
     &:focus-visible {
-      @include focus-visible;
+      outline: 2px solid v.$color-primary;
+      outline-offset: 4px;
+      border-radius: 4px;
     }
   }
 
-  &__toggle-line {
+  &__burger-line {
     width: 100%;
-    height: 3px;
-    background-color: $color-text-primary;
-    border-radius: $border-radius-full;
-    transition: all $transition-base;
-    transform-origin: center;
-
-    .navbar__toggle--open &:nth-child(1) {
-      transform: translateY(9.5px) rotate(45deg);
-    }
-
-    .navbar__toggle--open &:nth-child(2) {
-      opacity: 0;
-      transform: translateX(-20px);
-    }
-
-    .navbar__toggle--open &:nth-child(3) {
-      transform: translateY(-9.5px) rotate(-45deg);
-    }
+    height: 2px;
+    background-color: v.$color-text-primary;
+    border-radius: 3px;
+    transition: all 0.3s ease;
   }
+  // Animation burger quand ouvert
+  &__burger--open {
+    .navbar__burger-line {
+      &:nth-child(1) {
+        transform: translateY(5px) rotate(45deg);
+      }
 
-  // ===== MOBILE MENU =====
-  &__mobile-menu {
-    display: block;
-    overflow: hidden;
-    background-color: $color-bg-white;
-    border-top: 1px solid $color-bg-light-blue-alt;
+      &:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
 
-    @include respond-to(md) {
-      display: none;
+      &:nth-child(3) {
+        transform: translateY(-5px) rotate(-45deg);
+      }
     }
   }
 
-  &__mobile-list {
-    list-style: none;
-    padding: $spacing-6 $spacing-4;
-    display: flex;
-    flex-direction: column;
-    gap: $spacing-2;
-  }
-
-  &__mobile-item {
-    width: 100%;
-  }
-
-  &__mobile-link {
-    display: block;
-    padding: $spacing-4;
-    font-family: $font-accent;
-    font-size: $font-size-lg;
-    font-weight: $font-weight-medium;
-    color: $color-text-secondary;
-    text-decoration: none;
-    border-radius: $border-radius-md;
-    transition: all $transition-fast;
+  // ===== CONTACT BUTTON =====
+  &__contact-btn {
+    padding: 0.5rem 1.25rem;
+    background-color: v.$color-primary;
+    color: v.$color-text-primary;
+    border: none;
+    border-radius: 0.5rem;
+    font-family: v.$font-accent;
+    font-size: v.$font-size-sm;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    order: 3;
 
     &:hover {
-      background-color: $color-bg-light-blue;
-      color: $color-text-primary;
+      background-color: darken(v.$color-primary, 8%);
+      transform: translateY(-1px);
     }
 
-    &--active {
-      background-color: rgba($color-primary, 0.1);
-      color: $color-primary;
-      font-weight: $font-weight-semibold;
+    &:active {
+      transform: translateY(0);
     }
 
     &:focus-visible {
-      @include focus-visible;
+      outline: 2px solid v.$color-primary;
+      outline-offset: 4px;
     }
   }
 
-  &__mobile-cta {
-    display: block;
-    text-decoration: none;
-    margin-top: $spacing-4;
+  // ===== DROPDOWN MENU =====
+  &__dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: v.$color-bg-white;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
 
-    .btn-block {
-      width: 100%;
-      justify-content: center;
-      gap: $spacing-2;
+  &__dropdown-list {
+    list-style: none;
+    padding: 1rem 0;
+    margin: 0;
+  }
+
+  &__dropdown-link {
+    display: block;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background: none;
+    border: none;
+    font-family: v.$font-accent;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: v.$color-text-secondary;
+    text-align: right;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: v.$color-bg-light-blue;
+      color: v.$color-text-primary;
+    }
+
+    &:focus-visible {
+      outline: 2px solid v.$color-primary;
+      outline-offset: -2px;
     }
   }
 }
 
 // ===== ESPACER LE CONTENU =====
-// Ajouter de l'espace en haut du body pour compenser la navbar fixe
+// Compense la hauteur de la navbar fixe
 body {
-  padding-top: 80px; // Ajuste selon la hauteur de ta navbar
-
-  @include respond-to(md) {
-    padding-top: 100px;
-  }
+  padding-top: 70px;
 }

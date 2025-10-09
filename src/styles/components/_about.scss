@@ -1,0 +1,200 @@
+// ===================================
+// 👤 ABOUT STYLES - VERSION MOBILE
+// ===================================
+// Fichier : src/styles/components/_about.scss
+
+@use "../abstracts/variables" as v;
+
+.about {
+  padding: 4rem 1.5rem;
+  background-color: v.$color-bg-white;
+
+  &__container {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  // ===== TITRE =====
+  &__title {
+    font-family: v.$font-accent;
+    font-size: 2rem;
+    font-weight: 700;
+    color: v.$color-text-primary;
+    margin-bottom: 1.5rem;
+  }
+
+  // ===== INTRODUCTION =====
+  &__intro {
+    font-family: v.$font-body;
+    font-size: 1rem;
+    font-weight: 700;
+    color: v.$color-text-primary;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+
+    strong {
+      font-weight: 700;
+    }
+  }
+
+  // ===== CONTENU =====
+  &__content {
+    margin-bottom: 3rem;
+  }
+
+  &__text {
+    font-family: v.$font-body;
+    font-size: 0.95rem;
+    color: v.$color-text-secondary;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+
+  &__highlight {
+    font-family: v.$font-body;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: v.$color-text-primary;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+
+  &__objective {
+    font-family: v.$font-body;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: v.$color-text-primary;
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+
+  // ===== EXPÉRIENCES =====
+  &__experiences {
+    margin-bottom: 2.5rem;
+  }
+
+  &__experiences-title {
+    font-family: v.$font-accent;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: v.$color-text-secondary;
+    margin-bottom: 1.5rem;
+  }
+
+  &__experience-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: flex-start;
+  }
+
+  &__experience-year {
+    font-family: v.$font-accent;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: v.$color-primary;
+    min-width: 40px;
+    flex-shrink: 0;
+  }
+
+  &__experience-content {
+    flex: 1;
+  }
+
+  &__experience-role {
+    font-family: v.$font-accent;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: v.$color-text-primary;
+    margin-bottom: 0.25rem;
+    line-height: 1.3;
+  }
+
+  &__experience-subtitle {
+    font-family: v.$font-body;
+    font-size: 0.95rem;
+    color: v.$color-text-secondary;
+    margin: 0;
+  }
+
+  // ===== BOUTONS CTA =====
+  &__cta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  &__cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    border-radius: 8px;
+    font-family: v.$font-body;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+
+    &--primary {
+      background-color: #ff6b35;
+      color: white;
+      border-color: #ff6b35;
+
+      &:hover {
+        background-color: #e55a2b;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+      }
+    }
+
+    &--secondary {
+      background-color: white;
+      color: v.$color-text-primary;
+      border-color: v.$color-text-primary;
+
+      &:hover {
+        background-color: v.$color-text-primary;
+        color: white;
+        transform: translateY(-2px);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid v.$color-primary;
+      outline-offset: 4px;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  // ===== ICÔNES TECHNOLOGIES =====
+  &__tech-icons {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  &__tech-icon {
+    width: 48px;
+    height: 48px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

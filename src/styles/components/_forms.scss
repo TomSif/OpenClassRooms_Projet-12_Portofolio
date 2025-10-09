@@ -1,3 +1,5 @@
+@use "../abstracts/variables" as v;
+
 // ===================================
 // 🧩 COMPONENTS - _forms.scss
 // ===================================
@@ -7,28 +9,28 @@
 .textarea,
 .select {
   width: 100%;
-  padding: $spacing-3 $spacing-4;
-  font-family: $font-body;
-  font-size: $font-size-base;
-  color: $color-text-primary;
-  background-color: $color-bg-white;
-  border: $border-width-thin solid $color-bg-light-blue-alt;
-  border-radius: $border-radius-md;
-  transition: all $transition-fast;
+  padding: v.$spacing-3 v.$spacing-4;
+  font-family: v.$font-body;
+  font-size: v.$font-size-base;
+  color: v.$color-text-primary;
+  background-color: v.$color-bg-white;
+  border: v.$border-width-thin solid v.$color-bg-light-blue-alt;
+  border-radius: v.$border-radius-md;
+  transition: all v.$transition-fast;
 
   &:focus {
     outline: none;
-    border-color: $color-primary;
-    box-shadow: 0 0 0 3px rgba($color-primary, 0.1);
+    border-color: v.$color-primary;
+    box-shadow: 0 0 0 3px rgba(v.$color-primary, 0.1);
   }
 
   &::placeholder {
-    color: $color-text-secondary;
+    color: v.$color-text-secondary;
     opacity: 0.6;
   }
 
   &:disabled {
-    background-color: $color-bg-light-blue;
+    background-color: v.$color-bg-light-blue;
     cursor: not-allowed;
     opacity: 0.6;
   }
@@ -40,24 +42,24 @@
 }
 
 .form-group {
-  margin-bottom: $spacing-6;
+  margin-bottom: v.$spacing-6;
 }
 
 .label {
   display: block;
-  margin-bottom: $spacing-2;
-  font-weight: $font-weight-medium;
-  color: $color-text-primary;
+  margin-bottom: v.$spacing-2;
+  font-weight: v.$font-weight-medium;
+  color: v.$color-text-primary;
 }
 
 .form-error {
-  margin-top: $spacing-2;
-  font-size: $font-size-sm;
-  color: $color-error;
+  margin-top: v.$spacing-2;
+  font-size: v.$font-size-sm;
+  color: v.$color-error;
 }
 
 .form-success {
-  margin-top: $spacing-2;
-  font-size: $font-size-sm;
-  color: $color-success;
+  margin-top: v.$spacing-2;
+  font-size: v.$font-size-sm;
+  color: v.$color-success;
 }
