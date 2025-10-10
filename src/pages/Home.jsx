@@ -6,7 +6,7 @@
 import Hero from "../components/Hero";
 import Navbar from "../components/NavBar";
 import About from "../components/About";
-import Portofolio from "../components/Portofolio";
+import Portfolio from "../components/Portfolio";
 import Works from "../components/Works";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
@@ -23,8 +23,8 @@ const Home = () => {
         <About />
       </section>
 
-      <section id="portofolio" className="section">
-        <Portofolio />
+      <section id="portfolio" className="section">
+        <Portfolio />
       </section>
 
       <section id="works" className="section section-lavender">

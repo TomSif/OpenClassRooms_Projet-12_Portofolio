@@ -5,7 +5,7 @@
 
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import ProjectDetail from "./components/ProjectDetail";
+import ProjectPage from "./pages/ProjectPage";
 import "../src/styles/main.scss";
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
 
         {/* Pages détail des projets */}
-        <Route path="/project/:id" element={<ProjectDetail />} />
+        <Route path="/project/:slug" element={<ProjectPage />} />
 
         {/* Route 404 (optionnel) */}
         <Route path="*" element={<NotFound />} />
