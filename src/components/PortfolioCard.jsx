@@ -1,80 +1,130 @@
 // ===================================
-// 🃏 PORTFOLIOCARD.JSX - COMPOSANT CARD
+// 🧩 COMPONENT - PortfolioCard.jsx
 // ===================================
-// Fichier : src/components/PortfolioCard.jsx
-
 import { Link } from "react-router-dom";
+import { FaArrowRight, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
-const PortfolioCard = ({ project }) => {
+function PortfolioCard({ project }) {
+  // Vérifications de sécurité
+  if (!project) {
+    console.error("PortfolioCard: project prop is undefined");
+    return null;
+  }
+
   // Générer un slug si il n'existe pas
   const projectSlug =
     project.slug ||
-    project.title
+    (project.title || "")
       .toLowerCase()
       .replace(/[^a-z0-9\s-]/g, "") // Supprimer les caractères spéciaux
       .replace(/\s+/g, "-") // Remplacer les espaces par des tirets
       .trim();
 
-  // Debug en mode développement
-  if (process.env.NODE_ENV === "development") {
-    console.log("Project thumbnail:", project.thumbnail);
-  }
+  // Valeurs par défaut pour éviter les erreurs
+  const title = project.title || "Projet sans titre";
+  const category = project.category || "Non catégorisé";
+  const description = project.description || "Pas de description disponible";
+  const thumbnail = project.thumbnail || "/images/placeholder.jpg";
+  const technologies = project.technologies || [];
+  const details = project.details || {};
 
   return (
-    <Link
-      to={`/project/${projectSlug}`}
-      className="portfolio-card"
-      style={{
-        backgroundImage: project.thumbnail
-          ? `url("${project.thumbnail}")`
-          : "none",
-        backgroundSize: "auto",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      {/* Overlay gradient */}
-      <div className="portfolio-card__overlay"></div>
-
-      {/* Contenu */}
-      <div className="portfolio-card__content">
-        {/* Tags technologies */}
-        <div className="portfolio-card__tags">
-          {project.technologies.map((tech, index) => (
-            <span key={index} className="portfolio-card__tag">
-              {tech}
-            </span>
-          ))}
-        </div>
-
-        {/* Titre */}
-        <h3 className="portfolio-card__title">{project.title}</h3>
-
-        {/* Description courte */}
-        <p className="portfolio-card__description">{project.description}</p>
-
-        {/* Lien "Voir le projet" */}
-        <div className="portfolio-card__cta">
-          <span className="portfolio-card__cta-text">Voir le projet</span>
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 20 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+    <article className="portfolio-card">
+      {/* IMAGE AVEC OVERLAY AU HOVER */}
+      <div className="portfolio-card__image-wrapper">
+        <img
+          src={thumbnail}
+          alt={`Aperçu du projet ${title}`}
+          loading="lazy"
+          onError={(e) => {
+            e.target.src = "/images/placeholder.jpg";
+            console.warn(`Image non trouvée: ${thumbnail}`);
+          }}
+        />
+        <div className="portfolio-card__overlay">
+          <Link
+            to={`/project/${projectSlug}`}
+            className="portfolio-card__cta"
+            aria-label={`Voir les détails du projet ${title}`}
           >
-            <path
-              d="M4.16669 10H15.8334M15.8334 10L10.8334 5M15.8334 10L10.8334 15"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+            Voir le projet <FaArrowRight aria-hidden="true" />
+          </Link>
         </div>
       </div>
-    </Link>
+
+      {/* CONTENU DE LA CARD */}
+      <div className="portfolio-card__content">
+        {/* Badge catégorie */}
+        <span
+          className="portfolio-card__category"
+          aria-label="Catégorie du projet"
+        >
+          {category}
+        </span>
+
+        {/* Titre */}
+        <h3 className="portfolio-card__title">{title}</h3>
+
+        {/* Description */}
+        <p className="portfolio-card__description">{description}</p>
+
+        {/* Technologies (3 premières + compteur) */}
+        {technologies.length > 0 && (
+          <div
+            className="portfolio-card__tech"
+            aria-label="Technologies utilisées"
+          >
+            {technologies.slice(0, 3).map((tech, index) => (
+              <span key={index} className="tech-badge">
+                {tech}
+              </span>
+            ))}
+            {technologies.length > 3 && (
+              <span
+                className="tech-badge more"
+                aria-label={`${technologies.length - 3} autres technologies`}
+              >
+                +{technologies.length - 3}
+              </span>
+            )}
+          </div>
+        )}
+
+        {/* Footer avec liens */}
+        <div className="portfolio-card__footer">
+          <Link to={`/project/${projectSlug}`} className="portfolio-card__link">
+            En savoir plus
+          </Link>
+
+          {/* Liens externes (GitHub + Live Demo) */}
+          <div style={{ display: "flex", gap: "1rem" }}>
+            {details.github && (
+              <a
+                href={details.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="portfolio-card__github"
+                aria-label={`Voir le code source sur GitHub pour ${title}`}
+              >
+                <FaGithub aria-hidden="true" /> Code
+              </a>
+            )}
+            {details.live && (
+              <a
+                href={details.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="portfolio-card__github"
+                aria-label={`Voir la démo en ligne pour ${title}`}
+              >
+                <FaExternalLinkAlt aria-hidden="true" /> Demo
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    </article>
   );
-};
+}
 
 export default PortfolioCard;
