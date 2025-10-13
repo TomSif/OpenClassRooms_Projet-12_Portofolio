@@ -305,7 +305,7 @@ export const allProjects = [
     title: "Loopstudios-landing-page",
     category: "Personal",
 
-    thumbnail: "/images/travaux/Personal-Loopstudios-2-thumb.webp",
+    thumbnail: "/images/travaux/Personal-loop-4-thumb.webp",
 
     description: "Création d'une landing page pour Loopstudios.",
 
@@ -328,7 +328,7 @@ export const allProjects = [
     title: "Space-tourism-website",
     category: "Personal",
 
-    thumbnail: "/images/travaux/Personal-Space-1-thumb.webp",
+    thumbnail: "/images/travaux/Personal-space-1-thumb.webp",
 
     description: "Création d'une page de destination pour un site spatial.",
 
