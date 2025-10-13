@@ -50,7 +50,7 @@ export const allProjects = [
     title: "Argent Bank - Application Bancaire",
     category: "Scholar",
 
-    thumbnail: "/images/travaux/argent-bank-1-thumb.webp",
+    thumbnail: "/images/travaux/SelectedWorks-ArgentBank-2-thumb.webp",
 
     description:
       "Application bancaire responsive avec authentification JWT et Redux Toolkit.",
@@ -59,11 +59,17 @@ export const allProjects = [
 
     details: {
       gallery: [
-        "/images/travaux/argent-bank-1.webp",
-        "/images/travaux/argent-bank-2.webp",
+        "/images/travaux/SelectedWorks-ArgentBank-1.webp",
+        "/images/travaux/SelectedWorks-ArgentBank-2.webp",
+        "/images/travaux/SelectedWorks-ArgentBank-3.webp",
+        "/images/travaux/SelectedWorks-ArgentBank-4.webp",
+        "/images/travaux/SelectedWorks-ArgentBank-5.webp",
+        "/images/travaux/SelectedWorks-ArgentBank-6.webp",
+        "/images/travaux/SelectedWorks-ArgentBank-7.webp",
+        "/images/travaux/SelectedWorks-ArgentBank-8.webp",
       ],
-      github: "https://github.com/TomSif/argent-bank",
-      live: null, // Si pas de démo live
+      github: "https://github.com/TomSif/OpenClassRooms_Projet-10_Argent-Bank",
+      live: null, // Si pas de démo live - pas encore hébergé
     },
   },
 
