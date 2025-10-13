@@ -6,8 +6,33 @@
 import { Link } from "react-router-dom";
 
 const PortfolioCard = ({ project }) => {
+  // Générer un slug si il n'existe pas
+  const projectSlug =
+    project.slug ||
+    project.title
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, "") // Supprimer les caractères spéciaux
+      .replace(/\s+/g, "-") // Remplacer les espaces par des tirets
+      .trim();
+
+  // Debug en mode développement
+  if (process.env.NODE_ENV === "development") {
+    console.log("Project thumbnail:", project.thumbnail);
+  }
+
   return (
-    <Link to={`/project/${project.slug}`} className="portfolio-card">
+    <Link
+      to={`/project/${projectSlug}`}
+      className="portfolio-card"
+      style={{
+        backgroundImage: project.thumbnail
+          ? `url("${project.thumbnail}")`
+          : "none",
+        backgroundSize: "auto",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       {/* Overlay gradient */}
       <div className="portfolio-card__overlay"></div>
 
