@@ -1,48 +1,14 @@
 // ===================================
-// 📊 FICHIER DE DONNÉES - PROJETS
+// 📊 EXEMPLE DE STRUCTURE projects.js
 // ===================================
-// Fichier : src/data/projects.js
+// Avec la nouvelle organisation des images (structure plate + suffixe -thumb)
 
-// ===================================
-// 🎨 CONFIGURATION TECHNOS (pour react-icons)
-// ===================================
-// Noms exacts à utiliser dans le tableau technologies[]
-// Ces noms doivent matcher avec le mapping dans TechStack.jsx
-
-export const TECH_NAMES = {
-  // Frontend
-  JAVASCRIPT: "JavaScript",
-  HTML5: "HTML5",
-  CSS3: "CSS3",
-  REACT: "React",
-  SASS: "Sass",
-
-  // Build tools
-  VITE: "Vite",
-  WEBPACK: "Webpack",
-
-  // State management
-  REDUX: "Redux",
-
-  // Backend (si besoin plus tard)
-  NODEJS: "Node.js",
-  EXPRESS: "Express",
-  MONGODB: "MongoDB",
-
-  // Autres
-  GIT: "Git",
-  FIGMA: "Figma",
-};
-
-// ===================================
-// 📦 DONNÉES DES PROJETS
-// ===================================
+import { TECH_NAMES } from "./techConfig"; // (si séparé)
 
 export const allProjects = [
   // ==========================================
   // 🌟 PROJETS PRINCIPAUX (featured: true)
   // ==========================================
-  // Ces projets ont des pages dédiées /project/:slug
 
   {
     id: 1,
@@ -50,24 +16,30 @@ export const allProjects = [
     slug: "sophie-bluel",
     title: "Sophie Bluel - Portfolio Architecte",
     category: "Scholar",
-    thumbnail: "/images/projects/sophie-bluel-thumb.jpg",
-    description:
-      "Création d'un portfolio dynamique pour une architecte d'intérieur avec système d'administration. Gestion des projets via API REST et interface de connexion sécurisée.",
 
-    // Technologies utilisées (noms exacts depuis TECH_NAMES)
+    // ✅ Thumbnail pour card homepage
+    thumbnail: "/images/travaux/SelectedWorks-sophie bluel-2-thumb.webp",
+
+    description:
+      "Création d'un portfolio dynamique pour une architecte d'intérieur avec système d'administration.",
+
     technologies: [TECH_NAMES.JAVASCRIPT, TECH_NAMES.HTML5, TECH_NAMES.CSS3],
 
     details: {
-      // Galerie d'images (2-4 pour projets code)
+      // ✅ Images HD pour modale (sans -thumb)
+      // Les thumbnails de navigation seront générés automatiquement par getThumbnail()
       gallery: [
-        "/images/projects/sophie-bluel-1.jpg",
-        "/images/projects/sophie-bluel-2.jpg",
-        "/images/projects/sophie-bluel-3.jpg",
+        "/images/travaux/works-sophie-bluel 1.webp",
+        "/images/travaux/works-sophie-bluel 2.webp",
+        "/images/travaux/works-sophie-bluel 3.webp",
+        "/images/travaux/works-sophie-bluel 4.webp",
+        "/images/travaux/works-sophie-bluel 5.webp",
+        "/images/travaux/works-sophie-bluel 6.webp",
+        "/images/travaux/works-sophie-bluel 7.webp",
       ],
-
-      // Liens
-      github: "https://github.com/TomSif/sophie-bluel",
-      live: "https://sophie-bluel-demo.vercel.app",
+      github:
+        "https://github.com/TomSif/TomSif-OpenClassRooms_Projet-6_Sophie-Bluel",
+      live: "https://tom-sif-open-class-rooms-projet-6-sophie-bluel.vercel.app/index.html",
     },
   },
 
@@ -77,341 +49,481 @@ export const allProjects = [
     slug: "argent-bank",
     title: "Argent Bank - Application Bancaire",
     category: "Scholar",
-    thumbnail: "/images/projects/argent-bank-thumb.jpg",
-    description:
-      "Application bancaire responsive avec authentification JWT, gestion de profil utilisateur et Redux Toolkit pour la gestion d'état. Interface moderne et sécurisée.",
 
-    technologies: [
-      TECH_NAMES.REACT,
-      TECH_NAMES.REDUX,
-      TECH_NAMES.SASS,
-      TECH_NAMES.JAVASCRIPT,
-    ],
+    thumbnail: "/images/travaux/argent-bank-1-thumb.webp",
+
+    description:
+      "Application bancaire responsive avec authentification JWT et Redux Toolkit.",
+
+    technologies: [TECH_NAMES.REACT, TECH_NAMES.REDUX, TECH_NAMES.SASS],
 
     details: {
       gallery: [
-        "/images/projects/argent-bank-1.jpg",
-        "/images/projects/argent-bank-2.jpg",
+        "/images/travaux/argent-bank-1.webp",
+        "/images/travaux/argent-bank-2.webp",
       ],
       github: "https://github.com/TomSif/argent-bank",
-      live: "https://argent-bank-demo.vercel.app",
+      live: null, // Si pas de démo live
     },
   },
 
   // ==========================================
-  // 📚 PROJETS SCHOLAR (OpenClassrooms)
+  // 🎓 PROJETS SCHOLAR (Works)
   // ==========================================
-  // Projets de formation - featured: false
-
-  {
-    id: 3,
-    featured: false,
-    title: "Kasa - Location d'appartements",
-    category: "Scholar",
-    thumbnail: "/images/works/kasa-thumb.jpg",
-    description:
-      "Application web de location d'appartements entre particuliers. Utilisation de React Router pour la navigation et composants réutilisables.",
-
-    technologies: [TECH_NAMES.REACT, TECH_NAMES.SASS, TECH_NAMES.VITE],
-
-    details: {
-      gallery: ["/images/works/kasa-1.jpg", "/images/works/kasa-2.jpg"],
-      github: "https://github.com/TomSif/kasa",
-      live: "https://kasa-demo.vercel.app",
-    },
-  },
-
-  {
-    id: 4,
-    featured: false,
-    title: "Nina Carducci - Portfolio Photographe",
-    category: "Scholar",
-    thumbnail: "/images/works/nina-carducci-thumb.jpg",
-    description:
-      "Optimisation SEO et performance d'un portfolio de photographe. Amélioration du score Lighthouse et accessibilité.",
-
-    technologies: [TECH_NAMES.JAVASCRIPT, TECH_NAMES.HTML5, TECH_NAMES.CSS3],
-
-    details: {
-      gallery: ["/images/works/nina-carducci-1.jpg"],
-      github: "https://github.com/TomSif/nina-carducci",
-      live: "https://nina-carducci-demo.vercel.app",
-    },
-  },
-  {
-    id: 5,
-    featured: false,
-    title: "Booki - Landing Page Agence de Voyage",
-    category: "Scholar",
-    thumbnail: "/images/works/booki-thumb.jpg",
-    description:
-      "Création d'une landing page pour une agence de voyage. Mise en avant des destinations et optimisation SEO.",
-
-    technologies: [TECH_NAMES.JAVASCRIPT, TECH_NAMES.HTML5, TECH_NAMES.CSS3],
-
-    details: {
-      gallery: ["/images/works/booki-1.jpg"],
-      github: "https://github.com/TomSif/booki",
-      live: "https://booki-demo.vercel.app",
-    },
-  },
-
-  // ⚠️ AJOUTE TES AUTRES PROJETS SCHOLAR ICI
-  // Exemple template :
-  // {
-  //   id: 5,
-  //   featured: false,
-  //   title: "Nom du projet",
-  //   category: "Scholar",
-  //   thumbnail: "/images/works/project-thumb.jpg",
-  //   description: "Description courte (100-150 caractères)",
-  //   technologies: [TECH_NAMES.REACT, TECH_NAMES.SASS],
-  //   details: {
-  //     gallery: ["/images/works/project-1.jpg"],
-  //     github: "https://github.com/...",
-  //     live: "https://..."
-  //   }
-  // },
-
-  // ==========================================
-  // 💻 PROJETS PERSONNELS (Personal)
-  // ==========================================
-  // Projets réalisés en dehors de la formation
 
   {
     id: 10,
     featured: false,
-    title: "Portfolio V1",
-    category: "Personal",
-    thumbnail: "/images/works/portfolio-v1-thumb.jpg",
+    title: "Kasa - Location immobilière",
+    category: "Scholar",
+
+    thumbnail: "/images/travaux/SelectedWorks-KASA-3-thumb.webp",
+
     description:
-      "Première version de mon portfolio personnel. Exploration des animations CSS et du responsive design.",
+      "Application de location immobilière avec React Router et animations CSS.",
+
+    technologies: [TECH_NAMES.REACT, TECH_NAMES.SASS],
+
+    details: {
+      gallery: [
+        "/images/travaux/works-kasa-1.webp",
+        "/images/travaux/works-kasa-2.webp",
+        "/images/travaux/works-kasa-3.webp",
+        "/images/travaux/works-kasa-4.webp",
+      ],
+      github:
+        "https://github.com/TomSif/OpenClassRooms_Projet-7_Kasa/blob/main/my-react-app/README.md",
+      live: "https://open-class-rooms-projet-7-kasa.vercel.app/",
+    },
+  },
+
+  {
+    id: 12,
+    featured: false,
+    title: "Nina Carducci - Projet d'Optimisation SEO",
+    category: "Scholar",
+
+    thumbnail: "/images/travaux/SelectedWorks-nina-3-thumb.webp",
+
+    description:
+      "Améliorer le référencement naturel (SEO) et l'accessibilité du site web de Nina Carducci",
+
+    technologies: [TECH_NAMES.HTML5],
+
+    details: {
+      gallery: [
+        "/images/travaux/works-nina-1.webp",
+        "/images/travaux/works-nina-2.webp",
+        "/images/travaux/works-nina-3.webp",
+        "/images/travaux/works-nina-4.webp",
+      ],
+      github: "https://github.com/TomSif/OpenClassRooms_Projet-8_Nina_Carducci",
+      live: "https://open-class-rooms-projet-8-nina-card.vercel.app/",
+    },
+  },
+  {
+    id: 13,
+    featured: false,
+    title: "Print-it",
+    category: "Scholar",
+
+    thumbnail: "/images/travaux/SelectedWorks-print-it-3-thumb.webp",
+
+    description: "Initiation à JavaScript en créant un carrousel interactif.",
 
     technologies: [TECH_NAMES.HTML5, TECH_NAMES.CSS3, TECH_NAMES.JAVASCRIPT],
 
     details: {
-      gallery: ["/images/works/portfolio-v1-1.jpg"],
-      github: "https://github.com/TomSif/portfolio-v1",
-      live: "https://portfolio-v1.vercel.app",
+      gallery: [
+        "/images/travaux/works-print-it-1.webp",
+        "/images/travaux/works-print-it-2.webp",
+        "/images/travaux/works-print-it-3.webp",
+        "/images/travaux/works-print-it-4.webp",
+      ],
+      github:
+        "https://github.com/TomSif/OpenClassRooms_Projet-5_Print-it/tree/main",
+      live: "https://tomsif.github.io/OpenClassRooms_Projet-5_Print-it/",
+    },
+  },
+  {
+    id: 14,
+    featured: false,
+    title: "OhMyFood-CSS Animations",
+    category: "Scholar",
+
+    thumbnail: "/images/travaux/SelectedWorks-ohmyfood-1-thumb.webp",
+
+    description:
+      "Améliorez l'interface d'un site mobile avec des animations CSS",
+
+    technologies: [TECH_NAMES.HTML5, TECH_NAMES.SASS, TECH_NAMES.CSS3],
+
+    details: {
+      gallery: [
+        "/images/travaux/works-ohmyfood-1.webp",
+        "/images/travaux/works-ohmyfood-2.webp",
+        "/images/travaux/works-ohmyfood-3.webp",
+        "/images/travaux/works-ohmyfood-4.webp",
+      ],
+      github: "https://github.com/TomSif/OpenClassrooms_Projet-4_Ohmyfood",
+      live: "https://tomsif.github.io/OpenClassrooms_Projet-4_Ohmyfood/",
+    },
+  },
+  {
+    id: 15,
+    featured: false,
+    title: "Booki - Page d'accueil",
+    category: "Scholar",
+
+    thumbnail: "/images/travaux/SelectedWorks-booki-1-thumb.webp",
+
+    description:
+      "Créez la page d'accueil d'une agence de voyage avec HTML & CSS",
+
+    technologies: [TECH_NAMES.HTML5, TECH_NAMES.CSS3],
+    details: {
+      gallery: [
+        "/images/travaux/works-booki-1.webp",
+        "/images/travaux/works-booki-2.webp",
+        "/images/travaux/works-booki-3.webp",
+        "/images/travaux/works-booki-4.webp",
+      ],
+      github: "https://github.com/TomSif/OpenClassRooms_Projet-3_Site-Booki",
+      live: "https://tomsif.github.io/OpenClassRooms_Projet-3_Site-Booki/",
     },
   },
 
-  // ⚠️ AJOUTE TES PROJETS PERSONNELS ICI
-  // {
-  //   id: 11,
-  //   featured: false,
-  //   title: "...",
-  //   category: "Personal",
-  //   ...
-  // },
-
   // ==========================================
-  // 📷 PROJETS PHOTOGRAPHY
+  // 💻 PROJETS PERSONAL (Works)
   // ==========================================
-  // Galeries de photos (PAS de technologies, github, live)
 
   {
     id: 20,
     featured: false,
-    title: "Loire au coucher de soleil",
-    category: "Photography",
-    thumbnail: "/images/photography/loire-thumb.jpg",
-    description:
-      "Série de 8 photos capturées au bord de la Loire en juin 2024. Exploration des reflets et des couleurs chaudes du coucher de soleil.",
+    title: "Calculatrice de pourboires",
+    category: "Personal",
 
-    // ⚠️ PAS de technologies pour Photography
+    thumbnail: "/images/travaux/Personal-tips calculator-1-thumb.webp",
+
+    description: "Création d'une calculatrice fonctionnelle en JavaScript.",
+
+    technologies: [TECH_NAMES.HTML5, TECH_NAMES.JAVASCRIPT, TECH_NAMES.CSS3],
+
     details: {
-      // Galerie avec plusieurs images (5-15 pour photos)
       gallery: [
-        "/images/photography/loire-1.jpg",
-        "/images/photography/loire-2.jpg",
-        "/images/photography/loire-3.jpg",
-        "/images/photography/loire-4.jpg",
-        "/images/photography/loire-5.jpg",
-        "/images/photography/loire-6.jpg",
-        "/images/photography/loire-7.jpg",
-        "/images/photography/loire-8.jpg",
+        "/images/travaux/personal-tips-calculator-1.webp",
+        "/images/travaux/personal-tips-calculator-2.webp",
+        "/images/travaux/ersonal-tips-calculator-3.webp",
+        "/images/travaux/personal-tips-calculator-4.webp",
       ],
-      // ⚠️ PAS de github ni live pour Photography
+      github: "https://github.com/TomSif/Front-end_Mentor_Tip_Calculator_App",
+      live: "https://tomsif.github.io/Front-end_Mentor_Tip_Calculator_App/",
     },
   },
-
   {
     id: 21,
     featured: false,
-    title: "Portraits urbains",
-    category: "Photography",
-    thumbnail: "/images/photography/portraits-thumb.jpg",
-    description:
-      "Collection de portraits pris dans les rues de Paris. Jeu sur les expressions et la lumière naturelle.",
+    title: "E-commerce product page",
+    category: "Personal",
+
+    thumbnail: "/images/travaux/Personal-sneakers-1-thumb.webp",
+
+    description: "Création d'une page produit e-commerce en JavaScript.",
+
+    technologies: [TECH_NAMES.HTML5, TECH_NAMES.JAVASCRIPT, TECH_NAMES.CSS3],
 
     details: {
       gallery: [
-        "/images/photography/portraits-1.jpg",
-        "/images/photography/portraits-2.jpg",
-        "/images/photography/portraits-3.jpg",
-        "/images/photography/portraits-4.jpg",
-        "/images/photography/portraits-5.jpg",
+        "/images/travaux/personal-sneakers-1.webp",
+        "/images/travaux/personal-sneakers-2.webp",
+        "/images/travaux/personal-sneakers-3.webp",
+        "/images/travaux/personal-sneakers-4.webp",
       ],
+      github:
+        "https://github.com/TomSif/Frontend_Mentor_E-commerce_product_page",
+      live: "https://tomsif.github.io/Frontend_Mentor_E-commerce_product_page/",
+    },
+  },
+  {
+    id: 22,
+    featured: false,
+    title: "News homepage",
+
+    category: "Personal",
+
+    thumbnail: "/images/travaux/Personal-News-4-thumb.webp",
+
+    description: "Création d'une page d'accueil d'actualités en JavaScript.",
+
+    technologies: [TECH_NAMES.CSS3, TECH_NAMES.JAVASCRIPT, TECH_NAMES.HTML5],
+
+    details: {
+      gallery: [
+        "/images/travaux/personal-news-1.webp",
+        "/images/travaux/personal-news-2.webp",
+        "/images/travaux/personal-news-3.webp",
+        "/images/travaux/personal-news-4.webp",
+      ],
+      github: "https://github.com/TomSif/Front-end_Mentor_News_Homepage_main",
+      live: "https://tomsif.github.io/Front-end_Mentor_News_Homepage_main/",
+    },
+  },
+  {
+    id: 23,
+    featured: false,
+    title: "Bookmark-Landing-Page-Master",
+
+    category: "Personal",
+
+    thumbnail: "/images/travaux/Personal-Bookmark-4-thumb.webp",
+
+    description: "Création d'une landing page avec rubriques en JavaScript.",
+
+    technologies: [TECH_NAMES.HTML5, TECH_NAMES.JAVASCRIPT, TECH_NAMES.CSS3],
+
+    details: {
+      gallery: [
+        "/images/travaux/personal-bookmark-1.webp",
+        "/images/travaux/personal-bookmark-2.webp",
+        "/images/travaux/personal-bookmark-3.webp",
+        "/images/travaux/personal-bookmark-4.webp",
+      ],
+      github:
+        "https://github.com/TomSif/Front-end-Mentor__Bookmark-Landing-Page-Master",
+      live: "https://tomsif.github.io/Front-end-Mentor__Bookmark-Landing-Page-Master/",
+    },
+  },
+  {
+    id: 24,
+    featured: false,
+    title: "Loopstudios-landing-page",
+    category: "Personal",
+
+    thumbnail: "/images/travaux/Personal-Loopstudios-2-thumb.webp",
+
+    description: "Création d'une landing page pour Loopstudios.",
+
+    technologies: [TECH_NAMES.HTML5, TECH_NAMES.JAVASCRIPT, TECH_NAMES.SASS],
+
+    details: {
+      gallery: [
+        "/images/travaux/personal-Loopstudios-1.webp",
+        "/images/travaux/personal-Loopstudios-2.webp",
+        "/images/travaux/personal-Loopstudios-3.webp",
+        "/images/travaux/personal-Loopstudios-4.webp",
+      ],
+      github: "https://github.com/TomSif/Front-end_Mentor_Loop-Studio",
+      live: "https://tomsif.github.io/Front-end_Mentor_Loop-Studio/",
+    },
+  },
+  {
+    id: 25,
+    featured: false,
+    title: "Space-tourism-website",
+    category: "Personal",
+
+    thumbnail: "/images/travaux/Personal-Space-1-thumb.webp",
+
+    description: "Création d'une page de destination pour un site spatial.",
+
+    technologies: [
+      TECH_NAMES.HTML5,
+      TECH_NAMES.JAVASCRIPT,
+      TECH_NAMES.TAILWIND,
+    ],
+
+    details: {
+      gallery: [
+        "/images/travaux/personal-space-1.webp",
+        "/images/travaux/personal-space-2.webp",
+        "/images/travaux/personal-space-3.webp",
+        "/images/travaux/personal-space-4.webp",
+      ],
+      github: "https://github.com/TomSif/Front-end__Mentor__Space-tourism",
+      live: null, // Si pas de démo live
     },
   },
 
-  // ⚠️ AJOUTE TES GALERIES PHOTO ICI
-  // {
-  //   id: 22,
-  //   featured: false,
-  //   title: "Titre de la série",
-  //   category: "Photography",
-  //   thumbnail: "/images/photography/serie-thumb.jpg",
-  //   description: "Description de la série photo",
-  //   details: {
-  //     gallery: [
-  //       "/images/photography/serie-1.jpg",
-  //       "/images/photography/serie-2.jpg",
-  //       // ... 5-15 images
-  //     ]
-  //   }
-  // },
-
   // ==========================================
-  // 🎨 PROJETS GRAPHIC DESIGN
+  // 📷 PROJETS PHOTOGRAPHY (Works)
   // ==========================================
-  // Créations graphiques (logos, affiches, etc.)
 
   {
     id: 30,
     featured: false,
-    title: "Identité visuelle - Café des Arts",
-    category: "GraphicDesign",
-    thumbnail: "/images/graphic/cafe-arts-thumb.jpg",
-    description:
-      "Création complète de l'identité visuelle d'un café culturel : logo, carte de visite, menu, signalétique.",
+    title: "Portraits Indonésie",
+    category: "Photography",
 
-    // ⚠️ Tu PEUX ajouter des technos pour Graphic Design si pertinent
-    // Par exemple : Photoshop, Illustrator, Figma
-    // technologies: [TECH_NAMES.FIGMA],
+    thumbnail: "/images/travaux/photography-Portrait-4-thumb.webp",
+
+    description: "Série de photos de portraits en Indonésie.",
+
+    // ⚠️ PAS de technologies pour Photography
 
     details: {
+      // ✅ 5-15 images HD pour galerie
       gallery: [
-        "/images/graphic/cafe-arts-logo.jpg",
-        "/images/graphic/cafe-arts-carte.jpg",
-        "/images/graphic/cafe-arts-menu.jpg",
-        "/images/graphic/cafe-arts-signage.jpg",
+        "/images/travaux/photography-Portrait-1.webp",
+        "/images/travaux/photography-Portrait-2.webp",
+        "/images/travaux/photography-Portrait-3.webp",
+        "/images/travaux/photography-Portrait-4.webp",
       ],
-      // ⚠️ PAS de github ni live (sauf si projet web design)
+      // ⚠️ PAS de github ni live
     },
   },
 
   {
     id: 31,
     featured: false,
-    title: "Affiches événementielles",
-    category: "GraphicDesign",
-    thumbnail: "/images/graphic/affiches-thumb.jpg",
-    description:
-      "Série d'affiches pour un festival de musique. Exploration typographique et composition dynamique.",
+    title: "Street Photography Vietnam",
+    category: "Photography",
+
+    thumbnail: "/images/travaux/photography-N&B-8-thumb.webp",
+
+    description: "Collection de portraits dans les rues de Ho Chi Minh.",
 
     details: {
       gallery: [
-        "/images/graphic/affiche-1.jpg",
-        "/images/graphic/affiche-2.jpg",
-        "/images/graphic/affiche-3.jpg",
+        "/images/travaux/photography-N&B-1.webp",
+        "/images/travaux/photography-N&B-2.webp",
+        "/images/travaux/photography-N&B-3.webp",
+        "/images/travaux/photography-N&B-4.webp",
+      ],
+    },
+  },
+  {
+    id: 32,
+    featured: false,
+    title: "Brutalism Architecture",
+    category: "Photography",
+
+    thumbnail: "/images/travaux/photography-bosnie-4-thumb.webp",
+
+    description: "Collection de photos d'architecture brutaliste.",
+
+    details: {
+      gallery: [
+        "/images/travaux/photography-bosnie-1.webp",
+        "/images/travaux/photography-bosnie-2.webp",
+        "/images/travaux/photography-bosnie-3.webp",
+        "/images/travaux/photography-bosnie-4.webp",
+      ],
+    },
+  },
+  {
+    id: 33,
+    featured: false,
+    title: "Photography Birmanie",
+    category: "Photography",
+
+    thumbnail: "/images/travaux/photography-birmanie-13-thumb.webp",
+
+    description: "Collection de photography en Birmanie.",
+
+    details: {
+      gallery: [
+        "/images/travaux/photography-birmanie-13.webp",
+        "/images/travaux/photography-birmanie-9.webp",
+        "/images/travaux/photography-birmanie-8.webp",
+        "/images/travaux/photography-birmanie-4.webp",
+      ],
+    },
+  },
+  {
+    id: 34,
+    featured: false,
+    title: "Photography Thaïlande",
+    category: "Photography",
+
+    thumbnail: "/images/travaux/photography-ayutthaya-2-thumb.webp",
+
+    description: "Collection de portraits à Ayutthaya.",
+
+    details: {
+      gallery: [
+        "/images/travaux/photography-ayutthaya-1.webp",
+        "/images/travaux/photography-ayutthaya-2.webp",
+        "/images/travaux/photography-ayutthaya-3.webp",
+        "/images/travaux/photography-ayutthaya-4.webp",
+      ],
+    },
+  },
+  {
+    id: 35,
+    featured: false,
+    title: "Photography du Donon",
+    category: "Photography",
+
+    thumbnail: "/images/travaux/photography-alsace-1-thumb.webp",
+
+    description: "Collection de photography du Donon.",
+
+    details: {
+      gallery: [
+        "/images/travaux/photography-alsace-1.webp",
+        "/images/travaux/photography-alsace-2.webp",
+        "/images/travaux/photography-alsace-3.webp",
+        "/images/travaux/photography-alsace-4.webp",
       ],
     },
   },
 
-  // ⚠️ AJOUTE TES PROJETS GRAPHIQUES ICI
-  // {
-  //   id: 32,
-  //   featured: false,
-  //   title: "...",
-  //   category: "GraphicDesign",
-  //   ...
-  // },
+  // ==========================================
+  // 🎨 PROJETS GRAPHIC DESIGN (Works)
+  // ==========================================
+
+  {
+    id: 40,
+    featured: false,
+    title: "travaux infographie",
+    category: "GraphicDesign",
+
+    thumbnail: "/images/travaux/COUETTE-insta2-thumb.webp",
+
+    description: "Création photomontage pour les réseaux sociaux.",
+
+    // ⚠️ Tu PEUX ajouter des technos pour GraphicDesign si pertinent
+    technologies: [TECH_NAMES.PHPHOTOSHOP, TECH_NAMES.ILLUSTRATOR],
+
+    details: {
+      gallery: [
+        "/images/travaux/graphic-1.webp",
+        "/images/travaux/graphic-2.webp",
+        "/images/travaux/graphic-3.webp",
+        "/images/travaux/graphic-4.webp",
+      ],
+    },
+  },
+
+  // ... AJOUTE TES AUTRES PROJETS ICI
 ];
 
 // ===================================
-// 🔧 HELPERS (fonctions utilitaires)
+// 🔧 FONCTIONS UTILITAIRES
 // ===================================
 
-// Récupérer les projets principaux (avec pages dédiées)
 export const featuredProjects = allProjects.filter((p) => p.featured);
-
-// Récupérer les projets de la section Works (sans pages dédiées)
 export const workProjects = allProjects.filter((p) => !p.featured);
 
-// Filtrer par catégorie
 export const getProjectsByCategory = (category) => {
   if (category === "All") return workProjects;
   return workProjects.filter((p) => p.category === category);
 };
 
-// Récupérer un projet par son slug (pour les featured)
-export const getProjectBySlug = (slug) => {
-  return featuredProjects.find((p) => p.slug === slug);
-};
-
-// Récupérer un projet par son ID (pour la modale)
 export const getProjectById = (id) => {
   return allProjects.find((p) => p.id === id);
 };
 
-// Statistiques (optionnel, pour debug)
-export const getProjectStats = () => {
-  return {
-    total: allProjects.length,
-    featured: featuredProjects.length,
-    works: workProjects.length,
-    scholar: workProjects.filter((p) => p.category === "Scholar").length,
-    personal: workProjects.filter((p) => p.category === "Personal").length,
-    photography: workProjects.filter((p) => p.category === "Photography")
-      .length,
-    graphic: workProjects.filter((p) => p.category === "GraphicDesign").length,
-  };
-};
-
 // ===================================
-// 📝 NOTES D'UTILISATION
+// 📝 CHECKLIST AVANT COMMIT
 // ===================================
 
 /*
-STRUCTURE D'UN PROJET CODE (Scholar/Personal) :
-{
-  id: number (unique),
-  featured: boolean,
-  slug: "url-slug" (uniquement si featured),
-  title: "Titre du projet",
-  category: "Scholar" | "Personal",
-  thumbnail: "path/to/thumbnail.jpg",
-  description: "Description courte (100-200 caractères)",
-  technologies: [TECH_NAMES.REACT, TECH_NAMES.SASS, ...],
-  details: {
-    gallery: ["path/to/image1.jpg", ...], // 2-4 images
-    github: "https://github.com/...",
-    live: "https://demo-url.com"
-  }
-}
-
-STRUCTURE D'UN PROJET VISUEL (Photography/GraphicDesign) :
-{
-  id: number (unique),
-  featured: false,
-  title: "Titre de la galerie",
-  category: "Photography" | "GraphicDesign",
-  thumbnail: "path/to/thumbnail.jpg",
-  description: "Description courte",
-  // PAS de technologies (sauf exception pour GraphicDesign)
-  details: {
-    gallery: ["path/to/image1.jpg", ...] // 5-15 images
-    // PAS de github ni live
-  }
-}
-
-CHECKLIST AVANT DE COMPLÉTER :
-- [ ] Toutes les images sont dans /public/images/ avec les bons chemins
-- [ ] Chaque projet a un ID unique
-- [ ] Les noms de technologies matchent TECH_NAMES
-- [ ] Les projets Photography/GraphicDesign n'ont PAS de technologies/github/live
-- [ ] Les descriptions font entre 100-200 caractères
-- [ ] Les galeries ont 2-4 images (code) ou 5-15 images (visuel)
+✅ Tous les chemins thumbnail finissent par "-thumb.webp"
+✅ Tous les chemins gallery sont en HD (sans -thumb)
+✅ Les projets Photography/GraphicDesign n'ont PAS de github/live
+✅ Les projets code ont 2-4 images dans gallery
+✅ Les projets visuels ont 5-15 images dans gallery
+✅ Chaque projet a un ID unique
+✅ Les descriptions font 100-200 caractères
 */
