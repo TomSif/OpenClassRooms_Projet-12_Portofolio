@@ -29,13 +29,13 @@ export const allProjects = [
       // ✅ Images HD pour modale (sans -thumb)
       // Les thumbnails de navigation seront générés automatiquement par getThumbnail()
       gallery: [
-        "/images/travaux/works-sophie-bluel 1.webp",
-        "/images/travaux/works-sophie-bluel 2.webp",
-        "/images/travaux/works-sophie-bluel 3.webp",
-        "/images/travaux/works-sophie-bluel 4.webp",
-        "/images/travaux/works-sophie-bluel 5.webp",
-        "/images/travaux/works-sophie-bluel 6.webp",
-        "/images/travaux/works-sophie-bluel 7.webp",
+        "/images/travaux/works-sophie-bluel-1.webp",
+        "/images/travaux/works-sophie-bluel-2.webp",
+        "/images/travaux/works-sophie-bluel-3.webp",
+        "/images/travaux/works-sophie-bluel-4.webp",
+        "/images/travaux/works-sophie-bluel-5.webp",
+        "/images/travaux/works-sophie-bluel-6.webp",
+        "/images/travaux/works-sophie-bluel-7.webp",
       ],
       github:
         "https://github.com/TomSif/TomSif-OpenClassRooms_Projet-6_Sophie-Bluel",
@@ -92,10 +92,10 @@ export const allProjects = [
 
     details: {
       gallery: [
-        "/images/travaux/works-kasa-1.webp",
-        "/images/travaux/works-kasa-2.webp",
-        "/images/travaux/works-kasa-3.webp",
-        "/images/travaux/works-kasa-4.webp",
+        "/images/travaux/works-KASA-1.webp",
+        "/images/travaux/works-KASA-2.webp",
+        "/images/travaux/works-KASA-3.webp",
+        "/images/travaux/works-KASA-4.webp",
       ],
       github:
         "https://github.com/TomSif/OpenClassRooms_Projet-7_Kasa/blob/main/my-react-app/README.md",
@@ -219,7 +219,7 @@ export const allProjects = [
       gallery: [
         "/images/travaux/personal-tips-calculator-1.webp",
         "/images/travaux/personal-tips-calculator-2.webp",
-        "/images/travaux/ersonal-tips-calculator-3.webp",
+        "/images/travaux/personal-tips-calculator-3.webp",
         "/images/travaux/personal-tips-calculator-4.webp",
       ],
       github: "https://github.com/TomSif/Front-end_Mentor_Tip_Calculator_App",
@@ -313,10 +313,10 @@ export const allProjects = [
 
     details: {
       gallery: [
-        "/images/travaux/personal-Loopstudios-1.webp",
-        "/images/travaux/personal-Loopstudios-2.webp",
-        "/images/travaux/personal-Loopstudios-3.webp",
-        "/images/travaux/personal-Loopstudios-4.webp",
+        "/images/travaux/personal-loop-1.webp",
+        "/images/travaux/personal-loop-2.webp",
+        "/images/travaux/personal-loop-3.webp",
+        "/images/travaux/personal-loop-4.webp",
       ],
       github: "https://github.com/TomSif/Front-end_Mentor_Loop-Studio",
       live: "https://tomsif.github.io/Front-end_Mentor_Loop-Studio/",
@@ -325,7 +325,7 @@ export const allProjects = [
   {
     id: 25,
     featured: false,
-    title: "Space-tourism-website",
+    title: "Space-tourism",
     category: "Personal",
 
     thumbnail: "/images/travaux/Personal-space-1-thumb.webp",

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { getProjectsByCategory } from "../data/project";
+import ImageLightbox from "./ImageLightbox";
 
 // Configuration des catégories avec couleurs
 const CATEGORIES = [
@@ -16,7 +17,7 @@ const CATEGORIES = [
 
 function Works() {
   const [activeFilter, setActiveFilter] = useState("Scholar");
-
+  const [selectedProject, setSelectedProject] = useState(null);
   // Utiliser la fonction utilitaire du fichier projects.js
   // getProjectsByCategory retourne déjà les workProjects filtrés
   const filteredProjects = getProjectsByCategory(activeFilter).slice(0, 6);
@@ -63,7 +64,20 @@ function Works() {
         <div className="works__grid">
           {filteredProjects.length > 0 ? (
             filteredProjects.map((project) => (
-              <article key={project.id} className="works__card">
+              <article
+                key={project.id}
+                className="works__card"
+                onClick={() => setSelectedProject(project)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setSelectedProject(project);
+                  }
+                }}
+                aria-label={`View ${project.title} details`}
+              >
                 <div className="works__card-image">
                   <img
                     src={project.thumbnail}
@@ -72,12 +86,7 @@ function Works() {
                   />
                 </div>
                 <h3 className="works__card-title">{project.title}</h3>
-                <button
-                  className="works__card-cta"
-                  aria-label={`View ${project.title} details`}
-                >
-                  View Project
-                </button>
+                <div className="works__card-cta">View Project</div>
               </article>
             ))
           ) : (
@@ -85,6 +94,13 @@ function Works() {
           )}
         </div>
       </div>
+      {/* AJOUTER la modale */}
+      {selectedProject && (
+        <ImageLightbox
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
+      )}
     </section>
   );
 }

@@ -8,6 +8,7 @@ export const TECH_NAMES = {
   HTML5: "HTML5",
   CSS3: "CSS3",
   SASS: "Sass",
+  TAILWIND: "Tailwind CSS",
   JAVASCRIPT: "JavaScript",
   REACT: "React",
   REDUX: "Redux",
