@@ -106,7 +106,7 @@ export const allProjects = [
   {
     id: 12,
     featured: false,
-    title: "Nina Carducci - Projet d'Optimisation SEO",
+    title: "Nina Carducci - SEO",
     category: "Scholar",
 
     thumbnail: "/images/travaux/SelectedWorks-nina-3-thumb.webp",
@@ -277,7 +277,7 @@ export const allProjects = [
   {
     id: 23,
     featured: false,
-    title: "Bookmark-Landing-Page-Master",
+    title: "Bookmark",
 
     category: "Personal",
 
@@ -302,7 +302,7 @@ export const allProjects = [
   {
     id: 24,
     featured: false,
-    title: "Loopstudios-landing-page",
+    title: "Loopstudios",
     category: "Personal",
 
     thumbnail: "/images/travaux/Personal-loop-4-thumb.webp",

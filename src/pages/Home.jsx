@@ -4,7 +4,7 @@
 // Fichier : src/pages/Home/Home.jsx
 
 import Hero from "../components/Hero";
-import Navbar from "../components/NavBar";
+import Navbar from "../components/Navbar";
 import About from "../components/About";
 import Portfolio from "../components/Portfolio";
 import Works from "../components/Works";
