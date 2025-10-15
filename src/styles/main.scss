@@ -31,10 +31,10 @@
 @use "./components/portfolio-card";
 @use "./components/works";
 @use "./components/lightbox";
+@use "./components/contact";
 
 // ===================================
 // 📄 PAGES (Styles spécifiques)
 // ===================================
 @use "./pages/home";
 @use "./pages/projects";
-@use "./pages/contact";

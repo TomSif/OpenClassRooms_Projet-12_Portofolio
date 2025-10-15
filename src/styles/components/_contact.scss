@@ -1,0 +1,327 @@
+// ===================================
+// 🎨 COMPONENTS - _contact.scss
+// ===================================
+// Syntaxe Sass moderne stricte : @use "namespace" as v
+// Pas de mixins sur ce projet
+
+@use "../abstracts/variables" as v;
+
+// ========== SECTION CONTACT ==========
+.contact {
+  padding: v.$spacing-20 v.$spacing-4; // 80px 16px mobile
+  background-color: v.$color-bg-light-blue;
+
+  @media (min-width: 768px) {
+    padding: v.$spacing-24 v.$spacing-8; // 96px 32px tablet
+  }
+
+  @media (min-width: 1024px) {
+    padding: v.$spacing-32 v.$spacing-16; // 128px 64px desktop
+  }
+
+  &__container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  // En-tête
+  &__header {
+    text-align: center;
+    margin-bottom: v.$spacing-12; // 48px
+  }
+
+  &__title {
+    font-family: v.$font-heading-primary;
+    font-size: v.$font-size-3xl; // 40px mobile
+    font-weight: v.$font-weight-bold;
+    color: v.$color-text-primary;
+    margin-bottom: v.$spacing-4; // 16px
+
+    @media (min-width: 1024px) {
+      font-size: v.$font-size-4xl; // 48px desktop
+    }
+  }
+
+  &__subtitle {
+    font-size: v.$font-size-lg; // 18px
+    color: v.$color-text-secondary;
+    line-height: v.$line-height-relaxed;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  // CTA Principal
+  &__cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: v.$spacing-3; // 12px
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto v.$spacing-10; // 0 auto 40px
+    padding: v.$spacing-5 v.$spacing-8; // 20px 32px
+    font-size: v.$font-size-lg; // 18px
+    font-weight: v.$font-weight-semibold;
+    background-color: v.$color-primary;
+    color: v.$color-text-white;
+    border-radius: v.$border-radius-lg;
+    box-shadow: v.$shadow-md;
+    transition: all v.$transition-base;
+    text-decoration: none;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: v.$shadow-lg;
+      background-color: v.$color-hover-primary;
+      color: v.$color-text-white;
+    }
+
+    @media (min-width: 768px) {
+      font-size: v.$font-size-xl; // 24px
+      padding: v.$spacing-6 v.$spacing-10; // 24px 40px
+    }
+  }
+
+  // Séparateur
+  &__divider {
+    display: flex;
+    align-items: center;
+    gap: v.$spacing-4; // 16px
+    margin: v.$spacing-10 0; // 40px 0
+    color: v.$color-text-secondary;
+    font-size: v.$font-size-sm; // 14px
+    font-weight: v.$font-weight-medium;
+  }
+
+  &__divider-line {
+    flex: 1;
+    height: 1px;
+    background-color: v.$color-text-secondary;
+    opacity: 0.3;
+  }
+
+  &__divider-text {
+    white-space: nowrap;
+  }
+}
+
+// ========== FORMULAIRE ==========
+.contact-form {
+  background-color: v.$color-bg-white;
+  padding: v.$spacing-8; // 32px mobile
+  border-radius: v.$border-radius-lg;
+  box-shadow: v.$shadow-md;
+  margin-bottom: v.$spacing-12; // 48px
+
+  @media (min-width: 768px) {
+    padding: v.$spacing-10; // 40px tablet
+  }
+}
+
+.form-group {
+  margin-bottom: v.$spacing-6; // 24px
+
+  &__label {
+    display: block;
+    font-family: v.$font-accent;
+    font-size: v.$font-size-sm; // 14px
+    font-weight: v.$font-weight-semibold;
+    color: v.$color-text-primary;
+    margin-bottom: v.$spacing-2; // 8px
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    padding: v.$spacing-4; // 16px
+    font-family: v.$font-body;
+    font-size: v.$font-size-base; // 16px
+    color: v.$color-text-primary;
+    background-color: v.$color-bg-light-blue;
+    border: 2px solid transparent;
+    border-radius: v.$border-radius-md;
+    transition: all v.$transition-fast;
+
+    &::placeholder {
+      color: v.$color-text-secondary;
+      opacity: 0.6;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: v.$color-primary;
+      background-color: v.$color-bg-white;
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+
+  &__textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+}
+
+// Bouton submit
+.contact-form .btn {
+  width: 100%;
+  padding: v.$spacing-4 v.$spacing-6; // 16px 24px
+  font-size: v.$font-size-base;
+  font-weight: v.$font-weight-semibold;
+  background-color: v.$color-primary;
+  color: v.$color-text-white;
+  border: none;
+  border-radius: v.$border-radius-md;
+  cursor: pointer;
+  transition: all v.$transition-fast;
+
+  &:hover:not(:disabled) {
+    background-color: v.$color-hover-primary;
+    transform: translateY(-2px);
+    box-shadow: v.$shadow-md;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  @media (min-width: 768px) {
+    width: auto;
+    min-width: 200px;
+  }
+}
+
+// Messages de feedback
+.form-message {
+  padding: v.$spacing-4; // 16px
+  margin-top: v.$spacing-6; // 24px
+  border-radius: v.$border-radius-md;
+  font-size: v.$font-size-sm; // 14px
+  font-weight: v.$font-weight-medium;
+  text-align: center;
+
+  &--success {
+    background-color: rgba(16, 185, 129, 0.1); // $color-success avec alpha
+    color: darken(#10b981, 10%);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+  }
+
+  &--error {
+    background-color: rgba(239, 68, 68, 0.1); // $color-error avec alpha
+    color: darken(#ef4444, 10%);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+  }
+}
+
+// ========== INFOS PERSONNELLES ==========
+.personal-details {
+  background-color: v.$color-bg-white;
+  padding: v.$spacing-8; // 32px mobile
+  border-radius: v.$border-radius-lg;
+  box-shadow: v.$shadow-md;
+
+  @media (min-width: 768px) {
+    padding: v.$spacing-10; // 40px tablet
+  }
+
+  &__title {
+    font-family: v.$font-heading-secondary;
+    font-size: v.$font-size-xl; // 24px
+    font-weight: v.$font-weight-semibold;
+    color: v.$color-text-primary;
+    margin-bottom: v.$spacing-6; // 24px
+    text-align: center;
+
+    @media (min-width: 768px) {
+      text-align: left;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: v.$spacing-6; // 24px
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: v.$spacing-8; // 32px
+    }
+  }
+}
+
+// Détail individuel
+.detail {
+  display: flex;
+  align-items: flex-start;
+  gap: v.$spacing-4; // 16px
+  padding: v.$spacing-4; // 16px
+  background-color: v.$color-bg-light-blue;
+  border-radius: v.$border-radius-md;
+  transition: all v.$transition-fast;
+
+  &:hover {
+    background-color: darken(#d3dce7, 3%); // $color-bg-light-blue darken
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: v.$border-radius-md;
+    font-size: v.$font-size-xl; // 24px
+    color: v.$color-bg-white;
+
+    &--location {
+      background-color: v.$color-primary;
+    }
+
+    &--linkedin {
+      background-color: v.$color-secondary;
+    }
+
+    &--cv {
+      background-color: v.$color-accent-purple;
+    }
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__label {
+    font-size: v.$font-size-xs; // 12px
+    font-weight: v.$font-weight-semibold;
+    color: v.$color-text-secondary;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: v.$spacing-1; // 4px
+  }
+
+  &__value {
+    font-size: v.$font-size-base; // 16px
+    font-weight: v.$font-weight-medium;
+    color: v.$color-text-primary;
+  }
+
+  &__link {
+    display: inline-block;
+    font-size: v.$font-size-base; // 16px
+    font-weight: v.$font-weight-semibold;
+    color: v.$color-primary;
+    text-decoration: none;
+    transition: color v.$transition-fast;
+
+    &:hover {
+      color: v.$color-hover-primary;
+      text-decoration: underline;
+    }
+  }
+}
