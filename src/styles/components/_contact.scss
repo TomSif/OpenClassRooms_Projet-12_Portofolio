@@ -20,7 +20,7 @@
   }
 
   &__container {
-    max-width: 800px;
+    max-width: 1440px; // Largeur max pour 2 colonnes
     margin: 0 auto;
   }
 
@@ -28,6 +28,10 @@
   &__header {
     text-align: center;
     margin-bottom: v.$spacing-12; // 48px
+
+    @media (min-width: 1024px) {
+      margin-bottom: v.$spacing-16; // 64px desktop
+    }
   }
 
   &__title {
@@ -43,83 +47,50 @@
   }
 
   &__subtitle {
-    font-size: v.$font-size-lg; // 18px
+    font-size: v.$font-size-base; // 16px
     color: v.$color-text-secondary;
     line-height: v.$line-height-relaxed;
     max-width: 600px;
     margin: 0 auto;
   }
 
-  // CTA Principal
-  &__cta {
+  // Container flex pour layout côte à côte
+  &__content {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: v.$spacing-3; // 12px
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto v.$spacing-10; // 0 auto 40px
-    padding: v.$spacing-5 v.$spacing-8; // 20px 32px
-    font-size: v.$font-size-lg; // 18px
-    font-weight: v.$font-weight-semibold;
-    background-color: v.$color-primary;
-    color: v.$color-text-white;
-    border-radius: v.$border-radius-lg;
-    box-shadow: v.$shadow-md;
-    transition: all v.$transition-base;
-    text-decoration: none;
+    flex-direction: column; // Mobile : empilé verticalement
+    gap: v.$spacing-8; // 32px d'espace entre les 2 composants
 
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: v.$shadow-lg;
-      background-color: v.$color-hover-primary;
-      color: v.$color-text-white;
+    @media (min-width: 1024px) {
+      flex-direction: row; // Desktop : côte à côte horizontalement
+      align-items: flex-start; // Aligne en haut
+      gap: v.$spacing-12; // 48px d'espace en desktop
     }
 
-    @media (min-width: 768px) {
-      font-size: v.$font-size-xl; // 24px
-      padding: v.$spacing-6 v.$spacing-10; // 24px 40px
+    // Les 2 composants enfants prennent 50% chacun en desktop
+    > * {
+      flex: 1;
     }
-  }
-
-  // Séparateur
-  &__divider {
-    display: flex;
-    align-items: center;
-    gap: v.$spacing-4; // 16px
-    margin: v.$spacing-10 0; // 40px 0
-    color: v.$color-text-secondary;
-    font-size: v.$font-size-sm; // 14px
-    font-weight: v.$font-weight-medium;
-  }
-
-  &__divider-line {
-    flex: 1;
-    height: 1px;
-    background-color: v.$color-text-secondary;
-    opacity: 0.3;
-  }
-
-  &__divider-text {
-    white-space: nowrap;
   }
 }
 
-// ========== FORMULAIRE ==========
+// ========== FORMULAIRE (ContactForm) ==========
 .contact-form {
   background-color: v.$color-bg-white;
   padding: v.$spacing-8; // 32px mobile
   border-radius: v.$border-radius-lg;
   box-shadow: v.$shadow-md;
-  margin-bottom: v.$spacing-12; // 48px
 
   @media (min-width: 768px) {
-    padding: v.$spacing-10; // 40px tablet
+    padding: v.$spacing-10; // 40px tablet/desktop
   }
 }
 
 .form-group {
   margin-bottom: v.$spacing-6; // 24px
+
+  &:last-of-type {
+    margin-bottom: v.$spacing-8; // Plus d'espace avant le bouton
+  }
 
   &__label {
     display: block;
@@ -219,7 +190,7 @@
   }
 }
 
-// ========== INFOS PERSONNELLES ==========
+// ========== INFOS PERSONNELLES (PersonalDetails) ==========
 .personal-details {
   background-color: v.$color-bg-white;
   padding: v.$spacing-8; // 32px mobile
@@ -230,98 +201,135 @@
     padding: v.$spacing-10; // 40px tablet
   }
 
+  // Titre
   &__title {
     font-family: v.$font-heading-secondary;
-    font-size: v.$font-size-xl; // 24px
-    font-weight: v.$font-weight-semibold;
+    font-size: v.$font-size-2xl; // 32px
+    font-weight: v.$font-weight-bold;
     color: v.$color-text-primary;
-    margin-bottom: v.$spacing-6; // 24px
-    text-align: center;
-
-    @media (min-width: 768px) {
-      text-align: left;
-    }
+    margin-bottom: v.$spacing-4; // 16px
+    line-height: v.$line-height-tight;
   }
 
-  &__grid {
-    display: grid;
-    gap: v.$spacing-6; // 24px
+  // Description
+  &__description {
+    font-size: v.$font-size-base; // 16px
+    color: v.$color-text-secondary;
+    line-height: v.$line-height-relaxed;
+    margin-bottom: v.$spacing-8; // 32px
+  }
 
-    @media (min-width: 768px) {
-      grid-template-columns: repeat(3, 1fr);
-      gap: v.$spacing-8; // 32px
-    }
+  // Container des 3 cards
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: v.$spacing-6; // 24px
+    margin-bottom: v.$spacing-8; // 32px
   }
 }
 
-// Détail individuel
-.detail {
+// ========== DETAIL CARD (Cards cliquables) ==========
+.detail-card {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: v.$spacing-4; // 16px
-  padding: v.$spacing-4; // 16px
-  background-color: v.$color-bg-light-blue;
+  padding: v.$spacing-5; // 20px
+  background-color: v.$color-bg-white;
   border-radius: v.$border-radius-md;
-  transition: all v.$transition-fast;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all v.$transition-base;
 
+  // Hover effect
   &:hover {
-    background-color: darken(#d3dce7, 3%); // $color-bg-light-blue darken
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+
+    .detail-card__icon {
+      background-color: v.$color-accent-purple; // Fond violet
+      color: v.$color-bg-white; // Icône blanche
+    }
   }
 
+  // Icône carrée
   &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    background-color: #f5f5f5; // Gris clair
+    color: v.$color-accent-purple; // Icône violet
+    border-radius: v.$border-radius-md;
+    font-size: v.$font-size-2xl; // 32px
+    transition: all v.$transition-base;
+  }
+
+  // Contenu texte
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: v.$spacing-1; // 4px
+  }
+
+  // Label (petit texte gris)
+  &__label {
+    font-size: v.$font-size-sm; // 14px
+    color: v.$color-text-secondary;
+    font-weight: v.$font-weight-regular;
+    margin: 0;
+  }
+
+  // Valeur (texte noir bold)
+  &__value {
+    font-size: v.$font-size-base; // 16px
+    color: v.$color-text-primary;
+    font-weight: v.$font-weight-bold;
+    margin: 0;
+    line-height: v.$line-height-normal;
+  }
+}
+
+// ========== RÉSEAUX SOCIAUX ==========
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: v.$spacing-4; // 16px
+  flex-wrap: wrap;
+
+  &__item {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 48px;
     height: 48px;
-    flex-shrink: 0;
     border-radius: v.$border-radius-md;
-    font-size: v.$font-size-xl; // 24px
-    color: v.$color-bg-white;
-
-    &--location {
-      background-color: v.$color-primary;
-    }
-
-    &--linkedin {
-      background-color: v.$color-secondary;
-    }
-
-    &--cv {
-      background-color: v.$color-accent-purple;
-    }
-  }
-
-  &__content {
-    flex: 1;
-  }
-
-  &__label {
-    font-size: v.$font-size-xs; // 12px
-    font-weight: v.$font-weight-semibold;
-    color: v.$color-text-secondary;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: v.$spacing-1; // 4px
-  }
-
-  &__value {
-    font-size: v.$font-size-base; // 16px
-    font-weight: v.$font-weight-medium;
-    color: v.$color-text-primary;
-  }
-
-  &__link {
-    display: inline-block;
-    font-size: v.$font-size-base; // 16px
-    font-weight: v.$font-weight-semibold;
-    color: v.$color-primary;
+    font-size: v.$font-size-lg; // 18px
+    transition: all v.$transition-fast;
     text-decoration: none;
-    transition: color v.$transition-fast;
 
-    &:hover {
-      color: v.$color-hover-primary;
-      text-decoration: underline;
+    // Facebook (carré violet plein)
+    &--facebook {
+      background-color: v.$color-accent-purple;
+      color: v.$color-bg-white;
+
+      &:hover {
+        background-color: darken(#583fbc, 10%);
+        transform: translateY(-2px);
+      }
+    }
+
+    // Autres icônes (violet simple)
+    &:not(&--facebook) {
+      color: v.$color-accent-purple;
+
+      &:hover {
+        color: v.$color-primary;
+        transform: translateY(-2px);
+      }
     }
   }
 }
