@@ -13,12 +13,6 @@
 @use "./base/animations";
 
 // ===================================
-// 📐 LAYOUT (Structure globale)
-// ===================================
-@use "./layout/footer";
-@use "./layout/grid";
-
-// ===================================
 // 🧩 COMPONENTS (Éléments réutilisables)
 // ===================================
 @use "./components/buttons";
@@ -32,6 +26,7 @@
 @use "./components/works";
 @use "./components/lightbox";
 @use "./components/contact";
+@use "./components/footer";
 
 // ===================================
 // 📄 PAGES (Styles spécifiques)

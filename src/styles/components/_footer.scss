@@ -1,0 +1,221 @@
+// ===================================
+// 📐 LAYOUT - _footer.scss
+// ===================================
+// Syntaxe Sass moderne stricte : @use "namespace" as v
+
+@use "../abstracts/variables" as v;
+
+// ========== FOOTER PRINCIPAL ==========
+.footer {
+  background-color: v.$color-text-primary; // Bleu marine foncé (#242a41)
+  color: v.$color-text-white;
+  padding: v.$spacing-16 v.$spacing-4; // 64px 16px mobile
+
+  @media (min-width: 768px) {
+    padding: v.$spacing-20 v.$spacing-8; // 80px 32px tablet
+  }
+
+  @media (min-width: 1024px) {
+    padding: v.$spacing-24 v.$spacing-16; // 96px 64px desktop
+  }
+
+  &__container {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  // Haut du footer (3 colonnes)
+  &__top {
+    display: grid;
+    grid-template-columns: 1fr; // Mobile : 1 colonne
+    gap: v.$spacing-10; // 40px
+    margin-bottom: v.$spacing-12; // 48px
+    padding-bottom: v.$spacing-12; // 48px
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr); // Tablet : 2 colonnes
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: 1.5fr 1fr 1.2fr; // Desktop : 3 colonnes
+    }
+  }
+
+  // Bas du footer (Copyright)
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: v.$spacing-2; // 8px
+    text-align: center;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__copyright,
+  &__credits {
+    font-size: v.$font-size-sm; // 14px
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+  }
+}
+
+// ========== BRANDING (Colonne 1) ==========
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: v.$spacing-3; // 12px
+}
+
+.footer__logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background-color: v.$color-primary; // Orange
+  color: v.$color-text-white;
+  font-family: v.$font-heading-primary;
+  font-size: v.$font-size-xl; // 24px
+  font-weight: v.$font-weight-bold;
+  border-radius: v.$border-radius-md;
+  margin-bottom: v.$spacing-2; // 8px
+}
+
+.footer__brand-name {
+  font-family: v.$font-heading-primary;
+  font-size: v.$font-size-xl; // 24px
+  font-weight: v.$font-weight-bold;
+  color: v.$color-text-white;
+  margin: 0;
+}
+
+.footer__brand-tagline {
+  font-size: v.$font-size-base; // 16px
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+// ========== NAVIGATION (Colonne 2) ==========
+.footer__nav-title,
+.footer__info-title {
+  font-family: v.$font-heading-secondary;
+  font-size: v.$font-size-lg; // 18px
+  font-weight: v.$font-weight-semibold;
+  color: v.$color-primary; // Orange
+  margin-bottom: v.$spacing-4; // 16px
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer__nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: v.$spacing-3; // 12px
+}
+
+.footer__nav-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: v.$font-body;
+  font-size: v.$font-size-base; // 16px
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: color v.$transition-fast;
+  text-align: left;
+
+  &:hover {
+    color: v.$color-primary; // Orange au hover
+  }
+}
+
+// ========== AVAILABILITY + GITHUB (Colonne 3) ==========
+.footer__info {
+  display: flex;
+  flex-direction: column;
+  gap: v.$spacing-4; // 16px
+}
+
+// Badge de disponibilité
+.availability-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: v.$spacing-2; // 8px
+  padding: v.$spacing-2 v.$spacing-4; // 8px 16px
+  background-color: rgba(16, 185, 129, 0.15); // Vert transparent
+  border-radius: v.$border-radius-full; // Pill shape
+  border: 1px solid v.$color-success;
+  width: fit-content;
+
+  &__dot {
+    width: 8px;
+    height: 8px;
+    background-color: v.$color-success; // Vert
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  &__text {
+    font-size: v.$font-size-sm; // 14px
+    font-weight: v.$font-weight-semibold;
+    color: v.$color-success;
+  }
+
+  &__subtitle {
+    font-size: v.$font-size-sm; // 14px
+    color: rgba(255, 255, 255, 0.7);
+    line-height: v.$line-height-relaxed;
+    margin: 0;
+  }
+}
+
+// Animation pulse pour le dot
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+// Lien GitHub
+.footer__github {
+  display: inline-flex;
+  align-items: center;
+  gap: v.$spacing-2; // 8px
+  padding: v.$spacing-3 v.$spacing-5; // 12px 20px
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: v.$border-radius-md;
+  color: v.$color-text-white;
+  text-decoration: none;
+  transition: all v.$transition-fast;
+  width: fit-content;
+  margin-top: v.$spacing-2; // 8px
+
+  &:hover {
+    background-color: v.$color-primary; // Orange
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(253, 133, 58, 0.3);
+  }
+
+  &-icon {
+    font-size: v.$font-size-xl; // 24px
+  }
+
+  &-text {
+    font-size: v.$font-size-base; // 16px
+    font-weight: v.$font-weight-medium;
+  }
+}
