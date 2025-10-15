@@ -1,17 +1,38 @@
 import { useState } from "react";
 import { getProjectsByCategory } from "../data/project";
 import ImageLightbox from "./ImageLightbox";
+import {
+  FaGraduationCap,
+  FaLaptopCode,
+  FaCamera,
+  FaPalette,
+} from "react-icons/fa";
 
 // Configuration des catégories avec couleurs
 const CATEGORIES = [
-  { id: "Scholar", label: "Scholar", color: "#fd853a", icon: "🎓" },
-  { id: "Personal", label: "Personal", color: "#0088ff", icon: "💻" },
-  { id: "Photography", label: "Photography", color: "#583fbc", icon: "📷" },
+  {
+    id: "Scholar",
+    label: "Scholar",
+    color: "#fd853a",
+    icon: <FaGraduationCap />,
+  },
+  {
+    id: "Personal",
+    label: "Personal",
+    color: "#0088ff",
+    icon: <FaLaptopCode />,
+  },
+  {
+    id: "Photography",
+    label: "Photography",
+    color: "#583fbc",
+    icon: <FaCamera />,
+  },
   {
     id: "GraphicDesign",
     label: "Graphic Design",
     color: "#7de0ea",
-    icon: "🎨",
+    icon: <FaPalette />,
   },
 ];
 
