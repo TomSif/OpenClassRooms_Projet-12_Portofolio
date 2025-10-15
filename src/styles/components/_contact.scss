@@ -62,7 +62,7 @@
 
     @media (min-width: 1024px) {
       flex-direction: row; // Desktop : côte à côte horizontalement
-      align-items: flex-start; // Aligne en haut
+      align-items: stretch; // Les 2 composants ont la même hauteur
       gap: v.$spacing-12; // 48px d'espace en desktop
     }
 
@@ -82,6 +82,16 @@
 
   @media (min-width: 768px) {
     padding: v.$spacing-10; // 40px tablet/desktop
+  }
+
+  // Titre du formulaire
+  &__title {
+    font-family: v.$font-heading-secondary;
+    font-size: v.$font-size-2xl; // 32px (comme PersonalDetails)
+    font-weight: v.$font-weight-bold;
+    color: v.$color-text-primary;
+    margin-bottom: v.$spacing-6; // 24px
+    line-height: v.$line-height-tight;
   }
 }
 
@@ -207,16 +217,8 @@
     font-size: v.$font-size-2xl; // 32px
     font-weight: v.$font-weight-bold;
     color: v.$color-text-primary;
-    margin-bottom: v.$spacing-4; // 16px
+    margin-bottom: v.$spacing-6; // 24px (au lieu de 16px)
     line-height: v.$line-height-tight;
-  }
-
-  // Description
-  &__description {
-    font-size: v.$font-size-base; // 16px
-    color: v.$color-text-secondary;
-    line-height: v.$line-height-relaxed;
-    margin-bottom: v.$spacing-8; // 32px
   }
 
   // Container des 3 cards

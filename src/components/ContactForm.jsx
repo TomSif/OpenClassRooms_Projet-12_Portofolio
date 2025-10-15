@@ -83,6 +83,9 @@ const ContactForm = () => {
 
   return (
     <form className="contact-form" onSubmit={handleSubmit} noValidate>
+      {/* Titre */}
+      <h3 className="contact-form__title">Send me a message</h3>
+
       {/* Email */}
       <div className="form-group">
         <label htmlFor="email" className="form-group__label">

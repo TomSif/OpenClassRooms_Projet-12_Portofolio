@@ -15,17 +15,11 @@ const PersonalDetails = () => {
       {/* Titre */}
       <h3 className="personal-details__title">Let's discuss your Project</h3>
 
-      {/* Description */}
-      <p className="personal-details__description">
-        There are many variations of passages of Lorem Ipsum available, but the
-        majority have suffered alteration.
-      </p>
-
       {/* 3 Cards cliquables */}
       <div className="personal-details__cards">
         {/* Card 1 : Address → Google Maps */}
         <a
-          href="https://www.google.com/maps/place/67310+Traenheim"
+          href="https://www.google.com/maps/search/?api=1&query=Chancelade,+Nouvelle-Aquitaine,+France"
           target="_blank"
           rel="noopener noreferrer"
           className="detail-card"
@@ -36,7 +30,7 @@ const PersonalDetails = () => {
           </div>
           <div className="detail-card__content">
             <span className="detail-card__label">Address:</span>
-            <p className="detail-card__value">Traenheim, Bas-Rhin</p>
+            <p className="detail-card__value">Chancelade, Nouvelle-Aquitaine</p>
           </div>
         </a>
 
@@ -57,7 +51,7 @@ const PersonalDetails = () => {
 
         {/* Card 3 : Phone → Tel */}
         <a
-          href="tel:+33777068716"
+          href="tel:+33612345678"
           className="detail-card"
           aria-label="M'appeler"
         >
@@ -66,7 +60,7 @@ const PersonalDetails = () => {
           </div>
           <div className="detail-card__content">
             <span className="detail-card__label">Call Me Now:</span>
-            <p className="detail-card__value">+33 7 77 06 87 16</p>
+            <p className="detail-card__value">+33 6 12 34 56 78</p>
           </div>
         </a>
       </div>
@@ -75,7 +69,7 @@ const PersonalDetails = () => {
       <div className="social-links">
         {/* Facebook (carré violet plein) */}
         <a
-          href="https://facebook.com/ThomasSifferle"
+          href="https://facebook.com/thomas.sifferle"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Facebook"
@@ -97,7 +91,7 @@ const PersonalDetails = () => {
 
         {/* Behance */}
         <a
-          href="https://www.behance.net/neotrinos"
+          href="https://behance.net/thomas-sifferle"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Behance"
@@ -119,7 +113,7 @@ const PersonalDetails = () => {
 
         {/* LinkedIn */}
         <a
-          href="https://www.linkedin.com/in/thomas-sifferle/"
+          href="https://linkedin.com/in/thomas-sifferle"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
