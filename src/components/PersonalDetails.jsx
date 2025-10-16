@@ -19,7 +19,7 @@ const PersonalDetails = () => {
       <div className="personal-details__cards">
         {/* Card 1 : Address → Google Maps */}
         <a
-          href="https://www.google.com/maps/search/?api=1&query=Chancelade,+Nouvelle-Aquitaine,+France"
+          href="https://www.google.com/maps/place/67310+Traenheim/"
           target="_blank"
           rel="noopener noreferrer"
           className="detail-card"
@@ -30,7 +30,7 @@ const PersonalDetails = () => {
           </div>
           <div className="detail-card__content">
             <span className="detail-card__label">Address:</span>
-            <p className="detail-card__value">Chancelade, Nouvelle-Aquitaine</p>
+            <p className="detail-card__value">Traenheim, Bas-Rhin</p>
           </div>
         </a>
 
@@ -51,7 +51,7 @@ const PersonalDetails = () => {
 
         {/* Card 3 : Phone → Tel */}
         <a
-          href="tel:+33612345678"
+          href="tel:+33777068716"
           className="detail-card"
           aria-label="M'appeler"
         >
@@ -60,7 +60,7 @@ const PersonalDetails = () => {
           </div>
           <div className="detail-card__content">
             <span className="detail-card__label">Call Me Now:</span>
-            <p className="detail-card__value">+33 6 12 34 56 78</p>
+            <p className="detail-card__value">+33 7 77 06 87 16</p>
           </div>
         </a>
       </div>
@@ -78,8 +78,8 @@ const PersonalDetails = () => {
           <FaFacebookF />
         </a>
 
-        {/* Dribbble */}
-        <a
+        {/* Dribbble supprimé pas de compte pour l'instant, supprimé */}
+        {/* <a
           href="https://dribbble.com/thomas-sifferle"
           target="_blank"
           rel="noopener noreferrer"
@@ -87,7 +87,7 @@ const PersonalDetails = () => {
           className="social-links__item"
         >
           <FaDribbble />
-        </a>
+        </a> */}
 
         {/* Behance */}
         <a
