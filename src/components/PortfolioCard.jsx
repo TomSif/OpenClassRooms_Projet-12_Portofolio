@@ -30,8 +30,12 @@ function PortfolioCard({ project }) {
 
   return (
     <article className="portfolio-card">
-      {/* IMAGE AVEC OVERLAY AU HOVER */}
-      <div className="portfolio-card__image-wrapper">
+      {/* IMAGE CLIQUABLE AVEC INDICATION AU HOVER */}
+      <Link
+        to={`/project/${projectSlug}`}
+        className="portfolio-card__image-wrapper"
+        aria-label={`Voir les détails du projet ${title}`}
+      >
         <img
           src={thumbnail}
           alt={`Aperçu du projet ${title}`}
@@ -41,16 +45,7 @@ function PortfolioCard({ project }) {
             console.warn(`Image non trouvée: ${thumbnail}`);
           }}
         />
-        <div className="portfolio-card__overlay">
-          <Link
-            to={`/project/${projectSlug}`}
-            className="portfolio-card__cta"
-            aria-label={`Voir les détails du projet ${title}`}
-          >
-            Voir le projet <FaArrowRight aria-hidden="true" />
-          </Link>
-        </div>
-      </div>
+      </Link>
 
       {/* CONTENU DE LA CARD */}
       <div className="portfolio-card__content">
@@ -90,14 +85,18 @@ function PortfolioCard({ project }) {
           </div>
         )}
 
-        {/* Footer avec liens */}
+        {/* Footer avec tous les CTA groupés */}
         <div className="portfolio-card__footer">
-          <Link to={`/project/${projectSlug}`} className="portfolio-card__link">
-            En savoir plus
+          <Link
+            to={`/project/${projectSlug}`}
+            className="portfolio-card__project-btn"
+            aria-label={`Voir les détails du projet ${title}`}
+          >
+            Voir le projet <FaArrowRight aria-hidden="true" />
           </Link>
 
           {/* Liens externes (GitHub + Live Demo) */}
-          <div style={{ display: "flex", gap: "1rem" }}>
+          <div className="portfolio-card__external-links">
             {details.github && (
               <a
                 href={details.github}

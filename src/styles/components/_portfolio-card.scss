@@ -13,13 +13,10 @@
   flex-direction: column;
   height: 100%; // Pour que toutes les cards aient la même hauteur
 
-  &:hover {
-    transform: translateY(-8px);
-    box-shadow: v.$shadow-xl;
-  }
+  // Suppression du hover sur toute la card
 
   // =============================
-  // IMAGE AVEC OVERLAY
+  // IMAGE CLIQUABLE AVEC OVERLAY
   // =============================
   &__image-wrapper {
     position: relative;
@@ -27,6 +24,8 @@
     aspect-ratio: 16 / 10; // Ratio cohérent pour toutes les images
     overflow: hidden;
     background: v.$color-bg-light-blue;
+    display: block;
+    text-decoration: none;
 
     img {
       width: 100%;
@@ -40,55 +39,46 @@
     }
   }
 
-  &__overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(36, 42, 65, 0) 0%,
-      rgba(36, 42, 65, 0.85) 100%
-    );
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding: v.$spacing-8;
-    opacity: 0;
-    transition: opacity v.$transition-base;
-  }
-
-  &:hover &__overlay {
-    opacity: 1;
-  }
-
-  &__cta {
+  // =============================
+  // BOUTON PROJET PRINCIPAL
+  // =============================
+  &__project-btn {
+    color: v.$color-accent-purple;
+    font-size: 0.875rem;
+    font-weight: v.$font-weight-medium;
+    padding: 8px 12px;
+    border: 1px solid v.$color-accent-purple;
+    border-radius: 6px;
     display: flex;
     align-items: center;
-    gap: v.$spacing-2;
-    padding: v.$spacing-3 v.$spacing-7; // 0.875rem 1.75rem
-    background: v.$color-primary;
-    color: v.$color-text-white;
-    border-radius: v.$border-radius-full; // 50px
-    font-weight: v.$font-weight-semibold;
-    font-family: v.$font-accent;
+    gap: 6px;
+    transition: all 0.3s ease;
+    font-family: v.$font-body;
+    background: transparent;
     text-decoration: none;
-    transition: all v.$transition-base;
-    font-size: v.$font-size-sm;
 
     svg {
-      font-size: v.$font-size-base;
-      transition: transform v.$transition-fast;
+      font-size: 0.75rem;
+      transition: transform 0.3s ease;
     }
 
     &:hover {
-      background: v.$color-hover-primary;
-      gap: v.$spacing-3;
+      background-color: v.$color-accent-purple;
+      color: v.$color-text-white;
 
       svg {
         transform: translateX(4px);
       }
+    }
+  }
+
+  // Synchronisation du hover : image → bouton projet
+  &__image-wrapper:hover ~ &__content &__project-btn {
+    background-color: v.$color-accent-purple;
+    color: v.$color-text-white;
+
+    svg {
+      transform: translateX(4px);
     }
   }
 
@@ -172,20 +162,9 @@
     margin-top: auto; // Pour être toujours en bas
   }
 
-  &__link {
-    color: v.$color-primary;
-    font-weight: v.$font-weight-semibold;
-    font-family: v.$font-accent;
-    font-size: v.$font-size-sm;
-    text-decoration: none;
-    transition: color v.$transition-fast;
+  &__external-links {
     display: flex;
-    align-items: center;
-    gap: v.$spacing-1;
-
-    &:hover {
-      color: v.$color-hover-primary;
-    }
+    gap: v.$spacing-4;
   }
 
   &__github {
@@ -203,7 +182,7 @@
     }
 
     &:hover {
-      color: v.$color-text-primary;
+      color: v.$color-primary;
     }
   }
 

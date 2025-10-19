@@ -184,32 +184,37 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 0.875rem 1.75rem;
-    border-radius: 8px;
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.5rem;
     font-family: v.$font-body;
-    font-size: 1rem;
+    font-size: v.$font-size-sm;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s ease;
     cursor: pointer;
-    border: 2px solid transparent;
+    border: none;
 
     &--primary {
-      background-color: #ff6b35;
-      color: white;
-      border-color: #ff6b35;
+      background-color: v.$color-primary;
+      color: v.$color-text-white;
 
       &:hover {
-        background-color: #e55a2b;
+        background-color: darken(v.$color-primary, 12%);
+        color: v.$color-text-primary;
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+        box-shadow: 0 4px 12px rgba(253, 133, 58, 0.3);
+      }
+
+      &:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 6px rgba(253, 133, 58, 0.2);
       }
     }
 
     &--secondary {
       background-color: white;
       color: v.$color-text-primary;
-      border-color: v.$color-text-primary;
+      border: 2px solid v.$color-text-primary;
 
       &:hover {
         background-color: v.$color-text-primary;
@@ -219,8 +224,8 @@
     }
 
     &:focus-visible {
-      outline: 2px solid v.$color-primary;
-      outline-offset: 4px;
+      outline: 2px solid v.$color-accent-purple;
+      outline-offset: 3px;
     }
 
     svg {
