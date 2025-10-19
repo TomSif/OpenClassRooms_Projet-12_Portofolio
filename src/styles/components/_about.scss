@@ -38,8 +38,47 @@
   }
 
   // ===== CONTENU =====
+  &__layout {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      gap: 4rem;
+      align-items: flex-start;
+    }
+
+    @media (min-width: 1024px) {
+      gap: 6rem;
+    }
+  }
+
+  &__main-content {
+    flex: 1;
+
+    @media (min-width: 768px) {
+      flex: 1.2;
+    }
+  }
+
+  &__sidebar {
+    flex: 1;
+
+    @media (min-width: 768px) {
+      flex: 0.8;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+  }
+
   &__content {
-    margin-bottom: 3rem;
+    margin-bottom: 0;
+
+    @media (max-width: 767px) {
+      margin-bottom: 3rem;
+    }
   }
 
   &__text {
@@ -71,6 +110,10 @@
   // ===== EXPÉRIENCES =====
   &__experiences {
     margin-bottom: 2.5rem;
+
+    @media (min-width: 768px) {
+      margin-bottom: 0;
+    }
   }
 
   &__experiences-title {
@@ -124,6 +167,16 @@
     gap: 1rem;
     margin-bottom: 2.5rem;
     flex-wrap: wrap;
+
+    @media (min-width: 768px) {
+      margin-bottom: 0;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    @media (min-width: 1024px) {
+      flex-direction: row;
+    }
   }
 
   &__cta-btn {
@@ -188,9 +241,43 @@
     width: 48px;
     height: 48px;
     transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:hover {
       transform: translateY(-4px);
+    }
+
+    // Styles spécifiques pour chaque technologie
+    &--js {
+      color: #f7df1e;
+      font-size: 48px;
+    }
+
+    &--html {
+      color: #e34f26;
+      font-size: 48px;
+    }
+
+    &--css {
+      color: #1572b6;
+      font-size: 48px;
+    }
+
+    &--react {
+      color: #61dafb;
+      font-size: 48px;
+    }
+
+    &--sass {
+      color: #cc6699;
+      font-size: 48px;
+    }
+
+    &--redux {
+      color: #764abc;
+      font-size: 48px;
     }
 
     svg {
