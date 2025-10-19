@@ -21,9 +21,36 @@
     margin: 0 auto;
   }
 
+  // ===== LAYOUT WRAPPER =====
+  &__layout {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    @media (min-width: 1024px) {
+      gap: 6rem;
+    }
+  }
+
   // ===== CONTENU TEXTE =====
   &__content {
-    margin-bottom: 3rem;
+    flex: 1;
+    margin-bottom: 0;
+
+    @media (max-width: 767px) {
+      margin-bottom: 0;
+    }
+
+    @media (min-width: 768px) {
+      order: 1; // Garde le contenu à gauche sur tablet+
+      flex: 1;
+    }
   }
 
   &__title {
@@ -33,6 +60,14 @@
     color: v.$color-text-primary;
     line-height: 1.2;
     margin-bottom: 1rem;
+
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 3rem;
+    }
   }
 
   &__title-highlight {
@@ -47,6 +82,16 @@
     line-height: 1.6;
     margin-bottom: 2rem;
     max-width: 400px;
+
+    @media (min-width: 768px) {
+      font-size: 1.1rem;
+      max-width: 450px;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 1.125rem;
+      max-width: 500px;
+    }
   }
 
   // ===== BOUTONS SOCIAUX =====
@@ -89,10 +134,21 @@
 
   // ===== ANIMATION / IMAGE =====
   &__animation {
+    flex: 1;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 300px;
+
+    @media (min-width: 768px) {
+      min-height: 400px;
+      order: 2; // Place l'animation à droite sur tablet+
+    }
+
+    @media (min-width: 1024px) {
+      min-height: 450px;
+    }
   }
 
   &__animation-placeholder {
@@ -114,6 +170,16 @@
     align-items: center;
     position: relative;
 
+    @media (min-width: 768px) {
+      width: 320px;
+      height: 320px;
+    }
+
+    @media (min-width: 1024px) {
+      width: 380px;
+      height: 380px;
+    }
+
     // Placeholder pour l'image
     &::before {
       content: "Image / Animation";
@@ -121,6 +187,10 @@
       font-family: v.$font-body;
       font-size: 0.9rem;
       text-align: center;
+
+      @media (min-width: 768px) {
+        font-size: 1rem;
+      }
     }
   }
 }
