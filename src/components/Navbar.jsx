@@ -53,14 +53,27 @@ const Navbar = () => {
           <span className="navbar__burger-line"></span>
         </button>
 
+        {/* Desktop Navigation Links */}
+        <div className="navbar__nav">
+          <a href="/#about" className="navbar__nav-link">
+            About
+          </a>
+          <a href="/selected-works" className="navbar__nav-link">
+            Works
+          </a>
+          <a href="/#portfolio" className="navbar__nav-link">
+            Portfolio
+          </a>
+        </div>
+
         {/* Contact Button */}
-        <button
-          onClick={handleContact}
+        <a
+          href="/#contact"
           className="navbar__contact-btn"
           aria-label="Me contacter"
         >
           Contact
-        </button>
+        </a>
       </div>
 
       {/* Mobile Dropdown Menu */}

@@ -78,17 +78,6 @@ const PersonalDetails = () => {
           <FaFacebookF />
         </a>
 
-        {/* Dribbble supprimé pas de compte pour l'instant, supprimé */}
-        {/* <a
-          href="https://dribbble.com/thomas-sifferle"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Dribbble"
-          className="social-links__item"
-        >
-          <FaDribbble />
-        </a> */}
-
         {/* Behance */}
         <a
           href="https://behance.net/thomas-sifferle"

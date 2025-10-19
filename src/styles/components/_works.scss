@@ -195,27 +195,46 @@
     font-size: v.$font-size-xl; // 1.5rem
     font-weight: v.$font-weight-semibold;
     color: v.$color-text-primary;
-    padding: v.$spacing-4 v.$spacing-6; // 16px 24px
+    padding: v.$spacing-4 v.$spacing-6 v.$spacing-2 v.$spacing-6; // 16px 24px 8px 24px
     margin: 0;
   }
 
-  &__card-cta {
-    width: 100%;
-    padding: v.$spacing-4; // 16px
-    background: v.$color-primary;
-    color: v.$color-text-primary;
-    border: none;
-    font-weight: v.$font-weight-bold;
-    cursor: pointer;
-    transition: background 0.3s ease;
+  &__card-description {
+    font-size: 0.875rem;
+    color: v.$color-text-secondary;
+    line-height: 1.5;
+    padding: 0 v.$spacing-6 v.$spacing-3 v.$spacing-6; // 0 24px 12px 24px
+    margin: 0;
+  }
 
-    &:hover {
-      background: v.$color-hover-primary;
+  &__card-indicator {
+    color: v.$color-accent-purple;
+    font-size: 0.875rem;
+    font-weight: v.$font-weight-medium;
+    padding: 8px 12px;
+    margin: 0 v.$spacing-6 v.$spacing-4 v.$spacing-6; // 0 24px 16px 24px
+    border: 1px solid v.$color-accent-purple;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+    width: fit-content;
+
+    svg {
+      font-size: 0.75rem;
+      transition: transform 0.3s ease;
     }
+  }
 
-    &:focus-visible {
-      outline: 2px solid v.$color-primary;
-      outline-offset: -2px;
+  // Animation de la flèche au hover de la card
+  &__card:hover &__card-indicator {
+    background-color: v.$color-accent-purple;
+    color: v.$color-text-white;
+
+    svg {
+      transform: translateX(4px);
     }
   }
 

@@ -65,6 +65,10 @@
     z-index: 1001;
     order: 2;
 
+    @media (min-width: 768px) {
+      display: none; // Masquer le burger sur tablet+
+    }
+
     &:focus-visible {
       outline: 2px solid v.$color-primary;
       outline-offset: 4px;
@@ -79,6 +83,7 @@
     border-radius: 3px;
     transition: all 0.3s ease;
   }
+
   // Animation burger quand ouvert
   &__burger--open {
     .navbar__burger-line {
@@ -97,32 +102,93 @@
     }
   }
 
-  // ===== CONTACT BUTTON =====
-  &__contact-btn {
-    padding: 0.5rem 1.25rem;
-    background-color: v.$color-primary;
-    color: v.$color-text-primary;
-    border: none;
-    border-radius: 0.5rem;
-    font-family: v.$font-accent;
-    font-size: v.$font-size-sm;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    order: 3;
+  // ===== DESKTOP NAVIGATION =====
+  &__nav {
+    display: none;
+    gap: 3rem;
+    order: 2;
 
-    &:hover {
-      background-color: darken(v.$color-primary, 8%);
-      transform: translateY(-1px);
+    @media (min-width: 768px) {
+      display: flex;
+      align-items: center;
     }
 
-    &:active {
-      transform: translateY(0);
+    @media (min-width: 1024px) {
+      gap: 4rem;
+    }
+  }
+
+  &__nav-link {
+    font-family: v.$font-body; // Manrope
+    font-size: 1rem;
+    font-weight: 500;
+    color: v.$color-text-primary;
+    text-decoration: none;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+
+    // Underline effet qui s'élargit du centre
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background-color: v.$color-accent-purple;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    &:hover {
+      color: v.$color-accent-purple;
+
+      &::after {
+        width: 100%;
+      }
     }
 
     &:focus-visible {
       outline: 2px solid v.$color-primary;
       outline-offset: 4px;
+      border-radius: 4px;
+    }
+  }
+
+  // ===== CONTACT BUTTON =====
+  &__contact-btn {
+    padding: 0.5rem 1.25rem;
+    background-color: v.$color-primary;
+    color: v.$color-text-white;
+    border: none;
+    border-radius: 0.5rem;
+    font-family: v.$font-body;
+    font-size: v.$font-size-sm;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    order: 3;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: darken(v.$color-primary, 12%);
+      color: v.$color-text-primary;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(253, 133, 58, 0.3);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 6px rgba(253, 133, 58, 0.2);
+    }
+
+    &:focus-visible {
+      outline: 2px solid v.$color-accent-purple;
+      outline-offset: 3px;
     }
   }
 
@@ -136,6 +202,10 @@
     border-top: 1px solid rgba(0, 0, 0, 0.08);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     z-index: 999;
+
+    @media (min-width: 768px) {
+      display: none; // Masquer le dropdown sur tablet+
+    }
   }
 
   &__dropdown-list {

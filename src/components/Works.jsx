@@ -6,6 +6,7 @@ import {
   FaLaptopCode,
   FaCamera,
   FaPalette,
+  FaArrowRight,
 } from "react-icons/fa";
 
 // Configuration des catégories avec couleurs
@@ -107,7 +108,11 @@ function Works() {
                   />
                 </div>
                 <h3 className="works__card-title">{project.title}</h3>
-                <div className="works__card-cta">View Project</div>
+                <p className="works__card-description">{project.description}</p>
+                <div className="works__card-indicator">
+                  <span>View Project</span>
+                  <FaArrowRight />
+                </div>
               </article>
             ))
           ) : (
