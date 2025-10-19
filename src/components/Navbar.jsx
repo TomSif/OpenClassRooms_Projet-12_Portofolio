@@ -31,13 +31,13 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar__container">
         {/* Logo/Nom */}
-        <button
-          onClick={() => handleNavigation("/")}
+        <a
+          href="#"
           className="navbar__logo"
           aria-label="Thomas Portfolio - Accueil"
         >
           <span className="navbar__logo-text">Thomas Portfolio</span>
-        </button>
+        </a>
 
         {/* Burger Menu Button */}
         <button
@@ -55,20 +55,23 @@ const Navbar = () => {
 
         {/* Desktop Navigation Links */}
         <div className="navbar__nav">
-          <a href="/#about" className="navbar__nav-link">
+          <a href="#" className="navbar__nav-link">
+            Home
+          </a>
+          <a href="#about" className="navbar__nav-link">
             About
           </a>
-          <a href="/selected-works" className="navbar__nav-link">
-            Works
+          <a href="#portfolio" className="navbar__nav-link">
+            Selected Works
           </a>
-          <a href="/#portfolio" className="navbar__nav-link">
-            Portfolio
+          <a href="#works" className="navbar__nav-link">
+            Works
           </a>
         </div>
 
         {/* Contact Button */}
         <a
-          href="/#contact"
+          href="#contact"
           className="navbar__contact-btn"
           aria-label="Me contacter"
         >

@@ -32,6 +32,10 @@
     cursor: pointer;
     padding: 0;
     transition: opacity 0.2s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    order: 1;
 
     &:hover {
       opacity: 0.8;
