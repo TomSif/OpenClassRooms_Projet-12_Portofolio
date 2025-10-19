@@ -224,13 +224,14 @@
     padding: 1rem 1.5rem;
     background: none;
     border: none;
-    font-family: v.$font-accent;
+    font-family: v.$font-body;
     font-size: 1.1rem;
     font-weight: 500;
     color: v.$color-text-secondary;
-    text-align: right;
+    text-align: left;
     cursor: pointer;
     transition: all 0.2s ease;
+    text-decoration: none;
 
     &:hover {
       background-color: v.$color-bg-light-blue;

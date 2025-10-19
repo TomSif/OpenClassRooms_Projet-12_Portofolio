@@ -3,17 +3,47 @@
 // ===================================
 // Fichier : src/components/Navbar.jsx
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const navRef = useRef(null);
 
   // Toggle du menu mobile
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  // Fermer le menu au clic extérieur
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
+  // Fermer le menu lors du redimensionnement (passage en tablet)
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // Navigation et fermeture du menu
   const handleNavigation = (path) => {
@@ -28,7 +58,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar">
+    <nav className="navbar" ref={navRef}>
       <div className="navbar__container">
         {/* Logo/Nom */}
         <a
@@ -84,28 +114,40 @@ const Navbar = () => {
         <div className="navbar__dropdown">
           <ul className="navbar__dropdown-list">
             <li>
-              <button
-                onClick={() => handleNavigation("/about")}
+              <a
+                href="#"
                 className="navbar__dropdown-link"
+                onClick={() => setIsMenuOpen(false)}
               >
-                About me
-              </button>
+                Home
+              </a>
             </li>
             <li>
-              <button
-                onClick={() => handleNavigation("/selected-works")}
+              <a
+                href="#about"
                 className="navbar__dropdown-link"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                href="#portfolio"
+                className="navbar__dropdown-link"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Selected Works
-              </button>
+              </a>
             </li>
             <li>
-              <button
-                onClick={() => handleNavigation("/portfolio")}
+              <a
+                href="#works"
                 className="navbar__dropdown-link"
+                onClick={() => setIsMenuOpen(false)}
               >
-                Portfolio
-              </button>
+                Works
+              </a>
             </li>
           </ul>
         </div>
