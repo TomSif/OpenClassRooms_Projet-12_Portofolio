@@ -221,20 +221,19 @@ export const allProjects = [
     details: {
       // Galerie d'images HD
       gallery: [
-        "/images/travaux/works-argent-bank-1.webp",
-        "/images/travaux/works-argent-bank-2.webp",
-        "/images/travaux/works-argent-bank-3.webp",
-        "/images/travaux/works-argent-bank-4.webp",
-        "/images/travaux/works-argent-bank-5.webp",
-        "/images/travaux/works-argent-bank-6.webp",
-        "/images/travaux/works-argent-bank-7.webp",
-        "/images/travaux/works-argent-bank-8.webp",
+        "/images/travaux/SelectedWorks-ArgentBank-1.webp",
+        "/images/travaux/SelectedWorks-ArgentBank-2.webp",
+        "/images/travaux/SelectedWorks-ArgentBank-3.webp",
+        "/images/travaux/SelectedWorks-ArgentBank-4.webp",
+        "/images/travaux/SelectedWorks-ArgentBank-5.webp",
+        "/images/travaux/SelectedWorks-ArgentBank-6.webp",
+        "/images/travaux/SelectedWorks-ArgentBank-7.webp",
+        "/images/travaux/SelectedWorks-ArgentBank-8.webp",
       ],
 
       // Liens externes
-      github:
-        "https://github.com/TomSif/TomSif-OpenClassRooms_Projet-11_Argent-Bank",
-      live: "https://tom-sif-open-class-rooms-projet-11-argent-bank-frontend.vercel.app",
+      github: "https://github.com/TomSif/OpenClassRooms_Projet-10_Argent-Bank",
+      live: null,
 
       // 📝 6 SECTIONS DÉTAILLÉES
       sections: {
@@ -414,11 +413,11 @@ export const allProjects = [
       // 📊 STATISTIQUES DU PROJET
       stats: {
         duration: "4 semaines",
-        commits: 156,
+        commits: 23,
         lines_of_code: "5,200+",
         complexity: "Avancé",
-        completion: "125%", // Avec documentation Phase 2
-        grade: "Validé - Dépasse les attentes",
+        completion: "100%",
+        grade: "Validé ",
       },
     },
   },
