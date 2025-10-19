@@ -25,13 +25,13 @@ export const allProjects = [
     details: {
       // Galerie d'images HD pour la page projet
       gallery: [
-        "/images/travaux/works-sophie-bluel-1.webp",
-        "/images/travaux/works-sophie-bluel-2.webp",
-        "/images/travaux/works-sophie-bluel-3.webp",
-        "/images/travaux/works-sophie-bluel-4.webp",
-        "/images/travaux/works-sophie-bluel-5.webp",
-        "/images/travaux/works-sophie-bluel-6.webp",
-        "/images/travaux/works-sophie-bluel-7.webp",
+        "/images/travaux/works-sophie bluel-1.webp",
+        "/images/travaux/works-sophie bluel-2.webp",
+        "/images/travaux/works-sophie bluel-3.webp",
+        "/images/travaux/works-sophie bluel-4.webp",
+        "/images/travaux/works-sophie bluel-5.webp",
+        "/images/travaux/works-sophie bluel-6.webp",
+        "/images/travaux/works-sophie bluel-7.webp",
       ],
 
       // Liens externes

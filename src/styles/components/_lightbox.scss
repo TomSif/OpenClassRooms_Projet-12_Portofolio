@@ -506,3 +506,186 @@
     transform: translateY(0);
   }
 }
+
+// ===== SECTIONS DÉTAILLÉES PROJET =====
+.project-section {
+  margin-bottom: v.$spacing-8;
+  padding-bottom: v.$spacing-6;
+  border-bottom: 1px solid v.$color-bg-light-blue-alt;
+
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  &__title {
+    font-size: v.$font-size-xl;
+    font-weight: v.$font-weight-semibold;
+    color: v.$color-text-primary;
+    margin-bottom: v.$spacing-4;
+    font-family: v.$font-heading-secondary;
+  }
+
+  &__content {
+    font-size: v.$font-size-base;
+    line-height: v.$line-height-relaxed;
+    color: v.$color-text-secondary;
+    margin-bottom: v.$spacing-4;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      position: relative;
+      padding-left: v.$spacing-6;
+      margin-bottom: v.$spacing-2;
+      font-size: v.$font-size-base;
+      line-height: v.$line-height-relaxed;
+      color: v.$color-text-secondary;
+
+      &::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: v.$color-primary;
+        font-weight: bold;
+      }
+    }
+
+    &.metrics-list li::before {
+      content: "✓";
+      color: v.$color-success;
+    }
+  }
+}
+
+// Stack Categories
+.stack-categories {
+  display: grid;
+  gap: v.$spacing-6;
+  margin-top: v.$spacing-4;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+.stack-category {
+  &__title {
+    font-size: v.$font-size-lg;
+    font-weight: v.$font-weight-semibold;
+    color: v.$color-text-primary;
+    margin-bottom: v.$spacing-3;
+    font-family: v.$font-accent;
+  }
+
+  &__items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: v.$spacing-2 v.$spacing-4;
+      margin-bottom: v.$spacing-2;
+      background: v.$color-bg-light-blue;
+      border-radius: v.$border-radius-sm;
+      font-size: v.$font-size-sm;
+      color: v.$color-text-primary;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: v.$color-bg-light-blue-alt;
+        transform: translateX(4px);
+      }
+    }
+  }
+}
+
+// Skills List
+.skills-list {
+  display: grid;
+  gap: v.$spacing-4;
+  margin-top: v.$spacing-4;
+}
+
+.skill-item {
+  padding: v.$spacing-4;
+  background: v.$color-bg-light-blue;
+  border-radius: v.$border-radius-md;
+  border-left: 4px solid v.$color-primary;
+
+  &__name {
+    font-size: v.$font-size-lg;
+    font-weight: v.$font-weight-semibold;
+    color: v.$color-text-primary;
+    margin-bottom: v.$spacing-2;
+    font-family: v.$font-accent;
+  }
+
+  &__description {
+    font-size: v.$font-size-sm;
+    line-height: v.$line-height-relaxed;
+    color: v.$color-text-secondary;
+    margin: 0;
+  }
+}
+
+// Improvements List
+.improvements-list {
+  display: grid;
+  gap: v.$spacing-4;
+  margin-top: v.$spacing-4;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+.improvement-item {
+  padding: v.$spacing-4;
+  background: v.$color-bg-lavender;
+  border-radius: v.$border-radius-md;
+  border-left: 4px solid v.$color-accent-purple;
+
+  &__feature {
+    font-size: v.$font-size-lg;
+    font-weight: v.$font-weight-semibold;
+    color: v.$color-accent-purple;
+    margin-bottom: v.$spacing-2;
+    font-family: v.$font-accent;
+  }
+
+  &__reason {
+    font-size: v.$font-size-sm;
+    line-height: v.$line-height-relaxed;
+    color: v.$color-text-secondary;
+    margin: 0;
+  }
+}
+
+// Responsive adjustments for project sections
+@media (max-width: 767px) {
+  .project-section {
+    margin-bottom: v.$spacing-6;
+    padding-bottom: v.$spacing-4;
+
+    &__title {
+      font-size: v.$font-size-lg;
+    }
+
+    &__content {
+      font-size: v.$font-size-sm;
+    }
+  }
+
+  .stack-categories {
+    grid-template-columns: 1fr;
+  }
+
+  .improvements-list {
+    grid-template-columns: 1fr;
+  }
+}

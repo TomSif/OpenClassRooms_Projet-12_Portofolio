@@ -10,6 +10,9 @@
   display: flex;
   align-items: flex-start;
   padding: 2rem 1.5rem;
+  padding-top: calc(
+    2rem + 70px
+  ); // Compenser la suppression du padding-top du body
   background-color: v.$color-bg-light-blue;
 
   &__container {
