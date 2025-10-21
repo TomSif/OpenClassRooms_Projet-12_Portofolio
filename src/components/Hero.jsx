@@ -80,14 +80,13 @@ const Hero = () => {
           <div className="hero__animation">
             <div className="hero__animation-placeholder">
               <DotLottieReact
-                src="https://lottie.host/0e2f5030-a85b-4e84-907d-a0985bdcdb1c/uRNEFniIuO.lottie"
+                src="/animations/Hero-animation-test.lottie"
                 loop
                 autoplay
                 style={{
                   width: "100%",
-                  height: "100%",
-                  maxWidth: "800px",
-                  maxHeight: "800x",
+                  maxWidth: "800px", // ✅ Augmenté de 400px → 600px
+                  height: "auto",
                 }}
                 className="hero__lottie-animation"
               />
