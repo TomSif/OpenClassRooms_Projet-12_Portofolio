@@ -2,7 +2,7 @@
 // 🎯 HERO.JSX - COMPOSANT HERO
 // ===================================
 // Fichier : src/components/Hero.jsx
-// import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const Hero = () => {
   return (
@@ -78,16 +78,19 @@ const Hero = () => {
 
           {/* Container pour dotLottie animation */}
           <div className="hero__animation">
-            {/* Tu ajouteras ton dotLottie ici */}
             <div className="hero__animation-placeholder">
-              {/* <DotLottieReact
-              src="https://lottie.host/0e2f5030-a85b-4e84-907d-a0985bdcdb1c/uRNEFniIuO.lottie"
-              loop
-              autoplay
-            /> */}
-              <div className="hero__image-circle">
-                {/* Tu mettras ton image/animation ici */}
-              </div>
+              <DotLottieReact
+                src="https://lottie.host/0e2f5030-a85b-4e84-907d-a0985bdcdb1c/uRNEFniIuO.lottie"
+                loop
+                autoplay
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  maxWidth: "800px",
+                  maxHeight: "800x",
+                }}
+                className="hero__lottie-animation"
+              />
             </div>
           </div>
         </div>

@@ -137,15 +137,17 @@ const About = () => {
                 Hire me
               </a>
               <a
-                href="/cv.pdf"
-                download
+                href="/Thomas_Sifferle_CV.pdf"
+                download="Thomas_Sifferle_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="about__cta-btn about__cta-btn--secondary"
               >
                 Download CV
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                   <path
                     d="M10 3V13M10 13L6 9M10 13L14 9M3 17H17"
-                    stroke="currentColor"
+                    stroke="#0088ff"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
