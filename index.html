@@ -1,21 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- ===== OPTIMISATION GOOGLE FONTS ===== -->
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <!-- Meta description (157 caractères - OPTIMISÉ) -->
+    <meta
+      name="description"
+      content="Développeur Front-End Junior React & JavaScript. Portfolio de projets web dynamiques (Redux, API REST, TypeScript). Remote depuis Strasbourg."
+    />
+    <!-- Mots-clés  -->
+    <meta
+      name="keywords"
+      content="développeur front-end, React, JavaScript, TypeScript, Redux, API REST, Strasbourg, remote, portfolio développeur"
+    />
+    <!-- Auteur -->
+    <meta name="author" content="Thomas Sifferlé" />
+    <!-- Langue du contenu -->
+    <meta name="language" content="fr" />
+    <!-- Robots (indexation) -->
+    <meta name="robots" content="index, follow" />
+    <meta
+      property="og:title"
+      content="Thomas Sifferlé | Développeur Front-End Junior React"
+    />
+    <!-- Description (optimisée pour partage social) -->
+    <meta
+      property="og:description"
+      content="Portfolio professionnel - Projets React, Redux et JavaScript. Développeur Front-End Junior disponible en remote depuis Strasbourg."
+    />
+    <!-- Type de contenu -->
+    <meta property="og:type" content="website" />
+    <!-- URL du site (à adapter selon ton domaine final) -->
+    <meta
+      property="og:url"
+      content="https://thomas-sifferle-portfolio.vercel.app"
+    />
+    <meta
+      property="og:image"
+      content="https://thomas-sifferle-portfolio.vercel.app/images/og-image.jpg"
+    />
+    <meta
+      property="og:image:alt"
+      content="Portfolio de Thomas Sifferlé - Développeur Front-End Junior React"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <!-- Langue -->
+    <meta property="og:locale" content="fr_FR" />
+    <!-- Nom du site -->
+    <meta property="og:site_name" content="Thomas Sifferlé - Portfolio" />
+    <!-- Type de carte (summary_large_image = image grande) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- Titre (même que og:title) -->
+    <meta
+      name="twitter:title"
+      content="Thomas Sifferlé | Développeur Front-End Junior React"
+    />
+    <!-- Description (même que og:description) -->
+    <meta
+      name="twitter:description"
+      content="Portfolio professionnel - Projets React, Redux et JavaScript. Développeur Front-End Junior disponible en remote depuis Strasbourg."
+    />
+    <!-- Image (même que og:image) -->
+    <meta
+      name="twitter:image"
+      content="https://thomas-sifferle-portfolio.vercel.app/images/og-image.jpg"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Portfolio de Thomas Sifferlé - Développeur Front-End Junior React"
+    />
+    <!-- ===== TITLE (60 caractères) ===== -->
+    <title>
+      Thomas Sifferlé | Développeur Front-End Junior React & JavaScript
+    </title>
     <!-- 1️⃣ DNS Prefetch (gagne ~50ms) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
     <!-- 2️⃣ Préchargement police BODY (Plus Jakarta Sans - critique pour FCP) -->
     <link
       rel="preload"
       as="style"
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap"
     />
-
-    <!-- 3️⃣ Chargement asynchrone des 3 polices UTILISÉES -->
-
     <!-- BODY : Plus Jakarta Sans (2 weights au lieu de 5) -->
     <link
       rel="stylesheet"
@@ -23,7 +92,6 @@
       media="print"
       onload="this.media='all'"
     />
-
     <!-- HEADINGS : Poppins (3 weights au lieu de 5) -->
     <link
       rel="stylesheet"
@@ -31,7 +99,6 @@
       media="print"
       onload="this.media='all'"
     />
-
     <!-- UI/ACCENT : Manrope (3 weights au lieu de 4) -->
     <link
       rel="stylesheet"
@@ -39,7 +106,6 @@
       media="print"
       onload="this.media='all'"
     />
-
     <!-- 4️⃣ Fallback navigateurs sans JavaScript -->
     <noscript>
       <link
@@ -55,30 +121,7 @@
         href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
       />
     </noscript>
-
     <!-- ===== FIN OPTIMISATION FONTS ===== -->
-
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- SEO Meta Tags (à compléter après analyse offres) -->
-    <meta
-      name="description"
-      content="Portfolio de développeur front-end spécialisé React. Découvrez mes projets web modernes et mes compétences en développement."
-    />
-
-    <!-- Open Graph (réseaux sociaux) -->
-    <meta
-      property="og:title"
-      content="Thomas Sifferlé - Développeur Front-End"
-    />
-    <meta
-      property="og:description"
-      content="Portfolio professionnel - Projets React & développement web moderne"
-    />
-    <meta property="og:type" content="website" />
-    <title>Thomas Sifferlé - Portfolio - Développeur Front-End React</title>
   </head>
   <body>
     <div id="root"></div>

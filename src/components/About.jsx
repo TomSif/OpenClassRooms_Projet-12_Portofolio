@@ -26,52 +26,62 @@ const About = () => {
           <div className="about__main-content">
             {/* Introduction */}
             <p className="about__intro">
-              Bonjour, je suis Thomas Sifferle, développeur Front-End de 46 ans
-              spécialisé dans les <strong>interfaces créatives</strong> et les{" "}
-              <strong>expériences immersives</strong>.
+              Bonjour, je suis Thomas Sifferle,{" "}
+              <strong>Développeur Front-End Junior</strong> de 46 ans spécialisé
+              en <strong>React</strong> et <strong>JavaScript</strong>,
+              passionné par la création d'
+              <strong>interfaces web performantes</strong> et{" "}
+              <strong>accessibles</strong>.
             </p>
 
             <div className="about__content">
               <p className="about__text">
                 Mon parcours atypique mêle commerce tech (chef de rayon
                 informatique, Acheteur) et création multimédia : photographe
-                professionnel (expositions, publicités), graphiste (Photoshop,
-                Illustrator, After Effects) et producteur MAO. Ces années m'ont
-                appris à peaufiner chaque détail et à transformer une vision
-                créative en réalité technique.
+                professionnel, graphiste (Photoshop, Illustrator, After Effects)
+                et producteur MAO. Ces années m'ont appris à{" "}
+                <strong>peaufiner chaque détail</strong> et à comprendre les
+                besoins utilisateurs, des compétences essentielles pour l'
+                <strong>intégration UX/UI</strong>.
               </p>
-
               <p className="about__text">
-                Ma reconversion via OpenClassrooms concrétise 25 ans de passion
-                internet. Je maîtrise React, JavaScript ES6, Sass et Redux
-                Toolkit, avec une obsession pour les animations fluides et les
-                micro-interactions. Je me forme actuellement à Framer Motion et
-                Three.js, avec l'ambition de me spécialiser en réalité augmentée
-                où tout reste à inventer.
+                Ma reconversion via <strong>OpenClassrooms</strong> (Bac+2
+                Intégrateur-Frontend) concrétise 25 ans de passion internet. Je
+                maîtrise{" "}
+                <strong>React, JavaScript ES6, TypeScript, Sass</strong> et{" "}
+                <strong>Redux Toolkit</strong>, avec une expertise en{" "}
+                <strong>gestion d'état</strong> et{" "}
+                <strong>intégration d'API REST</strong>. Je travaille en{" "}
+                <strong>méthode agile</strong> et privilégie un code maintenable
+                et une <strong>culture du feedback</strong>.
               </p>
-
               <p className="about__text">
-                J'ai développé une application bancaire avec authentification
-                JWT et API Node avancée (Argent Bank), et un portfolio dynamique
-                en Vanilla JS avec architecture MVC personnalisée (Sophie
-                Bluel). Les deux incluent déploiement CI/CD et sont pensés pour
-                l'expérience utilisateur.
+                Parmi mes réalisations : <strong>Argent Bank</strong>, une
+                application bancaire React avec{" "}
+                <strong>authentification JWT complète</strong>, architecture
+                Redux modulaire, et interfaces performantes (score Lighthouse
+                98/100). Et <strong>Sophie Bluel</strong>, un portfolio
+                dynamique avec manipulation du DOM, <strong>API REST</strong> et
+                système d'authentification.
               </p>
-
               <p className="about__highlight">
-                Autodidacte rigoureux, je privilégie la créativité et
-                l'attention au détail dans chaque projet.
+                <strong>Autonome et rigoureux</strong>, j'apporte une
+                sensibilité créative unique à mes projets tout en respectant les
+                bonnes pratiques (accessibilité WCAG, performance, SEO).
               </p>
-
               <p className="about__text">
-                Je recherche des collaborations avec des agences web, artistes
-                ou entreprises voulant des sites originaux et mémorables.
+                Je recherche un poste de{" "}
+                <strong>Développeur Front-End Junior</strong> en{" "}
+                <strong>CDI</strong>, en <strong>remote</strong> ou sur{" "}
+                <strong>Strasbourg</strong>, dans une équipe produit
+                collaborative où je pourrai continuer à progresser
+                techniquement.
               </p>
-
               <p className="about__objective">
-                Mon objectif : devenir freelance et transformer mon imagination
-                en expériences web uniques.
-              </p>
+                Mon objectif : contribuer à des{" "}
+                <strong>projets web à impact</strong> en apportant mon expertise
+                React et ma sensibilité UX/UI.
+              </p>{" "}
             </div>
           </div>
 

@@ -19,7 +19,7 @@ export const allProjects = [
     category: "Scholar",
     thumbnail: "/images/travaux/SelectedWorks-sophie bluel-2-thumb.webp",
     description:
-      "Création d'un portfolio dynamique pour une architecte d'intérieur avec système d'administration.",
+      "Développement d'un portfolio dynamique en JavaScript vanilla avec API REST et authentification JWT. Manipulation du DOM, gestion d'événements et intégration fidèle des maquettes Figma. Système d'administration complet pour la gestion de projets.",
     technologies: [TECH_NAMES.JAVASCRIPT, TECH_NAMES.HTML5, TECH_NAMES.CSS3],
 
     details: {
@@ -210,7 +210,7 @@ export const allProjects = [
     category: "Scholar",
     thumbnail: "/images/travaux/SelectedWorks-ArgentBank-2-thumb.webp",
     description:
-      "Application bancaire responsive avec authentification JWT et Redux Toolkit.",
+      "Application bancaire React avec authentification JWT complète et gestion d'état avancée via Redux Toolkit. Architecture modulaire, intégration API REST et interfaces performantes. Code maintenable selon les best practices du développement front-end moderne.",
     technologies: [
       TECH_NAMES.REACT,
       TECH_NAMES.REDUX,
