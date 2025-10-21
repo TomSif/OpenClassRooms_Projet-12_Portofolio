@@ -90,7 +90,6 @@ function Works() {
                 key={project.id}
                 className="works__card"
                 onClick={() => setSelectedProject(project)}
-                role="button"
                 tabIndex={0}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {
@@ -98,7 +97,8 @@ function Works() {
                     setSelectedProject(project);
                   }
                 }}
-                aria-label={`View ${project.title} details`}
+                aria-label={`View ${project.title} project details`}
+                style={{ cursor: "pointer" }}
               >
                 <div className="works__card-image">
                   <img
