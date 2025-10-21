@@ -3,6 +3,41 @@
 // ===================================
 import { Link } from "react-router-dom";
 import { FaArrowRight, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaSass,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaFigma,
+} from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiRedux,
+  SiMongodb,
+  SiAdobephotoshop,
+  SiAdobeillustrator,
+} from "react-icons/si";
+
+// Fonction pour obtenir l'icône correspondante à une technologie
+function getTechIcon(tech) {
+  const techIcons = {
+    HTML5: <FaHtml5 />,
+    CSS3: <FaCss3Alt />,
+    Sass: <FaSass />,
+    JavaScript: <FaJs />,
+    React: <FaReact />,
+    Redux: <SiRedux />,
+    "Node.js": <FaNodeJs />,
+    MongoDB: <SiMongodb />,
+    "Tailwind CSS": <SiTailwindcss />,
+    Figma: <FaFigma />,
+    Photoshop: <SiAdobephotoshop />,
+    Illustrator: <SiAdobeillustrator />,
+  };
+  return techIcons[tech] || null;
+}
 
 function PortfolioCard({ project }) {
   // Vérifications de sécurité
@@ -49,35 +84,46 @@ function PortfolioCard({ project }) {
 
       {/* CONTENU DE LA CARD */}
       <div className="portfolio-card__content">
-        {/* Badge catégorie */}
-        <span
-          className="portfolio-card__category"
-          aria-label="Catégorie du projet"
-        >
-          {category}
-        </span>
-
         {/* Titre */}
         <h3 className="portfolio-card__title">{title}</h3>
 
         {/* Description */}
         <p className="portfolio-card__description">{description}</p>
 
-        {/* Technologies (3 premières + compteur) */}
+        {/* Technologies sous forme d'icônes avec labels - Cohérence avec lightbox */}
         {technologies.length > 0 && (
           <div
-            className="portfolio-card__tech"
+            className="portfolio-card__tech-icons"
             aria-label="Technologies utilisées"
           >
-            {technologies.slice(0, 3).map((tech, index) => (
-              <span key={index} className="tech-badge">
-                {tech}
-              </span>
-            ))}
+            {technologies.slice(0, 3).map((tech, index) => {
+              const icon = getTechIcon(tech);
+              return icon ? (
+                <span
+                  key={index}
+                  className="portfolio-card__tech-icon"
+                  title={tech}
+                  aria-label={tech}
+                >
+                  {icon}
+                  <span>{tech}</span>
+                </span>
+              ) : (
+                <span
+                  key={index}
+                  className="portfolio-card__tech-icon"
+                  title={tech}
+                  aria-label={tech}
+                >
+                  <span>{tech}</span>
+                </span>
+              );
+            })}
             {technologies.length > 3 && (
               <span
-                className="tech-badge more"
+                className="portfolio-card__tech-more"
                 aria-label={`${technologies.length - 3} autres technologies`}
+                title={`+${technologies.length - 3} technologies`}
               >
                 +{technologies.length - 3}
               </span>
