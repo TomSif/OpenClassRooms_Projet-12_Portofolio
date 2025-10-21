@@ -27,7 +27,7 @@ const Hero = () => {
             {/* Boutons sociaux */}
             <div className="hero__social">
               <a
-                href="https://linkedin.com/in/votre-profil"
+                href="https://linkedin.com/in/thomas-sifferle"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hero__social-btn"
@@ -43,7 +43,7 @@ const Hero = () => {
               </a>
 
               <a
-                href="https://github.com/votre-username"
+                href="https://github.com/TomSif"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hero__social-btn"
@@ -59,7 +59,7 @@ const Hero = () => {
               </a>
 
               <a
-                href="https://instagram.com/votre-profil"
+                href="https://instagram.com/neotrinos"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hero__social-btn"
