@@ -21,10 +21,10 @@ const About = () => {
         {/* Titre */}
         <motion.h2
           className="about__title"
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.6, margin: "-100px" }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.2, margin: "-50px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
           About Me
         </motion.h2>
@@ -32,10 +32,10 @@ const About = () => {
         {/* Layout responsive */}
         <motion.div
           className="about__layout"
-          initial={{ opacity: 0, y: 60 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3, margin: "-50px" }}
-          transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
+          viewport={{ once: true, amount: 0.1, margin: "-30px" }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
         >
           {/* Contenu principal (gauche) */}
           <div className="about__main-content">
