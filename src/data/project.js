@@ -17,7 +17,7 @@ export const allProjects = [
     slug: "sophie-bluel",
     title: "Sophie Bluel - Portfolio Architecte",
     category: "Scholar",
-    thumbnail: "/images/travaux/SelectedWorks-sophie bluel-2-thumb.webp",
+    thumbnail: "/images/travaux/SelectedWorks-sophie bluel-4-thumb.webp",
     description:
       "Développement d'un portfolio dynamique en JavaScript vanilla avec API REST et authentification JWT. Manipulation du DOM, gestion d'événements et intégration fidèle des maquettes Figma. Système d'administration complet pour la gestion de projets.",
     technologies: [TECH_NAMES.JAVASCRIPT, TECH_NAMES.HTML5, TECH_NAMES.CSS3],

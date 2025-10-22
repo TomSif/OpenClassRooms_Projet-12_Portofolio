@@ -229,7 +229,7 @@
   // Titre
   &__title {
     font-family: v.$font-heading-secondary;
-    font-size: v.$font-size-2xl; // 32px
+    font-size: clamp(1.5rem, 4vw, 2rem); // Fluide : min 24px, max 32px
     font-weight: v.$font-weight-bold;
     color: v.$color-text-primary;
     margin-bottom: v.$spacing-6; // 24px (au lieu de 16px)
@@ -240,7 +240,7 @@
   &__cards {
     display: flex;
     flex-direction: column;
-    gap: v.$spacing-6; // 24px
+    gap: clamp(1rem, 3vw, 1.5rem); // Gap fluide : min 16px, max 24px
     margin-bottom: v.$spacing-8; // 32px
   }
 }
@@ -249,8 +249,8 @@
 .detail-card {
   display: flex;
   align-items: center;
-  gap: v.$spacing-4; // 16px
-  padding: v.$spacing-5; // 20px
+  gap: clamp(0.75rem, 2.5vw, 1rem); // Gap fluide entre icône et texte
+  padding: clamp(0.875rem, 3vw, 1.25rem); // Padding fluide
   background-color: v.$color-bg-white;
   border-radius: v.$border-radius-md;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -274,13 +274,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 60px;
-    height: 60px;
+    width: clamp(48px, 8vw, 60px); // Taille fluide de l'icône
+    height: clamp(48px, 8vw, 60px);
     flex-shrink: 0;
     background-color: #f5f5f5; // Gris clair
     color: v.$color-accent-purple; // Icône violet
     border-radius: v.$border-radius-md;
-    font-size: v.$font-size-2xl; // 32px
+    font-size: clamp(1.25rem, 4vw, 2rem); // Taille icône fluide
     transition: all v.$transition-base;
   }
 
@@ -294,19 +294,21 @@
 
   // Label (petit texte gris)
   &__label {
-    font-size: v.$font-size-sm; // 14px
+    font-size: clamp(0.75rem, 2vw, 0.875rem); // Fluide : min 12px, max 14px
     color: v.$color-text-secondary;
     font-weight: v.$font-weight-regular;
     margin: 0;
   }
 
-  // Valeur (texte noir bold)
+  // Valeur (texte noir bold) -
   &__value {
-    font-size: v.$font-size-base; // 16px
+    font-size: clamp(0.875rem, 2.5vw, 1rem); // Fluide : min 14px, max 16px
     color: v.$color-text-primary;
     font-weight: v.$font-weight-bold;
     margin: 0;
     line-height: v.$line-height-normal;
+    word-break: break-all; // Force la coupure des longs emails
+    overflow-wrap: break-word;
   }
 }
 

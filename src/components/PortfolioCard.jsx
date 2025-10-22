@@ -39,6 +39,19 @@ function getTechIcon(tech) {
   return techIcons[tech] || null;
 }
 
+// Fonction pour tronquer la description à une longueur raisonnable
+function truncateDescription(text, maxLength = 100) {
+  if (!text || text.length <= maxLength) return text;
+
+  // Trouver le dernier espace avant la limite pour éviter de couper un mot
+  const truncated = text.substring(0, maxLength);
+  const lastSpace = truncated.lastIndexOf(" ");
+
+  return lastSpace > 0
+    ? truncated.substring(0, lastSpace) + ".."
+    : truncated + "..";
+}
+
 function PortfolioCard({ project }) {
   // Vérifications de sécurité
   if (!project) {
@@ -58,7 +71,8 @@ function PortfolioCard({ project }) {
   // Valeurs par défaut pour éviter les erreurs
   const title = project.title || "Projet sans titre";
   const category = project.category || "Non catégorisé";
-  const description = project.description || "Pas de description disponible";
+  const rawDescription = project.description || "Pas de description disponible";
+  const description = truncateDescription(rawDescription, 90); // Limite à 90 caractères
   const thumbnail = project.thumbnail || "/images/placeholder.jpg";
   const technologies = project.technologies || [];
   const details = project.details || {};

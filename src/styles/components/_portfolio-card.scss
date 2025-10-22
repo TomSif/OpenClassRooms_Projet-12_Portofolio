@@ -5,25 +5,18 @@
 
 .portfolio-card {
   background: v.$color-bg-white;
-  border-radius: v.$border-radius-xl; // 20px
+  border-radius: v.$border-radius-xl;
   overflow: hidden;
   box-shadow: v.$shadow-md;
   transition: all v.$transition-base;
-  display: flex;
-  flex-direction: column;
-  height: 100%; // Pour que toutes les cards aient la même hauteur
 
-  // Suppression du hover sur toute la card
-
-  // =============================
-  // IMAGE CLIQUABLE AVEC OVERLAY
-  // =============================
   &__image-wrapper {
-    position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9; // Ratio plus compact
+    aspect-ratio: 16 / 10;
     overflow: hidden;
     background: v.$color-bg-light-blue;
+    position: relative;
+    max-height: 250px;
     display: block;
     text-decoration: none;
 
@@ -86,16 +79,15 @@
   // CONTENU DE LA CARD
   // =============================
   &__content {
-    padding: v.$spacing-5; // 1.25rem
+    padding: clamp(1rem, 3vw, 1.5rem); // Padding fluide e-commerce
     display: flex;
     flex-direction: column;
-    gap: v.$spacing-3;
-    flex: 1; // Pour pousser le footer en bas
+    gap: clamp(0.5rem, 2vw, 0.75rem); // Gap fluide
+    // Pas de flex - hauteur naturelle comme Works cards
   }
 
   &__title {
-    font-size: v.$font-size-lg; // 1.125rem
-    font-weight: v.$font-weight-bold;
+    font-size: clamp(1rem, 3.5vw, 1.5rem); // Fluide : min 16px, max 24px
     font-family: v.$font-heading-secondary; // Poppins
     color: v.$color-text-primary;
     line-height: v.$line-height-tight;
@@ -103,10 +95,10 @@
   }
 
   &__description {
-    font-size: v.$font-size-sm;
+    font-size: clamp(0.75rem, 2.2vw, 0.875rem); // Fluide : min 12px, max 14px
     color: v.$color-text-secondary;
-    line-height: v.$line-height-relaxed;
-    flex: 1; // Pousse le footer en bas si description courte
+    line-height: 1.5;
+    flex: 1;
   }
 
   // =============================
@@ -122,11 +114,11 @@
     display: flex;
     align-items: center;
     gap: v.$spacing-1;
-    padding: v.$spacing-1 v.$spacing-3;
+    padding: clamp(0.25rem, 1vw, 0.375rem) clamp(0.75rem, 2vw, 1rem); // Padding fluide
     background: v.$color-bg-light-blue;
     border-radius: v.$border-radius-full;
     color: v.$color-text-primary; // Noir pour contraste optimal
-    font-size: v.$font-size-sm;
+    font-size: clamp(0.7rem, 2vw, 0.875rem); // Taille fluide
     font-weight: v.$font-weight-medium;
     font-family: v.$font-accent;
     transition: all v.$transition-fast;

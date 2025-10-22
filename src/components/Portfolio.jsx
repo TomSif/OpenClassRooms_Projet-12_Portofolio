@@ -42,60 +42,62 @@ function Portfolio() {
 
   return (
     <section id="portfolio" className="portfolio">
-      {/* HEADER */}
-      <div className="portfolio__header">
-        <h2>Mes Projets</h2>
-        <p>
-          Découvrez une sélection de mes réalisations, alliant design moderne et
-          développement front-end performant.
-        </p>
-      </div>
-
-      {/* DEBUG INFO (à retirer après) */}
-      {filteredProjects.length === 0 && (
-        <div
-          style={{
-            padding: "2rem",
-            background: "#fff3cd",
-            color: "#856404",
-            borderRadius: "8px",
-            margin: "0 auto 2rem",
-            maxWidth: "800px",
-          }}
-        >
+      <div className="portfolio__container">
+        {/* HEADER */}
+        <div className="portfolio__header">
+          <h2>Mes Projets</h2>
           <p>
-            <strong>⚠️ Aucun projet trouvé</strong>
-          </p>
-          <p>Total projets : {allProjects.length}</p>
-          <p>Projets featured : {featuredProjects.length}</p>
-          <p>
-            Vérifiez que vos projets ont bien <code>featured: true</code>
+            Découvrez une sélection de mes réalisations, alliant design moderne
+            et développement front-end performant.
           </p>
         </div>
-      )}
 
-      {/* GRILLE DE PROJETS */}
-      <div className="portfolio__grid">
-        {filteredProjects.length > 0 ? (
-          filteredProjects.map((project) => {
-            // SÉCURITÉ : Ne rendre que si project existe
-            if (!project) {
-              console.warn("⚠️ Undefined project in array");
-              return null;
-            }
-            return <PortfolioCard key={project.id} project={project} />;
-          })
-        ) : (
-          <p
+        {/* DEBUG INFO (à retirer après) */}
+        {filteredProjects.length === 0 && (
+          <div
             style={{
-              textAlign: "center",
-              gridColumn: "1 / -1",
               padding: "2rem",
+              background: "#fff3cd",
+              color: "#856404",
+              borderRadius: "8px",
+              margin: "0 auto 2rem",
+              maxWidth: "800px",
             }}
           >
-            Aucun projet à afficher pour le moment.
-          </p>
+            <p>
+              <strong>⚠️ Aucun projet trouvé</strong>
+            </p>
+            <p>Total projets : {allProjects.length}</p>
+            <p>Projets featured : {featuredProjects.length}</p>
+            <p>
+              Vérifiez que vos projets ont bien <code>featured: true</code>
+            </p>
+          </div>
         )}
+
+        {/* GRILLE DE PROJETS */}
+        <div className="portfolio__grid">
+          {filteredProjects.length > 0 ? (
+            filteredProjects.map((project) => {
+              // SÉCURITÉ : Ne rendre que si project existe
+              if (!project) {
+                console.warn("⚠️ Undefined project in array");
+                return null;
+              }
+              return <PortfolioCard key={project.id} project={project} />;
+            })
+          ) : (
+            <p
+              style={{
+                textAlign: "center",
+                gridColumn: "1 / -1",
+                padding: "2rem",
+              }}
+            >
+              Aucun projet à afficher pour le moment.
+            </p>
+          )}
+        </div>
       </div>
     </section>
   );
