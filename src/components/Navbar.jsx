@@ -5,6 +5,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -109,49 +110,100 @@ const Navbar = () => {
         </a>
       </div>
 
-      {/* Mobile Dropdown Menu */}
-      {isMenuOpen && (
-        <div className="navbar__dropdown">
-          <ul className="navbar__dropdown-list">
-            <li>
-              <a
-                href="#"
-                className="navbar__dropdown-link"
-                onClick={() => setIsMenuOpen(false)}
+      {/* Mobile Dropdown Menu avec Framer Motion */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            className="navbar__dropdown"
+            initial={{ opacity: 0, scaleY: 0 }}
+            animate={{ opacity: 1, scaleY: 1 }}
+            exit={{ opacity: 0, scaleY: 0 }}
+            style={{ transformOrigin: "top" }}
+            transition={{
+              opacity: { duration: 0.15, ease: "easeOut" },
+              scaleY: { duration: 0.3, ease: "easeOut" },
+            }}
+          >
+            <motion.ul
+              className="navbar__dropdown-list"
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    staggerChildren: 0.08,
+                    delayChildren: 0.15,
+                  },
+                },
+              }}
+            >
+              <motion.li
+                variants={{
+                  hidden: { opacity: 0, x: -20 },
+                  visible: { opacity: 1, x: 0 },
+                }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
               >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="#about"
-                className="navbar__dropdown-link"
-                onClick={() => setIsMenuOpen(false)}
+                <a
+                  href="#"
+                  className="navbar__dropdown-link"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Home
+                </a>
+              </motion.li>
+              <motion.li
+                variants={{
+                  hidden: { opacity: 0, x: -20 },
+                  visible: { opacity: 1, x: 0 },
+                }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
               >
-                About
-              </a>
-            </li>
-            <li>
-              <a
-                href="#portfolio"
-                className="navbar__dropdown-link"
-                onClick={() => setIsMenuOpen(false)}
+                <a
+                  href="#about"
+                  className="navbar__dropdown-link"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  About
+                </a>
+              </motion.li>
+              <motion.li
+                variants={{
+                  hidden: { opacity: 0, x: -20 },
+                  visible: { opacity: 1, x: 0 },
+                }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
               >
-                Selected Works
-              </a>
-            </li>
-            <li>
-              <a
-                href="#works"
-                className="navbar__dropdown-link"
-                onClick={() => setIsMenuOpen(false)}
+                <a
+                  href="#portfolio"
+                  className="navbar__dropdown-link"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Selected Works
+                </a>
+              </motion.li>
+              <motion.li
+                variants={{
+                  hidden: { opacity: 0, x: -20 },
+                  visible: { opacity: 1, x: 0 },
+                }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
               >
-                Works
-              </a>
-            </li>
-          </ul>
-        </div>
-      )}
+                <a
+                  href="#works"
+                  className="navbar__dropdown-link"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Works
+                </a>
+              </motion.li>
+            </motion.ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

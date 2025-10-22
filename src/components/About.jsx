@@ -12,16 +12,31 @@ import {
   FaNodeJs,
 } from "react-icons/fa";
 import { SiRedux } from "react-icons/si";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
     <section className="about" id="about">
       <div className="about__container">
         {/* Titre */}
-        <h2 className="about__title">About Me</h2>
+        <motion.h2
+          className="about__title"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.6, margin: "-100px" }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
+          About Me
+        </motion.h2>
 
         {/* Layout responsive */}
-        <div className="about__layout">
+        <motion.div
+          className="about__layout"
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3, margin: "-50px" }}
+          transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
+        >
           {/* Contenu principal (gauche) */}
           <div className="about__main-content">
             {/* Introduction */}
@@ -188,7 +203,7 @@ const About = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
