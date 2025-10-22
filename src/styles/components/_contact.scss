@@ -148,6 +148,40 @@
   }
 }
 
+// Container pour l'animation typewriter
+.textarea-container {
+  position: relative;
+}
+
+.textarea-placeholder-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: v.$spacing-4; // Même padding que la textarea
+  pointer-events: none; // Permet de cliquer à travers
+  display: flex;
+  align-items: flex-start;
+  color: v.$color-text-secondary;
+  font-family: v.$font-body;
+  font-size: v.$font-size-base;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.typewriter-placeholder {
+  display: inline-block;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.typewriter-cursor {
+  color: v.$color-primary;
+  font-weight: bold;
+  margin-left: 1px;
+}
+
 // Bouton submit
 .contact-form .btn {
   width: 100%;

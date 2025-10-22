@@ -1,4 +1,48 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+
+// Composant d'animation typewriter
+const TypewriterPlaceholder = ({ text, isVisible }) => {
+  const [displayedText, setDisplayedText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (!isVisible) {
+      setDisplayedText("");
+      setCurrentIndex(0);
+      return;
+    }
+
+    if (currentIndex < text.length) {
+      const timeout = setTimeout(() => {
+        setDisplayedText(text.slice(0, currentIndex + 1));
+        setCurrentIndex(currentIndex + 1);
+      }, 50); // Vitesse de frappe
+
+      return () => clearTimeout(timeout);
+    }
+  }, [currentIndex, text, isVisible]);
+
+  return (
+    <motion.span
+      className="typewriter-placeholder"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: isVisible ? 1 : 0 }}
+      transition={{ duration: 0.3 }}
+    >
+      {displayedText}
+      {isVisible && currentIndex <= text.length && (
+        <motion.span
+          className="typewriter-cursor"
+          animate={{ opacity: [0, 1, 0] }}
+          transition={{ duration: 0.8, repeat: Infinity }}
+        >
+          |
+        </motion.span>
+      )}
+    </motion.span>
+  );
+};
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +54,8 @@ const ContactForm = () => {
     succeeded: false,
     error: null,
   });
+  const [showTypewriter, setShowTypewriter] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
 
   // 🔑 Endpoint Formspree configuré
   const FORMSPREE_ENDPOINT = "https://formspree.io/f/mvgwdzjp";
@@ -105,22 +151,53 @@ const ContactForm = () => {
       </div>
 
       {/* Message */}
-      <div className="form-group">
+      <motion.div
+        className="form-group"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6 }}
+        onViewportEnter={() => !isFocused && setShowTypewriter(true)}
+      >
         <label htmlFor="message" className="form-group__label">
           Votre message *
         </label>
-        <textarea
-          id="message"
-          name="message"
-          className="form-group__textarea"
-          placeholder="Décrivez votre projet ou posez votre question..."
-          rows="5"
-          value={formData.message}
-          onChange={handleChange}
-          required
-          disabled={status.submitting}
-        />
-      </div>
+        <div className="textarea-container">
+          <textarea
+            id="message"
+            name="message"
+            className="form-group__textarea"
+            placeholder={
+              isFocused || formData.message
+                ? "Décrivez votre projet ou posez votre question..."
+                : ""
+            }
+            rows="5"
+            value={formData.message}
+            onChange={handleChange}
+            onFocus={() => {
+              setIsFocused(true);
+              setShowTypewriter(false);
+            }}
+            onBlur={() => {
+              if (!formData.message) {
+                setIsFocused(false);
+                setTimeout(() => setShowTypewriter(true), 500);
+              }
+            }}
+            required
+            disabled={status.submitting}
+          />
+          {!isFocused && !formData.message && (
+            <div className="textarea-placeholder-overlay">
+              <TypewriterPlaceholder
+                text="Décrivez votre projet ou posez votre question..."
+                isVisible={showTypewriter}
+              />
+            </div>
+          )}
+        </div>
+      </motion.div>
 
       {/* Bouton submit */}
       <button
