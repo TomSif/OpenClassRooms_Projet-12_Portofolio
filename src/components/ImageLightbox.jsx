@@ -67,6 +67,7 @@ const TECH_ICONS = {
 
 function ImageLightbox({ project, onClose }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isZoomed, setIsZoomed] = useState(false);
 
   if (!project) return null;
 
@@ -84,19 +85,42 @@ function ImageLightbox({ project, onClose }) {
 
   // Navigation images
   const goToPrevImage = () => {
-    setCurrentImageIndex((prev) =>
-      prev === 0 ? gallery.length - 1 : prev - 1
-    );
+    const newIndex =
+      currentImageIndex === 0 ? gallery.length - 1 : currentImageIndex - 1;
+    handleImageChange(newIndex);
   };
 
   const goToNextImage = () => {
-    setCurrentImageIndex((prev) =>
-      prev === gallery.length - 1 ? 0 : prev + 1
-    );
+    const newIndex =
+      currentImageIndex === gallery.length - 1 ? 0 : currentImageIndex + 1;
+    handleImageChange(newIndex);
   };
 
   const goToImage = (index) => {
-    setCurrentImageIndex(index);
+    handleImageChange(index);
+  };
+
+  // Gestion du zoom au double-clic
+  const handleImageDoubleClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log("Double-click détecté! Zoom actuel:", isZoomed);
+    setIsZoomed(!isZoomed);
+  };
+
+  // Debug - tester les événements
+  const handleImageClick = (e) => {
+    console.log("Click détecté sur l'image");
+  };
+
+  const handleImageMouseDown = (e) => {
+    console.log("MouseDown détecté sur l'image");
+  };
+
+  // Réinitialiser le zoom lors du changement d'image
+  const handleImageChange = (newIndex) => {
+    setCurrentImageIndex(newIndex);
+    setIsZoomed(false);
   };
 
   // Gestion clavier
@@ -291,7 +315,12 @@ function ImageLightbox({ project, onClose }) {
                 <img
                   src={gallery[currentImageIndex]}
                   alt={`${title} ${currentImageIndex + 1}`}
-                  className="lightbox-gallery__image"
+                  className={`lightbox-gallery__image ${
+                    isZoomed ? "lightbox-gallery__image--zoomed" : ""
+                  }`}
+                  onClick={handleImageClick}
+                  onDoubleClick={handleImageDoubleClick}
+                  onMouseDown={handleImageMouseDown}
                 />
 
                 {gallery.length > 1 && (

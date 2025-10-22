@@ -31,12 +31,14 @@
   border-radius: v.$border-radius-md;
   max-width: 1200px;
   width: 100%;
-  max-height: 90vh;
+  max-height: 85vh; // Réduit pour laisser plus d'espace
   overflow-y: auto;
   position: relative;
   z-index: 1050; // 1050 - Au-dessus du backdrop
   animation: slideUp 0.3s ease;
   margin: auto; // Centre verticalement sur desktop
+  display: flex;
+  flex-direction: column;
 
   @media (max-width: 767px) {
     width: 100vw; // ✅ Largeur complète
@@ -159,15 +161,16 @@
 
 // Layout VISUAL (Photography/GraphicDesign)
 .lightbox-content--visual {
-  padding: 0;
+  padding: v.$spacing-4;
   position: relative; // ✅ Contexte de positionnement
   z-index: 1; // ✅ Z-index inférieur au header
+  flex: 1; // Prend l'espace disponible
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
 
   @media (max-width: 767px) {
-    flex: 1; // ✅ Prend l'espace disponible
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto; // ✅ Scroll interne uniquement
+    padding: v.$spacing-2;
     -webkit-overflow-scrolling: touch; // ✅ Smooth scroll iOS
   }
 }
@@ -177,20 +180,55 @@
   &__main {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 10;
-    background: v.$color-bg-light-blue;
+    background: v.$color-text-dark;
     border-radius: v.$border-radius-md;
-    overflow: hidden;
+    overflow: hidden; // Masquer les débordements par défaut
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // Hauteur dynamique selon le contexte
+    min-height: 300px;
+    max-height: calc(85vh - 200px); // Espace pour header + padding
 
     @media (max-width: 767px) {
       border-radius: 0;
+      max-height: calc(100vh - 120px); // Espace pour header mobile
+    }
+
+    // Permettre le scroll uniquement quand une image est zoomée
+    &:has(.lightbox-gallery__image--zoomed) {
+      overflow: auto;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
     }
   }
 
   &__image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain; // Garde les proportions sans rogner
+    object-position: center;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: zoom-in;
+    user-select: none; // Empêche la sélection d'image
+
+    // État zoomé
+    &--zoomed {
+      transform: scale(1.5);
+      cursor: zoom-out;
+
+      // Sur mobile, zoom plus modéré
+      @media (max-width: 767px) {
+        transform: scale(1.3);
+      }
+
+      // Sur très grand écran, zoom plus important
+      @media (min-width: 1440px) {
+        transform: scale(2);
+      }
+    }
   }
 
   // Flèches navigation
@@ -330,7 +368,7 @@
     .lightbox-gallery__main {
       aspect-ratio: 4 / 3;
       border-radius: 0;
-      background: v.$color-text-primary;
+      background: v.$color-text-dark;
 
       @media (min-width: 768px) {
         min-height: 500px;
