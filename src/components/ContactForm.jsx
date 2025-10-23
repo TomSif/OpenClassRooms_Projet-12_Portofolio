@@ -5,23 +5,48 @@ import { motion } from "framer-motion";
 const TypewriterPlaceholder = ({ text, isVisible }) => {
   const [displayedText, setDisplayedText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
     if (!isVisible) {
       setDisplayedText("");
       setCurrentIndex(0);
+      setIsDeleting(false);
       return;
     }
 
-    if (currentIndex < text.length) {
-      const timeout = setTimeout(() => {
-        setDisplayedText(text.slice(0, currentIndex + 1));
-        setCurrentIndex(currentIndex + 1);
-      }, 50); // Vitesse de frappe
+    let timeout;
 
-      return () => clearTimeout(timeout);
+    if (isDeleting) {
+      // Phase d'effacement
+      if (currentIndex > 0) {
+        timeout = setTimeout(() => {
+          setDisplayedText(text.slice(0, currentIndex - 1));
+          setCurrentIndex(currentIndex - 1);
+        }, 30); // Vitesse d'effacement plus rapide
+      } else {
+        // Recommencer l'écriture après une pause
+        timeout = setTimeout(() => {
+          setIsDeleting(false);
+        }, 1000); // Pause avant de recommencer
+      }
+    } else {
+      // Phase d'écriture
+      if (currentIndex < text.length) {
+        timeout = setTimeout(() => {
+          setDisplayedText(text.slice(0, currentIndex + 1));
+          setCurrentIndex(currentIndex + 1);
+        }, 80); // Vitesse de frappe
+      } else {
+        // Commencer l'effacement après une pause
+        timeout = setTimeout(() => {
+          setIsDeleting(true);
+        }, 2000); // Pause avant d'effacer
+      }
     }
-  }, [currentIndex, text, isVisible]);
+
+    return () => clearTimeout(timeout);
+  }, [currentIndex, text, isVisible, isDeleting]);
 
   return (
     <motion.span
@@ -155,7 +180,7 @@ const ContactForm = () => {
         className="form-group"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: false, amount: 0.3 }}
         transition={{ duration: 0.6 }}
         onViewportEnter={() => !isFocused && setShowTypewriter(true)}
       >

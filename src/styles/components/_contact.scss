@@ -57,13 +57,13 @@
   // Container flex pour layout côte à côte
   &__content {
     display: flex;
-    flex-direction: column; // Mobile : empilé verticalement
-    gap: v.$spacing-8; // 32px d'espace entre les 2 composants
+    flex-direction: column;
+    gap: v.$spacing-8; // 32px
 
     @media (min-width: 1024px) {
-      flex-direction: row; // Desktop : côte à côte horizontalement
+      flex-direction: row; // Desktop
       align-items: stretch; // Les 2 composants ont la même hauteur
-      gap: v.$spacing-12; // 48px d'espace en desktop
+      gap: v.$spacing-12; // 48px
     }
 
     // Les 2 composants enfants prennent 50% chacun en desktop
@@ -287,20 +287,25 @@
   padding: clamp(0.875rem, 3vw, 1.25rem); // Padding fluide
   background-color: v.$color-bg-white;
   border-radius: v.$border-radius-md;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  // border: 0.075rem solid #c6cace8e;
+  // box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
   text-decoration: none;
   cursor: pointer;
   transition: all v.$transition-base;
 
-  // Hover effect
+  // Hover effect (partagé avec l'état auto is-active)
+  &.is-active,
   &:hover {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
     transform: translateY(-4px);
+    border-color: rgba(0, 0, 0, 0.12);
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.12),
+      2px 4px 8px rgba(0, 0, 0, 0.18);
+  }
 
-    .detail-card__icon {
-      background-color: v.$color-accent-purple; // Fond violet
-      color: v.$color-bg-white; // Icône blanche
-    }
+  &.is-active .detail-card__icon,
+  &:hover .detail-card__icon {
+    background-color: v.$color-accent-purple; // Fond violet
+    color: v.$color-bg-white; // Icône blanche
   }
 
   // Icône carrée

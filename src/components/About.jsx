@@ -23,7 +23,7 @@ const About = () => {
           className="about__title"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2, margin: "-50px" }}
+          viewport={{ once: false, amount: 0.2, margin: "-50px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           About Me
@@ -34,7 +34,7 @@ const About = () => {
           className="about__layout"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.1, margin: "-30px" }}
+          viewport={{ once: false, amount: 0.1, margin: "-30px" }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
         >
           {/* Contenu principal (gauche) */}
