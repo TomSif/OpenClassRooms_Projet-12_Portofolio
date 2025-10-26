@@ -28,22 +28,22 @@ const CATEGORY_CONFIG = {
   Scholar: {
     color: "#fd853a",
     icon: "🎓",
-    label: "Scholar Project",
+    label: "Projet Scolaire",
   },
   Personal: {
     color: "#0088ff",
     icon: "💻",
-    label: "Personal Project",
+    label: "Projet Personnel",
   },
   Photography: {
     color: "#583fbc",
     icon: "📷",
-    label: "Photography",
+    label: "Photographie",
   },
   GraphicDesign: {
     color: "#7de0ea",
     icon: "🎨",
-    label: "Graphic Design",
+    label: "Design Graphique",
   },
 };
 
@@ -187,7 +187,7 @@ function ImageLightbox({ project, onClose }) {
           <button
             className="lightbox-header__close"
             onClick={onClose}
-            aria-label="Close modal"
+            aria-label="Fermer la modale"
           >
             <FaTimes />
           </button>
@@ -212,14 +212,14 @@ function ImageLightbox({ project, onClose }) {
                     <button
                       className="lightbox-gallery__arrow lightbox-gallery__arrow--prev"
                       onClick={goToPrevImage}
-                      aria-label="Previous image"
+                      aria-label="Image précédente"
                     >
                       <FaChevronLeft />
                     </button>
                     <button
                       className="lightbox-gallery__arrow lightbox-gallery__arrow--next"
                       onClick={goToNextImage}
-                      aria-label="Next image"
+                      aria-label="Image suivante"
                     >
                       <FaChevronRight />
                     </button>
@@ -239,10 +239,10 @@ function ImageLightbox({ project, onClose }) {
                           : ""
                       }`}
                       onClick={() => goToImage(index)}
-                      aria-label={`Go to image ${index + 1}`}
+                      aria-label={`Aller à l'image ${index + 1}`}
                       aria-current={index === currentImageIndex}
                     >
-                      <img src={img} alt={`Thumbnail ${index + 1}`} loading="lazy" />
+                      <img src={img} alt={`Miniature ${index + 1}`} loading="lazy" />
                     </button>
                   ))}
                 </div>
@@ -273,7 +273,7 @@ function ImageLightbox({ project, onClose }) {
               )}
 
               {/* Titre (masqué visuellement, déjà dans le header) */}
-              <h3 className="lightbox-details__title">About this project</h3>
+              <h3 className="lightbox-details__title">À propos de ce projet</h3>
 
               {/* Description */}
               <p className="lightbox-details__description">{description}</p>
@@ -330,14 +330,14 @@ function ImageLightbox({ project, onClose }) {
                     <button
                       className="lightbox-gallery__arrow lightbox-gallery__arrow--prev"
                       onClick={goToPrevImage}
-                      aria-label="Previous image"
+                      aria-label="Image précédente"
                     >
                       <FaChevronLeft />
                     </button>
                     <button
                       className="lightbox-gallery__arrow lightbox-gallery__arrow--next"
                       onClick={goToNextImage}
-                      aria-label="Next image"
+                      aria-label="Image suivante"
                     >
                       <FaChevronRight />
                     </button>
@@ -355,7 +355,7 @@ function ImageLightbox({ project, onClose }) {
                             : ""
                         }`}
                         onClick={() => goToImage(index)}
-                        aria-label={`Go to image ${index + 1}`}
+                        aria-label={`Aller à l'image ${index + 1}`}
                         aria-current={index === currentImageIndex}
                         style={{
                           backgroundColor:

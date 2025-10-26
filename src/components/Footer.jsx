@@ -34,7 +34,7 @@ const Footer = () => {
             <ul className="footer__nav-list">
               <li>
                 <button onClick={scrollToTop} className="footer__nav-link">
-                  Home
+                  Accueil
                 </button>
               </li>
               <li>
@@ -42,7 +42,7 @@ const Footer = () => {
                   onClick={() => scrollToSection("about")}
                   className="footer__nav-link"
                 >
-                  About
+                  À Propos
                 </button>
               </li>
               <li>
@@ -50,7 +50,7 @@ const Footer = () => {
                   onClick={() => scrollToSection("portfolio")}
                   className="footer__nav-link"
                 >
-                  Portfolio
+                  Travaux Sélectionnés
                 </button>
               </li>
               <li>
@@ -58,7 +58,7 @@ const Footer = () => {
                   onClick={() => scrollToSection("works")}
                   className="footer__nav-link"
                 >
-                  Works
+                  Travaux
                 </button>
               </li>
               <li>
@@ -74,7 +74,7 @@ const Footer = () => {
 
           {/* Colonne 3 : Availability + GitHub */}
           <div className="footer__info">
-            <h4 className="footer__info-title">Availability</h4>
+            <h4 className="footer__info-title">Disponibilité</h4>
 
             {/* Badge de disponibilité */}
             <div
@@ -114,7 +114,7 @@ const Footer = () => {
               aria-label="Voir mon code sur GitHub"
             >
               <FaGithub className="footer__github-icon" />
-              <span className="footer__github-text">View my code</span>
+              <span className="footer__github-text">Voir mon code</span>
             </a>
           </div>
         </div>
@@ -122,7 +122,7 @@ const Footer = () => {
         {/* Bas du footer : Copyright */}
         <div className="footer__bottom">
           <p className="footer__copyright">
-            © 2025 Thomas Sifferle. All rights reserved.
+            © 2025 Thomas Sifferle. Tous droits réservés.
           </p>
           <p className="footer__credits">Développé avec React & Sass</p>
         </div>

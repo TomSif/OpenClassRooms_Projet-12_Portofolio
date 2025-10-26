@@ -195,14 +195,14 @@ const ProjectPage = () => {
                     <button
                       className="lightbox-gallery__arrow lightbox-gallery__arrow--prev"
                       onClick={goToPrevImage}
-                      aria-label="Previous image"
+                      aria-label="Image précédente"
                     >
                       <FaChevronLeft />
                     </button>
                     <button
                       className="lightbox-gallery__arrow lightbox-gallery__arrow--next"
                       onClick={goToNextImage}
-                      aria-label="Next image"
+                      aria-label="Image suivante"
                     >
                       <FaChevronRight />
                     </button>
@@ -222,10 +222,10 @@ const ProjectPage = () => {
                           : ""
                       }`}
                       onClick={() => goToImage(index)}
-                      aria-label={`Go to image ${index + 1}`}
+                      aria-label={`Aller à l'image ${index + 1}`}
                       aria-current={index === currentImageIndex}
                     >
-                      <img src={img} alt={`Thumbnail ${index + 1}`} loading="lazy" />
+                      <img src={img} alt={`Miniature ${index + 1}`} loading="lazy" />
                     </button>
                   ))}
                 </div>
@@ -263,7 +263,7 @@ const ProjectPage = () => {
               )}
 
               {/* Titre */}
-              <h3 className="lightbox-details__title">About this project</h3>
+              <h3 className="lightbox-details__title">À propos de ce projet</h3>
 
               {/* Description */}
               <p className="lightbox-details__description">{description}</p>
@@ -465,14 +465,14 @@ const ProjectPage = () => {
                     <button
                       className="lightbox-gallery__arrow lightbox-gallery__arrow--prev"
                       onClick={goToPrevImage}
-                      aria-label="Previous image"
+                      aria-label="Image précédente"
                     >
                       <FaChevronLeft />
                     </button>
                     <button
                       className="lightbox-gallery__arrow lightbox-gallery__arrow--next"
                       onClick={goToNextImage}
-                      aria-label="Next image"
+                      aria-label="Image suivante"
                     >
                       <FaChevronRight />
                     </button>
@@ -490,7 +490,7 @@ const ProjectPage = () => {
                             : ""
                         }`}
                         onClick={() => goToImage(index)}
-                        aria-label={`Go to image ${index + 1}`}
+                        aria-label={`Aller à l'image ${index + 1}`}
                         aria-current={index === currentImageIndex}
                         style={{
                           backgroundColor:

@@ -155,7 +155,7 @@ function PortfolioCard({ project }) {
             Voir le projet <FaArrowRight aria-hidden="true" />
           </Link>
 
-          {/* Liens externes (GitHub + Live Demo) */}
+          {/* Liens externes (GitHub + Live Démo) */}
           <div className="portfolio-card__external-links">
             {details.github && (
               <a
@@ -176,7 +176,7 @@ function PortfolioCard({ project }) {
                 className="portfolio-card__github"
                 aria-label={`Voir la démo en ligne pour ${title}`}
               >
-                <FaExternalLinkAlt aria-hidden="true" /> Demo
+                <FaExternalLinkAlt aria-hidden="true" /> Démo
               </a>
             )}
           </div>

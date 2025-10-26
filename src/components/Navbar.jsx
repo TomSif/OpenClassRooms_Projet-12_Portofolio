@@ -87,16 +87,16 @@ const Navbar = () => {
         {/* Desktop Navigation Links */}
         <div className="navbar__nav">
           <a href="#" className="navbar__nav-link">
-            Home
+            Accueil
           </a>
           <a href="#about" className="navbar__nav-link">
-            About
+            À Propos
           </a>
           <a href="#portfolio" className="navbar__nav-link">
-            Selected Works
+            Travaux Sélectionnés
           </a>
           <a href="#works" className="navbar__nav-link">
-            Works
+            Travaux
           </a>
         </div>
 
@@ -152,7 +152,7 @@ const Navbar = () => {
                   className="navbar__dropdown-link"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Home
+                  Accueil
                 </a>
               </motion.li>
               <motion.li
@@ -167,7 +167,7 @@ const Navbar = () => {
                   className="navbar__dropdown-link"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  About
+                  À Propos
                 </a>
               </motion.li>
               <motion.li
@@ -182,7 +182,7 @@ const Navbar = () => {
                   className="navbar__dropdown-link"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Selected Works
+                  Travaux Sélectionnés
                 </a>
               </motion.li>
               <motion.li
@@ -197,7 +197,7 @@ const Navbar = () => {
                   className="navbar__dropdown-link"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Works
+                  Travaux
                 </a>
               </motion.li>
             </motion.ul>

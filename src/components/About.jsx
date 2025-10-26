@@ -26,7 +26,7 @@ const About = () => {
           viewport={{ once: false, amount: 0.2, margin: "-50px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          About Me
+          À Propos
         </motion.h2>
 
         {/* Layout responsive */}
@@ -104,7 +104,7 @@ const About = () => {
           <div className="about__sidebar">
             {/* Expériences */}
             <div className="about__experiences">
-              <h3 className="about__experiences-title">Experiences</h3>
+              <h3 className="about__experiences-title">Expériences</h3>
 
               <div className="about__experience-item">
                 <span className="about__experience-year">25</span>
@@ -120,7 +120,7 @@ const About = () => {
                 <span className="about__experience-year">24</span>
                 <div className="about__experience-content">
                   <h4 className="about__experience-role">Maxi-Zoo</h4>
-                  <p className="about__experience-subtitle">Seller</p>
+                  <p className="about__experience-subtitle">Vendeur</p>
                 </div>
               </div>
 
@@ -137,7 +137,7 @@ const About = () => {
               <div className="about__experience-item">
                 <span className="about__experience-year">21</span>
                 <div className="about__experience-content">
-                  <h4 className="about__experience-role">Photographer</h4>
+                  <h4 className="about__experience-role">Photographe</h4>
                   <p className="about__experience-subtitle">
                     Auto-entrepreneur
                   </p>
@@ -159,7 +159,7 @@ const About = () => {
                 href="#contact"
                 className="about__cta-btn about__cta-btn--primary"
               >
-                Hire me
+                Me recruter
               </a>
               <a
                 href="/Thomas_Sifferle_CV.pdf"
@@ -168,7 +168,7 @@ const About = () => {
                 rel="noopener noreferrer"
                 className="about__cta-btn about__cta-btn--secondary"
               >
-                Download CV
+                Télécharger CV
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                   <path
                     d="M10 3V13M10 13L6 9M10 13L14 9M3 17H17"

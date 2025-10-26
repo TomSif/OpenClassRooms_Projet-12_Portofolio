@@ -8,10 +8,9 @@ const Contact = () => {
       <div className="contact__container">
         {/* En-tête */}
         <div className="contact__header">
-          <h2 className="contact__title">Get in touch</h2>
+          <h2 className="contact__title">Contactez-moi</h2>
           <p className="contact__subtitle">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et
+            Une question, un projet ou simplement envie d'échanger ? N'hésitez pas à me contacter, je vous répondrai rapidement.
           </p>
         </div>
 

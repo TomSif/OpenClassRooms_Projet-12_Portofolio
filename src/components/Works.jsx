@@ -13,25 +13,25 @@ import {
 const CATEGORIES = [
   {
     id: "Scholar",
-    label: "Scholar",
+    label: "Formation",
     color: "#fd853a",
     icon: <FaGraduationCap />,
   },
   {
     id: "Personal",
-    label: "Personal",
+    label: "Personnel",
     color: "#0088ff",
     icon: <FaLaptopCode />,
   },
   {
     id: "Photography",
-    label: "Photography",
+    label: "Photographie",
     color: "#583fbc",
     icon: <FaCamera />,
   },
   {
     id: "GraphicDesign",
-    label: "Graphic Design",
+    label: "Design Graphique",
     color: "#7de0ea",
     icon: <FaPalette />,
   },
@@ -49,18 +49,17 @@ function Works() {
       <div className="works__container">
         {/* En-tête de section */}
         <header className="works__header">
-          <h2 className="works__title">My Works</h2>
+          <h2 className="works__title">Mes Travaux</h2>
           <p className="works__description">
-            Explore my projects across web development, photography, and graphic
-            design. Each work represents a unique challenge and creative
-            solution.
+            Découvrez mes projets en développement web, photographie et design graphique.
+            Chaque travail représente un défi unique et une solution créative.
           </p>
         </header>
 
         {/* Menu de filtrage */}
         <nav
           className="works__filters"
-          aria-label="Filter projects by category"
+          aria-label="Filtrer les projets par catégorie"
         >
           {CATEGORIES.map((category) => (
             <button
@@ -97,7 +96,7 @@ function Works() {
                     setSelectedProject(project);
                   }
                 }}
-                aria-label={`View ${project.title} project details`}
+                aria-label={`Voir les détails du projet ${project.title}`}
                 style={{ cursor: "pointer" }}
               >
                 <div className="works__card-image">
@@ -110,13 +109,13 @@ function Works() {
                 <h3 className="works__card-title">{project.title}</h3>
                 <p className="works__card-description">{project.description}</p>
                 <div className="works__card-indicator">
-                  <span>View Project</span>
+                  <span>Voir le projet</span>
                   <FaArrowRight />
                 </div>
               </article>
             ))
           ) : (
-            <p className="works__empty">No projects in this category yet.</p>
+            <p className="works__empty">Aucun projet dans cette catégorie pour le moment.</p>
           )}
         </div>
       </div>

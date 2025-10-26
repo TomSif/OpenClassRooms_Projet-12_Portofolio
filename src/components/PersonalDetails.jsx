@@ -106,7 +106,7 @@ const PersonalDetails = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        Let's discuss your Project
+        Discutons de votre projet
       </motion.h3>
 
       {/* 3 Cards cliquables */}
@@ -133,7 +133,7 @@ const PersonalDetails = () => {
             <FaMapMarkerAlt />
           </div>
           <div className="detail-card__content">
-            <span className="detail-card__label">Address:</span>
+            <span className="detail-card__label">Adresse :</span>
             <p className="detail-card__value">Traenheim, Bas-Rhin</p>
           </div>
         </motion.a>
@@ -158,7 +158,7 @@ const PersonalDetails = () => {
             <MdEmail />
           </div>
           <div className="detail-card__content">
-            <span className="detail-card__label">My Email:</span>
+            <span className="detail-card__label">Mon Email :</span>
             <p className="detail-card__value">thomas.sifferle@gmail.com</p>
           </div>
         </motion.a>
@@ -183,7 +183,7 @@ const PersonalDetails = () => {
             <MdPhone />
           </div>
           <div className="detail-card__content">
-            <span className="detail-card__label">Call Me Now:</span>
+            <span className="detail-card__label">Appelez-moi :</span>
             <p className="detail-card__value">+33 7 77 06 87 16</p>
           </div>
         </motion.a>

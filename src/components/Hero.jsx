@@ -12,16 +12,18 @@ const Hero = () => {
           {/* Texte principal */}
           <div className="hero__content">
             <h1 className="hero__title">
-              HEY!
+              Hello !
               <br />
-              I'm Thomas,
+              Moi c'est Thomas,
               <br />
-              <span className="hero__title-highlight">Front-End developer</span>
+              <span className="hero__title-highlight">
+                Développeur Front-End
+              </span>
             </h1>
 
             <p className="hero__description">
-              Agency-quality Webflow websites with the personal touch of a
-              freelancer.
+              Sites internet de qualité professionnelle avec la touche
+              personnelle d'un développeur passionné.
             </p>
 
             {/* Boutons sociaux */}
