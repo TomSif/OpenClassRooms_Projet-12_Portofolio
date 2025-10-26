@@ -43,7 +43,7 @@ const PersonalDetails = () => {
       { index: 0, delay: 900 },
       { index: 1, delay: 900 },
       { index: 2, delay: 900 },
-      { index: -1, delay: 30000 },
+      { index: -1, delay: 20000 },
     ];
     let currentIndex = 0;
 

@@ -203,6 +203,7 @@ function ImageLightbox({ project, onClose }) {
                   src={gallery[currentImageIndex]}
                   alt={`${title} screenshot ${currentImageIndex + 1}`}
                   className="lightbox-gallery__image"
+                  loading="lazy"
                 />
 
                 {/* Flèches navigation */}
@@ -241,7 +242,7 @@ function ImageLightbox({ project, onClose }) {
                       aria-label={`Go to image ${index + 1}`}
                       aria-current={index === currentImageIndex}
                     >
-                      <img src={img} alt={`Thumbnail ${index + 1}`} />
+                      <img src={img} alt={`Thumbnail ${index + 1}`} loading="lazy" />
                     </button>
                   ))}
                 </div>
@@ -321,6 +322,7 @@ function ImageLightbox({ project, onClose }) {
                   onClick={handleImageClick}
                   onDoubleClick={handleImageDoubleClick}
                   onMouseDown={handleImageMouseDown}
+                  loading="lazy"
                 />
 
                 {gallery.length > 1 && (

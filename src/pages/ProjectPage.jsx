@@ -168,6 +168,7 @@ const ProjectPage = () => {
                     src={gallery[currentImageIndex]}
                     alt={`${title} screenshot ${currentImageIndex + 1}`}
                     className="lightbox-gallery__image"
+                    loading="lazy"
                     onError={(e) => {
                       console.error(
                         "Image failed to load:",
@@ -224,7 +225,7 @@ const ProjectPage = () => {
                       aria-label={`Go to image ${index + 1}`}
                       aria-current={index === currentImageIndex}
                     >
-                      <img src={img} alt={`Thumbnail ${index + 1}`} />
+                      <img src={img} alt={`Thumbnail ${index + 1}`} loading="lazy" />
                     </button>
                   ))}
                 </div>
@@ -456,6 +457,7 @@ const ProjectPage = () => {
                   src={gallery[currentImageIndex]}
                   alt={`${title} ${currentImageIndex + 1}`}
                   className="lightbox-gallery__image"
+                  loading="lazy"
                 />
 
                 {gallery.length > 1 && (

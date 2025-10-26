@@ -1,36 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
+
   <!-- ===== PAGE D'ACCUEIL ===== -->
   <url>
     <loc>https://thomas-sifferle-portfolio.vercel.app/</loc>
-    <lastmod>2025-10-21</lastmod>
+    <lastmod>2025-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  
-  <!-- ===== PAGE LISTE PROJETS ===== -->
-  <url>
-    <loc>https://thomas-sifferle-portfolio.vercel.app/projects</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
+
   <!-- ===== PROJETS FEATURED ===== -->
-  
+
   <!-- Projet 1 : Sophie Bluel -->
   <url>
-    <loc>https://thomas-sifferle-portfolio.vercel.app/projects/sophie-bluel</loc>
-    <lastmod>2025-10-21</lastmod>
+    <loc>https://thomas-sifferle-portfolio.vercel.app/project/sophie-bluel</loc>
+    <lastmod>2025-10-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
-  
+
   <!-- Projet 2 : Argent Bank -->
   <url>
-    <loc>https://thomas-sifferle-portfolio.vercel.app/projects/argent-bank</loc>
-    <lastmod>2025-10-21</lastmod>
+    <loc>https://thomas-sifferle-portfolio.vercel.app/project/argent-bank</loc>
+    <lastmod>2025-10-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
