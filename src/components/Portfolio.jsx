@@ -4,14 +4,15 @@
 import { useState } from "react";
 import PortfolioCard from "./PortfolioCard";
 import { allProjects } from "../data/project";
+import useScrollDirection from "../hooks/useScrollDirection";
+import FadeInScrollDirection from "../animations/FadeInScrollDirection";
 
 function Portfolio() {
-  // DEBUG : Voir ce qui arrive
-  console.log("📦 All projects:", allProjects);
-  console.log("📦 Projects count:", allProjects?.length || 0);
-
   // State pour les filtres (optionnel)
   const [activeFilter, setActiveFilter] = useState("all");
+
+  // Hook de détection de la direction du scroll
+  const scrollDirection = useScrollDirection();
 
   // SÉCURITÉ : Vérifier que allProjects existe et est un tableau
   if (!allProjects || !Array.isArray(allProjects)) {
@@ -32,9 +33,6 @@ function Portfolio() {
     (project) => project?.featured === true
   );
 
-  console.log("⭐ Featured projects:", featuredProjects);
-  console.log("⭐ Featured count:", featuredProjects.length);
-
   const filteredProjects =
     activeFilter === "all"
       ? featuredProjects
@@ -45,11 +43,16 @@ function Portfolio() {
       <div className="portfolio__container">
         {/* HEADER */}
         <div className="portfolio__header">
-          <h2>Mes Projets</h2>
-          <p>
-            Découvrez une sélection de mes réalisations, alliant design moderne
-            et développement front-end performant.
-          </p>
+          <FadeInScrollDirection direction={scrollDirection}>
+            <h2>Mes Projets</h2>
+          </FadeInScrollDirection>
+
+          <FadeInScrollDirection direction={scrollDirection} delay={0.2}>
+            <p>
+              Découvrez une sélection de mes réalisations, alliant design moderne
+              et développement front-end performant.
+            </p>
+          </FadeInScrollDirection>
         </div>
 
         {/* DEBUG INFO (à retirer après) */}

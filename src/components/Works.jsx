@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { getProjectsByCategory } from "../data/project";
 import ImageLightbox from "./ImageLightbox";
+import useScrollDirection from "../hooks/useScrollDirection";
+import FadeInScrollDirection from "../animations/FadeInScrollDirection";
 import {
   FaGraduationCap,
   FaLaptopCode,
@@ -40,6 +42,8 @@ const CATEGORIES = [
 function Works() {
   const [activeFilter, setActiveFilter] = useState("Scholar");
   const [selectedProject, setSelectedProject] = useState(null);
+  const scrollDirection = useScrollDirection();
+
   // Utiliser la fonction utilitaire du fichier projects.js
   // getProjectsByCategory retourne déjà les workProjects filtrés
   const filteredProjects = getProjectsByCategory(activeFilter).slice(0, 6);
@@ -49,11 +53,16 @@ function Works() {
       <div className="works__container">
         {/* En-tête de section */}
         <header className="works__header">
-          <h2 className="works__title">Mes Travaux</h2>
-          <p className="works__description">
-            Découvrez mes projets en développement web, photographie et design graphique.
-            Chaque travail représente un défi unique et une solution créative.
-          </p>
+          <FadeInScrollDirection direction={scrollDirection}>
+            <h2 className="works__title">Mes Travaux</h2>
+          </FadeInScrollDirection>
+
+          <FadeInScrollDirection direction={scrollDirection} delay={0.2}>
+            <p className="works__description">
+              Découvrez mes projets en développement web, photographie et design graphique.
+              Chaque travail représente un défi unique et une solution créative.
+            </p>
+          </FadeInScrollDirection>
         </header>
 
         {/* Menu de filtrage */}
