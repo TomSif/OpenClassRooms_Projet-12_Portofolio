@@ -9,7 +9,9 @@ import SlideInLeft from "../animations/SlideInLeft";
 
 const Hero = () => {
   const lottieRef = useRef(null);
+  const heroRef = useRef(null);
   const [showAnimation, setShowAnimation] = useState(true);
+  const animationTimerRef = useRef(null);
 
   // Variants pour le container parent (stagger)
   const containerVariants = {
@@ -22,30 +24,75 @@ const Hero = () => {
     },
   };
 
-  // Contrôle de l'alternance animation/image
-  useEffect(() => {
-    // Animation visible pendant 9.5s, puis cache pour laisser voir l'image fixe
-    const timer = setTimeout(() => {
-      setShowAnimation(false); // Cacher l'animation
+  // Fonction pour jouer l'animation une fois
+  const playAnimationOnce = () => {
+    const dotLottie = lottieRef.current;
+    if (!dotLottie) return;
+
+    // Annuler le timer précédent s'il existe
+    if (animationTimerRef.current) {
+      clearTimeout(animationTimerRef.current);
+    }
+
+    // Remettre à zéro et relancer l'animation
+    dotLottie.stop(); // Arrêter l'animation
+    dotLottie.setFrame(0); // Remettre à la frame 0
+    dotLottie.play(); // Relancer depuis le début
+
+    // Afficher l'animation
+    setShowAnimation(true);
+
+    // Cacher après 9.5s
+    animationTimerRef.current = setTimeout(() => {
+      setShowAnimation(false);
+      dotLottie.pause(); // Mettre en pause quand invisible
     }, 9500);
+  };
 
-    // Répéter le cycle toutes les 12 secondes (durée totale de l'animation)
-    const cycleInterval = setInterval(() => {
-      setShowAnimation(true); // Relancer l'animation
-
-      setTimeout(() => {
-        setShowAnimation(false); // Cacher après 9.5s
-      }, 9500);
-    }, 12000);
+  // Animation au chargement initial
+  useEffect(() => {
+    // Petit délai pour s'assurer que le dotLottie est prêt
+    const initTimer = setTimeout(() => {
+      playAnimationOnce();
+    }, 100);
 
     return () => {
-      clearTimeout(timer);
-      clearInterval(cycleInterval);
+      clearTimeout(initTimer);
+      if (animationTimerRef.current) {
+        clearTimeout(animationTimerRef.current);
+      }
+    };
+  }, []);
+
+  // Détecter le retour sur le Hero via scroll
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // Si le Hero entre dans le viewport
+          if (entry.isIntersecting) {
+            playAnimationOnce();
+          }
+        });
+      },
+      {
+        threshold: 0.3, // Déclenche quand 30% du Hero est visible
+      }
+    );
+
+    if (heroRef.current) {
+      observer.observe(heroRef.current);
+    }
+
+    return () => {
+      if (heroRef.current) {
+        observer.unobserve(heroRef.current);
+      }
     };
   }, []);
 
   return (
-    <section className="hero">
+    <section className="hero" ref={heroRef}>
       <div className="hero__container">
         <div className="hero__layout">
           {/* Texte principal */}
@@ -158,8 +205,8 @@ const Hero = () => {
                     lottieRef.current = dotLottie;
                   }}
                   src="/animations/Hero-animation-test.lottie"
-                  loop={true}
-                  autoplay={true}
+                  loop={false}
+                  autoplay={false}
                   className="hero__lottie-animation"
                 />
               </div>
