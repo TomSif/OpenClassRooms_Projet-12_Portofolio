@@ -2,11 +2,15 @@
 // 🎯 HERO.JSX - COMPOSANT HERO
 // ===================================
 // Fichier : src/components/Hero.jsx
+import { useRef, useEffect, useState } from "react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { motion } from "framer-motion";
 import SlideInLeft from "../animations/SlideInLeft";
 
 const Hero = () => {
+  const lottieRef = useRef(null);
+  const [showAnimation, setShowAnimation] = useState(true);
+
   // Variants pour le container parent (stagger)
   const containerVariants = {
     hidden: {},
@@ -17,6 +21,28 @@ const Hero = () => {
       },
     },
   };
+
+  // Contrôle de l'alternance animation/image
+  useEffect(() => {
+    // Animation visible pendant 9.5s, puis cache pour laisser voir l'image fixe
+    const timer = setTimeout(() => {
+      setShowAnimation(false); // Cacher l'animation
+    }, 9500);
+
+    // Répéter le cycle toutes les 12 secondes (durée totale de l'animation)
+    const cycleInterval = setInterval(() => {
+      setShowAnimation(true); // Relancer l'animation
+
+      setTimeout(() => {
+        setShowAnimation(false); // Cacher après 9.5s
+      }, 9500);
+    }, 12000);
+
+    return () => {
+      clearTimeout(timer);
+      clearInterval(cycleInterval);
+    };
+  }, []);
 
   return (
     <section className="hero">
@@ -106,20 +132,37 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Container pour dotLottie animation */}
+          {/* Container pour dotLottie animation et image fixe */}
           <div className="hero__animation">
             <div className="hero__animation-placeholder">
-              <DotLottieReact
-                src="/animations/Hero-animation-test.lottie"
-                loop
-                autoplay
+              {/* Image statique (frame 284) - toujours visible en dessous */}
+              <div className="hero__lottie-static-wrapper">
+                <img
+                  src="/animations/animation-lottie-fix.webp"
+                  alt="Animation hero"
+                  className="hero__lottie-static"
+                  loading="lazy"
+                />
+              </div>
+
+              {/* Wrapper pour l'animation Lottie (superposée, opacity contrôlée) */}
+              <div
+                className="hero__lottie-animation-wrapper"
                 style={{
-                  width: "100%",
-                  maxWidth: "800px", // ✅ Augmenté de 400px → 600px
-                  height: "auto",
+                  opacity: showAnimation ? 1 : 0,
+                  transition: "opacity 0.5s ease",
                 }}
-                className="hero__lottie-animation"
-              />
+              >
+                <DotLottieReact
+                  dotLottieRefCallback={(dotLottie) => {
+                    lottieRef.current = dotLottie;
+                  }}
+                  src="/animations/Hero-animation-test.lottie"
+                  loop={true}
+                  autoplay={true}
+                  className="hero__lottie-animation"
+                />
+              </div>
             </div>
           </div>
         </div>

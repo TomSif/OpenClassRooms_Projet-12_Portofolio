@@ -165,12 +165,77 @@
   }
 
   &__animation-placeholder {
-    width: 100%;
-    max-width: 400px;
-    aspect-ratio: 1;
+    width: 350px;
+    height: 350px;
+    position: relative; // Pour permettre la superposition
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 767px) {
+      width: 280px;
+      height: 280px;
+    }
+  }
+
+  // Wrapper pour l'animation Lottie
+  &__lottie-animation-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 350px;
+    height: 350px;
+    margin: 0;
+    padding: 0;
+    z-index: 2; // Au-dessus de l'image
+
+    @media (max-width: 767px) {
+      width: 280px;
+      height: 280px;
+    }
+  }
+
+  // Fix pour Chrome - forcer la taille du Lottie tout en gardant les proportions
+  &__lottie-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 350px !important;
+    height: 350px !important;
+    margin: 0;
+    padding: 0;
+
+    @media (max-width: 767px) {
+      width: 280px !important;
+      height: 280px !important;
+    }
+  }
+
+  // Wrapper pour l'image statique
+  &__lottie-static-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% - 8px));
+    margin: 0;
+    padding: 0;
+    z-index: 1; // En dessous de l'animation
+    width: 212px;
+  }
+
+  // Image statique (frame 284) - Ajustée à 226px avec décalage vertical
+  &__lottie-static {
+    width: 226px;
+    height: 226px;
+    margin: 0;
+    padding: 0;
+    object-fit: contain;
+    display: block; // Évite l'espace inline-block
+
+    @media (max-width: 767px) {
+      width: 186px;
+      height: 186px;
+    }
   }
 
   &__image-circle {
