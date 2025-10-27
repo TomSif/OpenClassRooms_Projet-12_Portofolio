@@ -77,6 +77,11 @@ function PortfolioCard({ project }) {
   const technologies = project.technologies || [];
   const details = project.details || {};
 
+  // Sauvegarder la position de scroll avant de naviguer
+  const handleLinkClick = () => {
+    sessionStorage.setItem("homeScrollPosition", window.scrollY.toString());
+  };
+
   return (
     <article className="portfolio-card">
       {/* IMAGE CLIQUABLE AVEC INDICATION AU HOVER */}
@@ -84,6 +89,7 @@ function PortfolioCard({ project }) {
         to={`/project/${projectSlug}`}
         className="portfolio-card__image-wrapper"
         aria-label={`Voir les détails du projet ${title}`}
+        onClick={handleLinkClick}
       >
         <img
           src={thumbnail}
@@ -151,6 +157,7 @@ function PortfolioCard({ project }) {
             to={`/project/${projectSlug}`}
             className="portfolio-card__project-btn"
             aria-label={`Voir les détails du projet ${title}`}
+            onClick={handleLinkClick}
           >
             Voir le projet <FaArrowRight aria-hidden="true" />
           </Link>

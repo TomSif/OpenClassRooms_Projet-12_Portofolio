@@ -3,6 +3,7 @@
 // ===================================
 // Fichier : src/pages/Home/Home.jsx
 
+import { useEffect } from "react";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import About from "../components/About";
@@ -12,6 +13,19 @@ import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
 const Home = () => {
+  // Restaurer la position de scroll au retour d'une page projet
+  useEffect(() => {
+    const savedScrollPosition = sessionStorage.getItem("homeScrollPosition");
+
+    if (savedScrollPosition) {
+      // Attendre que le DOM soit complètement chargé
+      setTimeout(() => {
+        window.scrollTo(0, parseInt(savedScrollPosition, 10));
+        sessionStorage.removeItem("homeScrollPosition");
+      }, 0);
+    }
+  }, []);
+
   return (
     <main className="home">
       <Navbar />

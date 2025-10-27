@@ -118,6 +118,11 @@ const ProjectPage = () => {
     setCurrentImageIndex(index);
   };
 
+  // Scroll to top au chargement de la page
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Gestion clavier
   useEffect(() => {
     const handleKeyDown = (e) => {
