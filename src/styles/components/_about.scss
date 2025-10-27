@@ -4,6 +4,7 @@
 // Fichier : src/styles/components/_about.scss
 
 @use "../abstracts/variables" as v;
+@use "sass:color";
 
 .about {
   padding: 4rem 1.5rem;
@@ -199,7 +200,7 @@
       color: v.$color-text-white;
 
       &:hover {
-        background-color: darken(v.$color-primary, 12%);
+        background-color: color.scale(v.$color-primary, $lightness: -12%);
         color: v.$color-text-primary;
         transform: translateY(-2px);
         box-shadow: 0 4px 12px rgba(253, 133, 58, 0.3);

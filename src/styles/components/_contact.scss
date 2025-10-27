@@ -5,6 +5,7 @@
 // Pas de mixins sur ce projet
 
 @use "../abstracts/variables" as v;
+@use "sass:color";
 
 // ========== SECTION CONTACT ==========
 .contact {
@@ -200,7 +201,7 @@
   justify-content: center;
 
   &:hover:not(:disabled) {
-    background-color: darken(v.$color-primary, 12%);
+    background-color: color.scale(v.$color-primary, $lightness: -12%);
     color: v.$color-text-primary;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(253, 133, 58, 0.3);
@@ -238,13 +239,13 @@
 
   &--success {
     background-color: rgba(16, 185, 129, 0.1); // $color-success avec alpha
-    color: darken(#10b981, 10%);
+    color: color.scale(#10b981, $lightness: -10%);
     border: 1px solid rgba(16, 185, 129, 0.3);
   }
 
   &--error {
     background-color: rgba(239, 68, 68, 0.1); // $color-error avec alpha
-    color: darken(#ef4444, 10%);
+    color: color.scale(#ef4444, $lightness: -10%);
     border: 1px solid rgba(239, 68, 68, 0.3);
   }
 }
@@ -375,7 +376,7 @@
       color: v.$color-bg-white;
 
       &:hover {
-        background-color: darken(#583fbc, 10%);
+        background-color: color.scale(#583fbc, $lightness: -10%);
         transform: translateY(-2px);
       }
     }

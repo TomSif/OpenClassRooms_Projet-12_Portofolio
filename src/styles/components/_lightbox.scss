@@ -2,6 +2,7 @@
 // 🎨 LIGHTBOX - MODALE PROJETS
 // ===================================
 @use "../abstracts/variables" as v;
+@use "sass:color";
 
 // ===== OVERLAY =====
 .lightbox-overlay {
@@ -470,7 +471,7 @@
     color: white;
 
     &:hover {
-      background: darken(v.$color-primary, 12%);
+      background: color.scale(v.$color-primary, $lightness: -12%);
       color: v.$color-text-primary;
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(253, 133, 58, 0.3);
@@ -487,7 +488,7 @@
     color: white;
 
     &:hover {
-      background: lighten(v.$color-text-primary, 10%);
+      background: color.scale(v.$color-text-primary, $lightness: +10%);
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(v.$color-text-primary, 0.3);
     }
