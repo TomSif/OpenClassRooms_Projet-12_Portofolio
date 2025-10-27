@@ -53,13 +53,22 @@
     }
   }
 
+  // Wrapper pour les lignes séparées
+  &__title-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem; // Espacement entre les lignes
+    margin-bottom: 1rem;
+    overflow: hidden; // Cache les textes qui dépassent pendant l'animation
+  }
+
   &__title {
     font-family: v.$font-accent;
     font-size: 2rem;
     font-weight: 700;
     color: v.$color-text-primary;
     line-height: 1.2;
-    margin-bottom: 1rem;
+    margin-bottom: 0; // Annule le margin car géré par wrapper
 
     @media (min-width: 768px) {
       font-size: 2.5rem;
@@ -68,6 +77,10 @@
     @media (min-width: 1024px) {
       font-size: 3rem;
     }
+  }
+
+  &__title-line {
+    display: block; // Chaque ligne en bloc séparé
   }
 
   &__title-highlight {

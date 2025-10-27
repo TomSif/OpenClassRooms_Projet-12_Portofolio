@@ -3,23 +3,51 @@
 // ===================================
 // Fichier : src/components/Hero.jsx
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { motion } from "framer-motion";
+import SlideInLeft from "../animations/SlideInLeft";
 
 const Hero = () => {
+  // Variants pour le container parent (stagger)
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.3, // Décalage de 0.3s entre chaque enfant
+        delayChildren: 0.5,   // Délai initial de 0.5s avant le premier
+      },
+    },
+  };
+
   return (
     <section className="hero">
       <div className="hero__container">
         <div className="hero__layout">
           {/* Texte principal */}
           <div className="hero__content">
-            <h1 className="hero__title">
-              Hello !
-              <br />
-              Moi c'est Thomas,
-              <br />
-              <span className="hero__title-highlight">
-                Développeur Front-End
-              </span>
-            </h1>
+            <motion.div
+              className="hero__title-wrapper"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              <SlideInLeft>
+                <h1 className="hero__title hero__title-line">Hello !</h1>
+              </SlideInLeft>
+
+              <SlideInLeft>
+                <h1 className="hero__title hero__title-line">
+                  Moi c'est Thomas,
+                </h1>
+              </SlideInLeft>
+
+              <SlideInLeft>
+                <h1 className="hero__title hero__title-line">
+                  <span className="hero__title-highlight">
+                    Développeur Front-End
+                  </span>
+                </h1>
+              </SlideInLeft>
+            </motion.div>
 
             <p className="hero__description">
               Sites internet de qualité professionnelle avec la touche
