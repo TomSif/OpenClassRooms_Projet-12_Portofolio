@@ -221,6 +221,10 @@
     padding: 0;
     z-index: 1; // En dessous de l'animation
     width: 212px;
+
+    @media (max-width: 767px) {
+      width: 170px;
+    }
   }
 
   // Image statique (frame 284) - Ajustée à 226px avec décalage vertical
