@@ -355,6 +355,12 @@
     transition: all 0.2s ease;
     z-index: 2;
 
+    // Visibilité assurée en mode plein écran
+    *:fullscreen & {
+      z-index: 9999;
+      background: rgba(255, 255, 255, 0.95);
+    }
+
     &:hover {
       background: white;
       transform: translateY(-50%) scale(1.1);
@@ -441,6 +447,13 @@
     background: rgba(0, 0, 0, 0.5);
     border-radius: v.$border-radius-full;
     padding: v.$spacing-2 v.$spacing-4;
+
+    // Visibilité assurée en mode plein écran
+    *:fullscreen & {
+      z-index: 9999;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+    }
   }
 
   &__dot {

@@ -363,8 +363,8 @@ function ImageLightbox({ project, onClose }) {
                   title="Double-cliquez pour afficher en plein écran"
                 />
 
-                {/* Flèches navigation - masquées en mode plein écran */}
-                {gallery.length > 1 && !isFullscreen && (
+                {/* Flèches navigation */}
+                {gallery.length > 1 && (
                   <>
                     <button
                       className="lightbox-gallery__arrow lightbox-gallery__arrow--prev"
@@ -382,8 +382,8 @@ function ImageLightbox({ project, onClose }) {
                     </button>
                   </>
                 )}
-                {/* Dots indicator - masqués en mode plein écran */}
-                {gallery.length > 1 && !isFullscreen && (
+                {/* Dots indicator */}
+                {gallery.length > 1 && (
                   <div className="lightbox-gallery__dots">
                     {gallery.map((_, index) => (
                       <button
