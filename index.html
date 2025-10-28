@@ -93,6 +93,79 @@
       type="font/woff2"
       crossorigin
     />
+    <!-- ===== JSON-LD SCHEMA MARKUP (SEO avancé) ===== -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://thomas-sifferle-portfolio.vercel.app/#person",
+            "name": "Thomas Sifferlé",
+            "givenName": "Thomas",
+            "familyName": "Sifferlé",
+            "jobTitle": "Développeur Front-End Junior",
+            "description": "Développeur Front-End Junior spécialisé en React et JavaScript, passionné par la création d'interfaces web performantes et accessibles. Expertise en gestion d'état Redux, intégration d'API REST et méthode agile.",
+            "url": "https://thomas-sifferle-portfolio.vercel.app",
+            "email": "thomas.sifferle@gmail.com",
+            "telephone": "+33777068716",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Traenheim",
+              "addressRegion": "Bas-Rhin",
+              "postalCode": "67310",
+              "addressCountry": "FR"
+            },
+            "knowsAbout": [
+              "React",
+              "JavaScript",
+              "TypeScript",
+              "Redux Toolkit",
+              "Sass",
+              "HTML5",
+              "CSS3",
+              "API REST",
+              "Git",
+              "Node.js",
+              "Développement Front-End",
+              "Accessibilité Web",
+              "Performance Web",
+              "SEO"
+            ],
+            "sameAs": [
+              "https://github.com/TomSif",
+              "https://linkedin.com/in/thomas-sifferle",
+              "https://behance.net/thomas-sifferle",
+              "https://instagram.com/thomas.sifferle",
+              "https://facebook.com/thomas.sifferle"
+            ],
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Disponible - Recherche CDI en remote ou Strasbourg"
+            },
+            "alumniOf": {
+              "@type": "EducationalOrganization",
+              "name": "OpenClassrooms",
+              "description": "Développeur Front-End (Bac+2)"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://thomas-sifferle-portfolio.vercel.app/#website",
+            "url": "https://thomas-sifferle-portfolio.vercel.app",
+            "name": "Thomas Sifferlé - Portfolio Développeur Front-End React",
+            "description": "Portfolio professionnel présentant mes projets React, Redux et JavaScript. Développeur Front-End Junior disponible en remote depuis Strasbourg.",
+            "inLanguage": "fr-FR",
+            "author": {
+              "@id": "https://thomas-sifferle-portfolio.vercel.app/#person"
+            },
+            "publisher": {
+              "@id": "https://thomas-sifferle-portfolio.vercel.app/#person"
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
