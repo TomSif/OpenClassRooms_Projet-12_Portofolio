@@ -76,52 +76,23 @@
     <title>
       Thomas Sifferlé | Développeur Front-End Junior React & JavaScript
     </title>
-    <!-- 1️⃣ DNS Prefetch (gagne ~50ms) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- 2️⃣ Préchargement police BODY (Plus Jakarta Sans - critique pour FCP) -->
+    <!-- ===== FONTS (hébergement local pour performance optimale) ===== -->
+    <!-- Polices chargées via @font-face dans src/styles/base/_typography.scss -->
+    <!-- Preload des polices critiques (body + headings) pour FCP optimal -->
     <link
       rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap"
+      href="/fonts/plus-jakarta-sans-v12-latin-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
-    <!-- BODY : Plus Jakarta Sans (2 weights au lieu de 5) -->
     <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap"
-      media="print"
-      onload="this.media='all'"
+      rel="preload"
+      href="/fonts/montserrat-v31-latin-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
-    <!-- HEADINGS : Poppins (3 weights au lieu de 5) -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
-      media="print"
-      onload="this.media='all'"
-    />
-    <!-- UI/ACCENT : Manrope (3 weights au lieu de 4) -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
-      media="print"
-      onload="this.media='all'"
-    />
-    <!-- 4️⃣ Fallback navigateurs sans JavaScript -->
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap"
-      />
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
-      />
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
-      />
-    </noscript>
-    <!-- ===== FIN OPTIMISATION FONTS ===== -->
   </head>
   <body>
     <div id="root"></div>
