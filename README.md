@@ -25,7 +25,6 @@ Portfolio de développeur Front-End créé dans le cadre de la formation [OpenCl
 > - ✅ Développement d'applications React modernes avec hooks
 > - 🎨 Création d'interfaces responsive et accessibles
 > - ⚡ Optimisation des performances web (SEO, Lighthouse)
-> - 🔄 Gestion d'état avec Redux Toolkit
 > - 🎭 Animations fluides avec Framer Motion
 
 ### 🌐 Démo Live :
@@ -209,12 +208,12 @@ npm run lint             # Vérifie le code avec ESLint
 
 ### Palette de couleurs
 
-| Couleur     | Hex       | Usage                    |
-| ----------- | --------- | ------------------------ |
-| **Primary** | `#fd853a` | CTA, liens, accents      |
-| **Secondary**| `#0088ff` | Titres, éléments clés   |
-| **Dark**    | `#2c3e50` | Texte principal          |
-| **Light**   | `#f8f9fa` | Arrière-plans            |
+| Couleur       | Hex       | Usage                 |
+| ------------- | --------- | --------------------- |
+| **Primary**   | `#fd853a` | CTA, liens, accents   |
+| **Secondary** | `#0088ff` | Titres, éléments clés |
+| **Dark**      | `#2c3e50` | Texte principal       |
+| **Light**     | `#f8f9fa` | Arrière-plans         |
 
 ### Typographie
 
@@ -228,11 +227,11 @@ npm run lint             # Vérifie le code avec ESLint
 Système basé sur des multiples de 8px pour une cohérence visuelle :
 
 ```scss
-$spacing-xs: 0.5rem;   // 8px
-$spacing-sm: 1rem;     // 16px
-$spacing-md: 1.5rem;   // 24px
-$spacing-lg: 2rem;     // 32px
-$spacing-xl: 3rem;     // 48px
+$spacing-xs: 0.5rem; // 8px
+$spacing-sm: 1rem; // 16px
+$spacing-md: 1.5rem; // 24px
+$spacing-lg: 2rem; // 32px
+$spacing-xl: 3rem; // 48px
 ```
 
 Toutes les variables sont centralisées dans `src/styles/abstracts/_variables.scss`
@@ -391,4 +390,4 @@ Specialized in React, JavaScript, Sass
 
 ---
 
-*Made with ❤️ and React*
+_Made with ❤️ and React_

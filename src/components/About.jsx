@@ -62,8 +62,7 @@ const About = () => {
               <p className="about__text">
                 Ma reconversion via <strong>OpenClassrooms</strong> (Bac+2
                 Intégrateur-Frontend) concrétise 25 ans de passion internet. Je
-                maîtrise{" "}
-                <strong>React, JavaScript ES6, TypeScript, Sass</strong> et{" "}
+                maîtrise <strong>React, JavaScript ES6, Sass</strong> et{" "}
                 <strong>Redux Toolkit</strong>, avec une expertise en{" "}
                 <strong>gestion d'état</strong> et{" "}
                 <strong>intégration d'API REST</strong>. Je travaille en{" "}
