@@ -181,7 +181,7 @@ function ImageLightbox({ project, onClose }) {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [currentImageIndex, gallery.length]);
 
-  // ✅ ICI : Gestion du scroll
+  // Gestion du scroll
   useEffect(() => {
     // Sauvegarde la position actuelle
     const scrollY = window.scrollY;
@@ -288,7 +288,11 @@ function ImageLightbox({ project, onClose }) {
                       aria-label={`Aller à l'image ${index + 1}`}
                       aria-current={index === currentImageIndex}
                     >
-                      <img src={img} alt={`Miniature ${index + 1}`} loading="lazy" />
+                      <img
+                        src={img}
+                        alt={`Miniature ${index + 1}`}
+                        loading="lazy"
+                      />
                     </button>
                   ))}
                 </div>
@@ -318,7 +322,7 @@ function ImageLightbox({ project, onClose }) {
                 </div>
               )}
 
-              {/* Titre (masqué visuellement, déjà dans le header) */}
+              {/* Titre  */}
               <h3 className="lightbox-details__title">À propos de ce projet</h3>
 
               {/* Description */}

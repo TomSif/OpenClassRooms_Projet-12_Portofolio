@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import {
   FaMapMarkerAlt,
   FaFacebookF,
-  FaDribbble,
   FaBehance,
   FaInstagram,
   FaLinkedinIn,

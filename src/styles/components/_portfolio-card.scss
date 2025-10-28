@@ -141,8 +141,8 @@
     align-items: center;
     justify-content: center;
     padding: v.$spacing-1 v.$spacing-3;
-    background: v.$color-secondary;
-    color: v.$color-text-white;
+    background: v.$color-bg-light-blue;
+    color: v.$color-text-primary; // Noir pour contraste optimal
     font-size: v.$font-size-sm;
     font-weight: v.$font-weight-bold;
     font-family: v.$font-accent;

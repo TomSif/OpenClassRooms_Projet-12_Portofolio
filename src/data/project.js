@@ -837,7 +837,7 @@ export const allProjects = [
     description: "Création photomontage pour les réseaux sociaux.",
 
     // ⚠️ Tu PEUX ajouter des technos pour GraphicDesign si pertinent
-    technologies: [TECH_NAMES.PHPHOTOSHOP, TECH_NAMES.ILLUSTRATOR],
+    technologies: [TECH_NAMES.PHOTOSHOP, TECH_NAMES.ILLUSTRATOR],
 
     details: {
       gallery: [

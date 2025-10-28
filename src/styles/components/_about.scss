@@ -20,7 +20,7 @@
     font-family: v.$font-accent;
     font-size: 2rem;
     font-weight: 700;
-    color: v.$color-text-primary;
+    color: black;
     margin-bottom: 1.5rem;
   }
 
@@ -197,7 +197,7 @@
 
     &--primary {
       background-color: v.$color-primary;
-      color: v.$color-text-white;
+      color: v.$color-text-primary;
 
       &:hover {
         background-color: color.scale(v.$color-primary, $lightness: -12%);

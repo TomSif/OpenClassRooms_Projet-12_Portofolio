@@ -178,7 +178,7 @@
 }
 
 .typewriter-cursor {
-  color: v.$color-primary;
+  color: black;
   font-weight: bold;
   margin-left: 1px;
 }
@@ -191,7 +191,7 @@
   font-size: v.$font-size-base;
   font-weight: 600;
   background-color: v.$color-primary;
-  color: v.$color-text-white;
+  color: v.$color-text-primary;
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;

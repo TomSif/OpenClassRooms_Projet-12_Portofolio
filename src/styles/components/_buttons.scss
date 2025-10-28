@@ -30,7 +30,7 @@
 // Bouton primaire (Orange)
 .btn-primary {
   background-color: v.$color-primary;
-  color: v.$color-text-white;
+  color: v.$color-text-primary;
   box-shadow: v.$shadow-md;
 
   &:hover:not(:disabled) {

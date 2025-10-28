@@ -122,8 +122,6 @@ function PortfolioCard({ project }) {
                 <span
                   key={index}
                   className="portfolio-card__tech-icon"
-                  title={tech}
-                  aria-label={tech}
                 >
                   {icon}
                   <span>{tech}</span>
@@ -132,8 +130,6 @@ function PortfolioCard({ project }) {
                 <span
                   key={index}
                   className="portfolio-card__tech-icon"
-                  title={tech}
-                  aria-label={tech}
                 >
                   <span>{tech}</span>
                 </span>

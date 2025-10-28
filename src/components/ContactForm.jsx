@@ -59,8 +59,9 @@ const TypewriterPlaceholder = ({ text, isVisible }) => {
       {isVisible && currentIndex <= text.length && (
         <motion.span
           className="typewriter-cursor"
-          animate={{ opacity: [0, 1, 0] }}
+          animate={{ opacity: [0.6, 1, 0.6] }}
           transition={{ duration: 0.8, repeat: Infinity }}
+          aria-hidden="true"
         >
           |
         </motion.span>
