@@ -16,7 +16,8 @@
     "react-dom": "^19.2.0",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.9.3",
-    "react-scripts": "^0.0.0"
+    "react-scripts": "^0.0.0",
+    "react-swipeable": "^7.0.2"
   },
   "eslintConfig": {
     "extends": [

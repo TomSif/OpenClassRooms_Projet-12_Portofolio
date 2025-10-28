@@ -344,9 +344,11 @@
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.9);
-    border: none;
-    color: v.$color-text-primary;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    color: #333;
     font-size: 1.25rem;
     cursor: pointer;
     display: flex;
@@ -355,14 +357,28 @@
     transition: all 0.2s ease;
     z-index: 2;
 
+    // Masquer uniquement sur mobile strict (< 768px ET tactile)
+    // Tablettes et desktop gardent les flèches
+    @media (max-width: 767px) and (hover: none) and (pointer: coarse) {
+      display: none;
+    }
+
     // Visibilité assurée en mode plein écran
     *:fullscreen & {
       z-index: 9999;
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+
+      // Masquer en fullscreen uniquement sur mobile strict
+      @media (max-width: 767px) and (hover: none) and (pointer: coarse) {
+        display: none;
+      }
     }
 
     &:hover {
-      background: white;
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+      color: #000;
       transform: translateY(-50%) scale(1.1);
     }
 

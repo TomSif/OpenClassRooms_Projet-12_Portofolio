@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useSwipeable } from "react-swipeable";
 import {
   FaTimes,
   FaChevronLeft,
@@ -83,6 +84,14 @@ function ImageLightbox({ project, onClose }) {
 
   const categoryConfig = CATEGORY_CONFIG[category] || CATEGORY_CONFIG.Scholar;
   const isCodeProject = category === "Scholar" || category === "Personal";
+
+  // Configuration du swipe pour navigation tactile
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => gallery.length > 1 && goToNextImage(),
+    onSwipedRight: () => gallery.length > 1 && goToPrevImage(),
+    preventScrollOnSwipe: true,
+    trackMouse: false, // Désactive le swipe à la souris (desktop)
+  });
 
   // Navigation images
   const goToPrevImage = () => {
@@ -235,7 +244,7 @@ function ImageLightbox({ project, onClose }) {
           <div className="lightbox-content lightbox-content--code">
             {/* GALERIE */}
             <div className="lightbox-gallery">
-              <div className="lightbox-gallery__main">
+              <div className="lightbox-gallery__main" {...swipeHandlers}>
                 <img
                   src={gallery[currentImageIndex]}
                   alt={`${title} screenshot ${currentImageIndex + 1}`}
@@ -353,7 +362,7 @@ function ImageLightbox({ project, onClose }) {
             }`}
           >
             <div className="lightbox-gallery lightbox-gallery--fullscreen">
-              <div className="lightbox-gallery__main">
+              <div className="lightbox-gallery__main" {...swipeHandlers}>
                 <img
                   src={gallery[currentImageIndex]}
                   alt={`${title} ${currentImageIndex + 1}`}
