@@ -247,14 +247,7 @@
       height: auto;
       object-fit: contain;
       object-position: center;
-
-      // En mode zoomé, l'image peut déborder et scroller
-      &--zoomed {
-        max-width: none;
-        max-height: none;
-        width: auto;
-        height: auto;
-      }
+      cursor: pointer;
     }
 
     // Flèches repositionnées
@@ -320,13 +313,6 @@
       border-radius: 0;
       max-height: calc(100vh - 120px); // Espace pour header mobile
     }
-
-    // Permettre le scroll uniquement quand une image est zoomée
-    &:has(.lightbox-gallery__image--zoomed) {
-      overflow: auto;
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
-    }
   }
 
   &__image {
@@ -336,24 +322,17 @@
     height: auto;
     object-fit: contain; // Garde les proportions sans rogner
     object-position: center;
-    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    cursor: zoom-in;
+    cursor: pointer;
     user-select: none; // Empêche la sélection d'image
 
-    // État zoomé
-    &--zoomed {
-      transform: scale(1.5);
-      cursor: zoom-out;
-
-      // Sur mobile, zoom plus modéré
-      @media (max-width: 767px) {
-        transform: scale(1.3);
-      }
-
-      // Sur très grand écran, zoom plus important
-      @media (min-width: 1440px) {
-        transform: scale(2);
-      }
+    // Mode plein écran : image adaptée au viewport
+    &:fullscreen {
+      max-width: 100vw;
+      max-height: 100vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      background: #000;
     }
   }
 

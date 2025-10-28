@@ -67,8 +67,8 @@ const TECH_ICONS = {
 
 function ImageLightbox({ project, onClose }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isZoomed, setIsZoomed] = useState(false);
   const [isDeviceLandscape, setIsDeviceLandscape] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   if (!project) return null;
 
@@ -101,27 +101,31 @@ function ImageLightbox({ project, onClose }) {
     handleImageChange(index);
   };
 
-  // Gestion du zoom au double-clic
-  const handleImageDoubleClick = (e) => {
+  // Gestion du plein écran au double-clic
+  const handleImageDoubleClick = async (e) => {
     e.preventDefault();
     e.stopPropagation();
-    console.log("Double-click détecté! Zoom actuel:", isZoomed);
-    setIsZoomed(!isZoomed);
+
+    const imageElement = e.currentTarget;
+
+    try {
+      if (!document.fullscreenElement) {
+        // Entrer en plein écran
+        await imageElement.requestFullscreen();
+        setIsFullscreen(true);
+      } else {
+        // Sortir du plein écran
+        await document.exitFullscreen();
+        setIsFullscreen(false);
+      }
+    } catch (error) {
+      console.error("Erreur plein écran:", error);
+    }
   };
 
-  // Debug - tester les événements
-  const handleImageClick = (e) => {
-    console.log("Click détecté sur l'image");
-  };
-
-  const handleImageMouseDown = (e) => {
-    console.log("MouseDown détecté sur l'image");
-  };
-
-  // Réinitialiser le zoom lors du changement d'image
+  // Changement d'image
   const handleImageChange = (newIndex) => {
     setCurrentImageIndex(newIndex);
-    setIsZoomed(false);
   };
 
   // Détection automatique de l'orientation du device
@@ -140,6 +144,19 @@ function ImageLightbox({ project, onClose }) {
 
     return () => {
       landscapeQuery.removeEventListener("change", handleOrientationChange);
+    };
+  }, []);
+
+  // Détection du mode plein écran
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+
+    return () => {
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
     };
   }, []);
 
@@ -340,16 +357,14 @@ function ImageLightbox({ project, onClose }) {
                 <img
                   src={gallery[currentImageIndex]}
                   alt={`${title} ${currentImageIndex + 1}`}
-                  className={`lightbox-gallery__image ${
-                    isZoomed ? "lightbox-gallery__image--zoomed" : ""
-                  }`}
-                  onClick={handleImageClick}
+                  className="lightbox-gallery__image"
                   onDoubleClick={handleImageDoubleClick}
-                  onMouseDown={handleImageMouseDown}
                   loading="lazy"
+                  title="Double-cliquez pour afficher en plein écran"
                 />
 
-                {gallery.length > 1 && (
+                {/* Flèches navigation - masquées en mode plein écran */}
+                {gallery.length > 1 && !isFullscreen && (
                   <>
                     <button
                       className="lightbox-gallery__arrow lightbox-gallery__arrow--prev"
@@ -367,8 +382,8 @@ function ImageLightbox({ project, onClose }) {
                     </button>
                   </>
                 )}
-                {/* Dots indicator */}
-                {gallery.length > 1 && (
+                {/* Dots indicator - masqués en mode plein écran */}
+                {gallery.length > 1 && !isFullscreen && (
                   <div className="lightbox-gallery__dots">
                     {gallery.map((_, index) => (
                       <button
