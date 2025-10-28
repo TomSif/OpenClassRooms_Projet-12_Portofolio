@@ -6,6 +6,7 @@ import {
   FaGithub,
   FaExternalLinkAlt,
 } from "react-icons/fa";
+import { MdScreenRotation } from "react-icons/md";
 import {
   SiJavascript,
   SiHtml5,
@@ -68,6 +69,8 @@ const TECH_ICONS = {
 function ImageLightbox({ project, onClose }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isZoomed, setIsZoomed] = useState(false);
+  const [isLandscapeMode, setIsLandscapeMode] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   if (!project) return null;
 
@@ -122,6 +125,22 @@ function ImageLightbox({ project, onClose }) {
     setCurrentImageIndex(newIndex);
     setIsZoomed(false);
   };
+
+  // Toggle mode paysage
+  const toggleLandscape = () => {
+    setIsLandscapeMode(!isLandscapeMode);
+  };
+
+  // Détection mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   // Gestion clavier
   useEffect(() => {
@@ -184,13 +203,32 @@ function ImageLightbox({ project, onClose }) {
             </h2>
           </div>
 
-          <button
-            className="lightbox-header__close"
-            onClick={onClose}
-            aria-label="Fermer la modale"
-          >
-            <FaTimes />
-          </button>
+          <div className="lightbox-header__actions">
+            {/* Toggle mode paysage - visible uniquement sur mobile pour projets visuels */}
+            {!isCodeProject && isMobile && (
+              <button
+                className={`lightbox-header__rotate ${
+                  isLandscapeMode ? "lightbox-header__rotate--active" : ""
+                }`}
+                onClick={toggleLandscape}
+                aria-label={
+                  isLandscapeMode ? "Mode portrait" : "Mode paysage"
+                }
+                title={isLandscapeMode ? "Mode portrait" : "Mode paysage"}
+                style={{ color: categoryConfig.color }}
+              >
+                <MdScreenRotation />
+              </button>
+            )}
+
+            <button
+              className="lightbox-header__close"
+              onClick={onClose}
+              aria-label="Fermer la modale"
+            >
+              <FaTimes />
+            </button>
+          </div>
         </header>
 
         {/* CONTENT - Layout Code Projects (Scholar/Personal) */}
@@ -310,7 +348,11 @@ function ImageLightbox({ project, onClose }) {
 
         {/* CONTENT - Layout Visual Projects (Photography/GraphicDesign) */}
         {!isCodeProject && (
-          <div className="lightbox-content lightbox-content--visual">
+          <div
+            className={`lightbox-content lightbox-content--visual ${
+              isLandscapeMode ? "lightbox-content--landscape" : ""
+            }`}
+          >
             <div className="lightbox-gallery lightbox-gallery--fullscreen">
               <div className="lightbox-gallery__main">
                 <img
