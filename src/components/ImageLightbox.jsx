@@ -6,7 +6,6 @@ import {
   FaGithub,
   FaExternalLinkAlt,
 } from "react-icons/fa";
-import { MdScreenRotation } from "react-icons/md";
 import {
   SiJavascript,
   SiHtml5,
@@ -69,8 +68,7 @@ const TECH_ICONS = {
 function ImageLightbox({ project, onClose }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isZoomed, setIsZoomed] = useState(false);
-  const [isLandscapeMode, setIsLandscapeMode] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isDeviceLandscape, setIsDeviceLandscape] = useState(false);
 
   if (!project) return null;
 
@@ -126,20 +124,23 @@ function ImageLightbox({ project, onClose }) {
     setIsZoomed(false);
   };
 
-  // Toggle mode paysage
-  const toggleLandscape = () => {
-    setIsLandscapeMode(!isLandscapeMode);
-  };
-
-  // Détection mobile
+  // Détection automatique de l'orientation du device
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+    const landscapeQuery = window.matchMedia("(orientation: landscape)");
+
+    const handleOrientationChange = (e) => {
+      setIsDeviceLandscape(e.matches);
     };
 
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
+    // Initialisation
+    setIsDeviceLandscape(landscapeQuery.matches);
+
+    // Écoute des changements d'orientation
+    landscapeQuery.addEventListener("change", handleOrientationChange);
+
+    return () => {
+      landscapeQuery.removeEventListener("change", handleOrientationChange);
+    };
   }, []);
 
   // Gestion clavier
@@ -203,32 +204,13 @@ function ImageLightbox({ project, onClose }) {
             </h2>
           </div>
 
-          <div className="lightbox-header__actions">
-            {/* Toggle mode paysage - visible uniquement sur mobile pour projets visuels */}
-            {!isCodeProject && isMobile && (
-              <button
-                className={`lightbox-header__rotate ${
-                  isLandscapeMode ? "lightbox-header__rotate--active" : ""
-                }`}
-                onClick={toggleLandscape}
-                aria-label={
-                  isLandscapeMode ? "Mode portrait" : "Mode paysage"
-                }
-                title={isLandscapeMode ? "Mode portrait" : "Mode paysage"}
-                style={{ color: categoryConfig.color }}
-              >
-                <MdScreenRotation />
-              </button>
-            )}
-
-            <button
-              className="lightbox-header__close"
-              onClick={onClose}
-              aria-label="Fermer la modale"
-            >
-              <FaTimes />
-            </button>
-          </div>
+          <button
+            className="lightbox-header__close"
+            onClick={onClose}
+            aria-label="Fermer la modale"
+          >
+            <FaTimes />
+          </button>
         </header>
 
         {/* CONTENT - Layout Code Projects (Scholar/Personal) */}
@@ -350,7 +332,7 @@ function ImageLightbox({ project, onClose }) {
         {!isCodeProject && (
           <div
             className={`lightbox-content lightbox-content--visual ${
-              isLandscapeMode ? "lightbox-content--landscape" : ""
+              isDeviceLandscape ? "lightbox-content--landscape" : ""
             }`}
           >
             <div className="lightbox-gallery lightbox-gallery--fullscreen">
