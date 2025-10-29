@@ -1,226 +1,161 @@
-# Stack Technique - Portfolio Thomas Sifferlé
+# 🚀 Stack Technique - Thomas Sifferlé
 
-## 🎯 Technologies Core
+## 🎯 Technologies Principales
 
-### Front-End Framework
-- **React** `19.2.0` - Bibliothèque JavaScript pour interfaces utilisateur
-- **React DOM** `19.2.0` - Package pour manipulation du DOM avec React
+### Frontend & Build
 
-### Build Tool & Development
-- **Vite** `7.1.8` - Build tool moderne et ultra-rapide
-- **@vitejs/plugin-react** `5.0.4` - Plugin officiel Vite pour React
+<div align="center">
 
----
+![React](https://skillicons.dev/icons?i=react)
+![Vite](https://skillicons.dev/icons?i=vite)
+![JavaScript](https://skillicons.dev/icons?i=js)
+![HTML5](https://skillicons.dev/icons?i=html)
+![CSS3](https://skillicons.dev/icons?i=css)
+![Sass](https://skillicons.dev/icons?i=sass)
+![React Router](https://skillicons.dev/icons?i=reactrouter)
 
-## 🧭 Routing & Navigation
+</div>
 
-- **React Router DOM** `7.9.3` - Gestion du routage côté client
-  - Navigation entre homepage et pages projet
-  - Gestion des routes dynamiques (`/project/:slug`)
-  - Scroll restoration automatique
+### Animations & Interactions
 
----
+<div align="center">
 
-## 🎨 Styling & Design
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-12.23.24-0055FF?style=for-the-badge&logo=framer&logoColor=white)
+![Lottie](https://img.shields.io/badge/Lottie-0.17.5-00D2B8?style=for-the-badge&logo=lottiefiles&logoColor=white)
+![React Swipeable](https://img.shields.io/badge/React_Swipeable-7.0.2-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![Fullscreen API](https://img.shields.io/badge/Fullscreen_API-Native-FF6B6B?style=for-the-badge&logo=web-api&logoColor=white)
 
-### CSS Architecture
-- **Sass** `1.93.2` - Préprocesseur CSS
-  - Architecture **7-1 pattern** (abstracts, base, components, pages)
-  - Variables design tokens (couleurs, typographie, espacements)
-  - Mixins réutilisables pour responsive design
-  - Convention de nommage **BEM**
+</div>
 
-### Fonts (Hébergement local)
-- **Montserrat** - 6 weights (300, 400, 500, 600, 700, 900)
-- **Poppins** - 3 weights (400, 600, 700)
-- **Plus Jakarta Sans** - 2 weights (400, 700)
-- **Manrope** - 3 weights (400, 600, 700)
-- Format **woff2** pour performance optimale
-- **Preload** des polices critiques (Plus Jakarta Sans Regular, Montserrat Bold)
+### UI & Icons
 
----
+<div align="center">
 
-## ✨ Animations & Interactions
+![React Icons](https://img.shields.io/badge/React_Icons-5.5.0-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![Figma](https://skillicons.dev/icons?i=figma)
+![Photoshop](https://skillicons.dev/icons?i=ps)
 
-### Animation Libraries
-- **Framer Motion** `12.23.24` - Bibliothèque d'animations React
-  - Animations scroll-triggered (`whileInView`)
-  - Orchestration avec `staggerChildren`
-  - Spring physics pour effets naturels
-  - Transitions de pages fluides
+</div>
 
-- **@lottiefiles/dotlottie-react** `0.17.5` - Lecteur d'animations Lottie
-  - Animation Hero avec contrôle manuel
-  - Déclenchement via IntersectionObserver
-  - Fallback statique pour performance
+### Services & Backend
 
-### Gesture Recognition
-- **react-swipeable** `7.0.2` - Gestion des gestes tactiles
-  - Navigation swipe dans lightbox (gauche/droite)
-  - Support mobile et tablette
-  - Configuration `preventScrollOnSwipe`
+<div align="center">
+
+![Formspree](https://img.shields.io/badge/Formspree-Backend_Forms-2478CC?style=for-the-badge&logo=formspree&logoColor=white)
+![Vercel](https://skillicons.dev/icons?i=vercel)
+![Hostinger](https://img.shields.io/badge/Hostinger-Hosting_&_Domain-FF6C2C?style=for-the-badge&logo=hostinger&logoColor=white)
+
+</div>
+
+### Outils & Développement
+
+<div align="center">
+
+![Git](https://skillicons.dev/icons?i=git)
+![GitHub](https://skillicons.dev/icons?i=github)
+![NPM](https://skillicons.dev/icons?i=npm)
+
+</div>
 
 ---
 
-## 🧩 UI Components & Icons
+## 📊 Métriques Performance
 
-- **react-icons** `5.5.0` - Bibliothèque d'icônes
-  - Simple Icons (logos technologiques)
-  - React Icons (icônes UI)
-  - Tabler Icons (icônes interface)
-  - Font Awesome (icônes génériques)
+<div align="center">
 
----
+| Category           | Score   | Badge                                                                                                 |
+| ------------------ | ------- | ----------------------------------------------------------------------------------------------------- |
+| **Performance**    | 97/100  | ![Performance](https://img.shields.io/badge/Performance-97%2F100-brightgreen?style=for-the-badge)     |
+| **Accessibility**  | 100/100 | ![Accessibility](https://img.shields.io/badge/Accessibility-96%2F100-brightgreen?style=for-the-badge) |
+| **Best Practices** | 100/100 | ![Best Practices](https://img.shields.io/badge/Best_Practices-100%2F100-green?style=for-the-badge)    |
+| **SEO**            | 100/100 | ![SEO](https://img.shields.io/badge/SEO-100%2F100-green?style=for-the-badge)                          |
 
-## 🔧 Utilities & Tools
-
-### Type Checking
-- **prop-types** `15.8.1` - Validation des props React
-
-### Build Optimization
-- **vite-plugin-html** `3.2.2` - Optimisation HTML
-  - Minification automatique
-  - Injection de variables
-  - Performance améliorée
+</div>
 
 ---
 
-## 🌐 Services Externes
+## 🏗️ Architecture du Projet
 
-### Form Backend
-- **Formspree** - Service de traitement des formulaires
-  - Endpoint : `https://formspree.io/f/xdkoqjzk`
-  - Validation côté client et serveur
-  - Protection anti-spam intégrée
-
-### Hébergement & Déploiement
-- **Vercel** - Plateforme de déploiement
-  - Déploiement automatique depuis GitHub
-  - CDN global pour performance
-  - Custom domain : `thomas-sifferle.com`
-  - HTTPS automatique
+src/
+├── 📁 components/ # Composants réutilisables
+├── 📁 pages/ # Pages (Home, ProjectPage)
+├── 📁 data/ # Données centralisées
+├── 📁 styles/ # Architecture SCSS 7-1
+└── 📁 assets/ # Ressources statiques
 
 ---
 
-## 📊 SEO & Performance
+## 🌐 Stack Complète
 
-### Meta Tags & Schema
-- **Open Graph Protocol** - Partage social optimisé
-- **Twitter Cards** - Prévisualisation Twitter/X
-- **JSON-LD Schema Markup** - Données structurées
-  - Person Schema (profil professionnel)
-  - WebSite Schema (métadonnées portfolio)
-  - 0 erreurs sur Schema.org validator
+### 🎯 Core Technologies
 
-### Optimisations
-- **Lazy Loading** - Chargement différé des images
-- **Sitemap.xml** - Indexation Google
-- **robots.txt** - Directives crawlers
-- **Font Preloading** - Polices critiques préchargées
-- **CSS Code Splitting** - CSS bundlé (moins de requêtes HTTP)
+- **React 19.2.0** - Framework UI moderne
+- **Vite 7.1.8** - Build tool ultra-rapide
+- **React Router DOM 7.9.3** - Navigation client
+- **Sass 1.93.2** - Architecture CSS 7-1
 
----
+### ✨ Animations & UX
 
-## 📱 Browser Support
+- **Framer Motion 12.23.24** - Animations scroll-triggered
+- **@lottiefiles/dotlottie-react 0.17.5** - Animations Lottie
+- **react-swipeable 7.0.2** - Gestes tactiles
+- **Fullscreen API** - Mode plein écran natif
 
-### Production
-- `>0.2%` - Navigateurs avec plus de 0.2% de parts de marché
-- `not dead` - Navigateurs maintenus
-- `not op_mini all` - Exclusion Opera Mini
+### 🎨 Design System
 
-### Development
-- Chrome (dernière version)
-- Firefox (dernière version)
-- Safari (dernière version)
+- **react-icons 5.5.0** - 5000+ icônes
+- **Polices locales** (Montserrat, Poppins, Plus Jakarta Sans, Manrope)
+- **Architecture BEM** avec Sass
 
----
+### 🔧 Services & Déploiement
 
-## 🎯 Lighthouse Scores (Production)
-
-- **Performance** : 97/100
-- **Accessibility** : 96/100
-- **Best Practices** : 100/100
-- **SEO** : 100/100
+- **Formspree** - Traitement des formulaires
+- **Vercel** - Déploiement automatique & CDN
+- **Hostinger** - Hébergement & Domaines
 
 ---
 
 ## 📦 Détails Techniques
 
-### React Features
-- **React 19** (version stable)
-- **Hooks personnalisés** :
-  - `useScrollDirection` (détection direction scroll)
-- **Components fonctionnels** (100% hooks)
-- **Context API** (pas de Redux nécessaire)
+### Versions Clés
 
-### Vite Configuration
-- **Module preload polyfill** activé
-- **CSS code split** désactivé (bundle unique)
-- **HTML optimization plugin** configuré
-- **React plugin** avec Fast Refresh
+| Technologie   | Version  |
+| ------------- | -------- |
+| React         | 19.2.0   |
+| Vite          | 7.1.8    |
+| React Router  | 7.9.3    |
+| Sass          | 1.93.2   |
+| Framer Motion | 12.23.24 |
+| React Icons   | 5.5.0    |
 
-### Architecture Files
-```
-src/
-├── components/      # Composants réutilisables
-├── pages/          # Pages (Home, ProjectPage)
-├── data/           # Données centralisées (projects.js)
-├── styles/         # SCSS 7-1 architecture
-│   ├── abstracts/  # Variables, mixins, functions
-│   ├── base/       # Reset, typography, animations
-│   ├── components/ # Styles composants
-│   └── pages/      # Styles pages
-└── assets/         # Ressources statiques
+### Bundle Size
 
-public/
-├── images/         # Images optimisées (WebP)
-├── fonts/          # Polices locales (woff2)
-├── animations/     # Fichiers Lottie
-├── sitemap.xml     # Plan du site
-└── robots.txt      # Directives SEO
-```
+![Bundle Size](https://img.shields.io/badge/Bundle_Size-~250KB_gzipped-success?style=for-the-badge)
+
+### Browser Support
+
+![Browser Support](https://img.shields.io/badge/Browser_Support->0.2%25,_not_dead-blue?style=for-the-badge)
 
 ---
 
-## 🔑 Points Clés pour Infographie
+## 🎨 Fonctionnalités Avancées
 
-### Technologies Principales (à mettre en avant)
-1. **React 19** - Framework UI moderne
-2. **Vite** - Build tool ultra-rapide
-3. **Sass** - Architecture CSS 7-1
-4. **Framer Motion** - Animations professionnelles
-5. **React Router** - Navigation fluide
+<div align="center">
 
-### Librairies Spécialisées
-- **@lottiefiles/dotlottie-react** - Animations vectorielles
-- **react-swipeable** - Gestes tactiles
-- **react-icons** - 5000+ icônes
+![Animations](https://img.shields.io/badge/🎭_Animations-Scroll_triggered,_Spring_physics-FF6B6B?style=for-the-badge)
+![SEO](https://img.shields.io/badge/🔍_SEO-JSON_LD,_Open_Graph,_Sitemap-4ECDC4?style=for-the-badge)
+![Performance](https://img.shields.io/badge/⚡_Performance-Lazy_loading,_Font_preload,_Code_splitting-45B7D1?style=for-the-badge)
+![Mobile](https://img.shields.io/badge/📱_Mobile-Touch_gestures,_Responsive-F96E88?style=for-the-badge)
+![Forms](https://img.shields.io/badge/📝_Forms-Formspree_backend,_Validation-9B59B6?style=for-the-badge)
 
-### Services Externes
-- **Formspree** - Backend formulaire
-- **Vercel** - Hébergement & CDN
-
-### Performance & SEO
-- Lighthouse **97/96/100/100**
-- JSON-LD Schema Markup
-- Local Font Hosting
-- Lazy Loading Images
+</div>
 
 ---
 
-## 📄 Versions & Compatibilité
+<div align="center">
 
-| Technologie | Version | Release Date |
-|-------------|---------|--------------|
-| React | 19.2.0 | Janvier 2025 |
-| Vite | 7.1.8 | Février 2025 |
-| Framer Motion | 12.23.24 | Décembre 2024 |
-| React Router | 7.9.3 | Janvier 2025 |
-| Sass | 1.93.2 | Février 2025 |
-| React Icons | 5.5.0 | Octobre 2024 |
+**✨ Stack moderne et performante pour un portfolio d'exception ✨**
 
----
+_Déployé sur Vercel • Domaines Hostinger • Formulaire Formspree_
 
-**Total** : 13 dépendances (10 production + 3 dev)
-**Taille du bundle** : ~250KB (gzipped)
-**Performance** : 97/100 Lighthouse
+</div>
