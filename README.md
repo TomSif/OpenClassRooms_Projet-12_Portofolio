@@ -252,7 +252,7 @@ Projet de fin de formation **OpenClassrooms - Développeur Web Front-End** (Bac+
 
 ## 📧 Contact
 
-- **Portfolio** : [thomas-sifferle-portfolio.vercel.app](https://www.thomas-sifferle.com/)
+- **Portfolio** : [thomas-sifferle.com](https://www.thomas-sifferle.com/)
 - **GitHub** : [@TomSif](https://github.com/TomSif)
 - **LinkedIn** : [Thomas Sifferle](https://www.linkedin.com/in/thomas-sifferle)
 - **Localisation** : Strasbourg, France 🇫🇷 (Remote possible)
