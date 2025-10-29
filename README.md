@@ -29,7 +29,7 @@ Portfolio de développeur Front-End créé dans le cadre de la formation [OpenCl
 
 ### 🌐 Démo Live :
 
-**[Voir le portfolio en ligne →](https://thomas-sifferle-portfolio.vercel.app)**
+**[Voir le portfolio en ligne →](https://open-class-rooms-projet-12-portofol.vercel.app/)**
 
 Déployé sur Vercel avec HTTPS et optimisations de performance.
 
@@ -66,7 +66,7 @@ Déployé sur Vercel avec HTTPS et optimisations de performance.
 ### 📥 Cloner le projet :
 
 ```bash
-git clone https://github.com/TomSif/portfolio.git
+git clone https://github.com/TomSif/OpenClassRooms_Projet-12_Portofolio
 cd portfolio
 ```
 
@@ -253,7 +253,7 @@ Projet de fin de formation **OpenClassrooms - Développeur Web Front-End** (Bac+
 
 ## 📧 Contact
 
-- **Portfolio** : [thomas-sifferle-portfolio.vercel.app](https://thomas-sifferle-portfolio.vercel.app)
+- **Portfolio** : [thomas-sifferle-portfolio.vercel.app](https://open-class-rooms-projet-12-portofol.vercel.app/)
 - **GitHub** : [@TomSif](https://github.com/TomSif)
 - **LinkedIn** : [Thomas Sifferle](https://www.linkedin.com/in/thomas-sifferle)
 - **Localisation** : Strasbourg, France 🇫🇷 (Remote possible)
@@ -284,7 +284,7 @@ Professional Front-End Developer Portfolio created as part of the [OpenClassroom
 
 ### 🌐 Live Demo:
 
-**[View portfolio online →](https://thomas-sifferle-portfolio.vercel.app)**
+**[View portfolio online →](https://open-class-rooms-projet-12-portofol.vercel.app/)**
 
 Deployed on Vercel with HTTPS and performance optimizations.
 
@@ -321,7 +321,7 @@ Deployed on Vercel with HTTPS and performance optimizations.
 ### 📥 Clone the project:
 
 ```bash
-git clone https://github.com/TomSif/portfolio.git
+git clone https://github.com/TomSif/OpenClassRooms_Projet-12_Portofolio
 cd portfolio
 ```
 

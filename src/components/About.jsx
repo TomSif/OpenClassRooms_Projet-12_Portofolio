@@ -101,9 +101,9 @@ const About = () => {
 
           {/* Sidebar (droite) - Expériences, CTA, Icônes */}
           <div className="about__sidebar">
-            {/* Expériences */}
+            {/* Parcours */}
             <div className="about__experiences">
-              <h3 className="about__experiences-title">Expériences</h3>
+              <h3 className="about__experiences-title">Parcours</h3>
 
               <div className="about__experience-item">
                 <span className="about__experience-year">25</span>
@@ -166,6 +166,7 @@ const About = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="about__cta-btn about__cta-btn--secondary"
+                aria-label="Télécharger mon CV (fichier PDF)"
               >
                 Télécharger CV
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
