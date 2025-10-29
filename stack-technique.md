@@ -63,27 +63,14 @@
 
 <div align="center">
 
-| Category           | Score   | Badge                                                                                                 |
-| ------------------ | ------- | ----------------------------------------------------------------------------------------------------- |
-| **Performance**    | 97/100  | ![Performance](https://img.shields.io/badge/Performance-97%2F100-brightgreen?style=for-the-badge)     |
-| **Accessibility**  | 100/100 | ![Accessibility](https://img.shields.io/badge/Accessibility-96%2F100-brightgreen?style=for-the-badge) |
-| **Best Practices** | 100/100 | ![Best Practices](https://img.shields.io/badge/Best_Practices-100%2F100-green?style=for-the-badge)    |
-| **SEO**            | 100/100 | ![SEO](https://img.shields.io/badge/SEO-100%2F100-green?style=for-the-badge)                          |
+| Category           | Score   | Badge                                                                                              |
+| ------------------ | ------- | -------------------------------------------------------------------------------------------------- |
+| **Performance**    | 97/100  | ![Performance](https://img.shields.io/badge/Performance-97%2F100-brightgreen?style=for-the-badge)  |
+| **Accessibility**  | 100/100 | ![Accessibility](https://img.shields.io/badge/Accessibility-100%2F100-green?style=for-the-badge)   |
+| **Best Practices** | 100/100 | ![Best Practices](https://img.shields.io/badge/Best_Practices-100%2F100-green?style=for-the-badge) |
+| **SEO**            | 100/100 | ![SEO](https://img.shields.io/badge/SEO-100%2F100-green?style=for-the-badge)                       |
 
 </div>
-
----
-
-## 🏗️ Architecture du Projet
-
-src/
-├── 📁 components/ # Composants réutilisables
-├── 📁 pages/ # Pages (Home, ProjectPage)
-├── 📁 data/ # Données centralisées
-├── 📁 styles/ # Architecture SCSS 7-1
-└── 📁 assets/ # Ressources statiques
-
----
 
 ## 🌐 Stack Complète
 
@@ -154,7 +141,7 @@ src/
 
 <div align="center">
 
-**✨ Stack moderne et performante pour un portfolio d'exception ✨**
+**✨ Stack moderne et performante pour un portfolio pas piqué des hanetons ✨**
 
 _Déployé sur Vercel • Domaines Hostinger • Formulaire Formspree_
 
