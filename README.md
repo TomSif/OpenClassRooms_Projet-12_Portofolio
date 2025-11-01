@@ -133,7 +133,7 @@ L'application sera accessible sur `http://localhost:5173`
 
 - ✅ **Design System complet** défini dans Sass avec variables centralisées (couleurs, typographie, espacements)
 - ✅ **Architecture SCSS 7-1** (abstracts, base, components, pages)
-- ✅ **Composants React réutilisables** avec props typées
+- ✅ **Composants React réutilisables** et modulaires
 - ✅ **Routing hybride** : One-page avec sections + pages dédiées aux projets détaillés
 - ✅ **Données centralisées** dans `/src/data/` pour faciliter la maintenance
 

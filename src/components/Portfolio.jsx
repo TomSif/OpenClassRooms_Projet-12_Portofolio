@@ -1,15 +1,33 @@
 // ===================================
 // 🧩 COMPONENT - Portfolio.jsx
 // ===================================
-import { useState } from "react";
+// import { useState } from "react"; // ← Commenté : Sera nécessaire pour filtres futurs
 import PortfolioCard from "./PortfolioCard";
 import { allProjects } from "../data/project";
 import useScrollDirection from "../hooks/useScrollDirection";
 import FadeInScrollDirection from "../animations/FadeInScrollDirection";
 
 function Portfolio() {
-  // State pour les filtres (optionnel)
-  const [activeFilter, setActiveFilter] = useState("all");
+  // ===================================
+  // 🔮 FUTURE FEATURE : Système de filtrage dynamique
+  // ===================================
+  // Évolutions possibles :
+  // 1. Rotation automatique des projets featured (ex: 2 derniers + 2 suivants par semaine)
+  // 2. Filtrage par catégorie (Scholar, Personal)
+  // 3. Tri par date, popularité, ou technologie
+  //
+  // Pour activer les filtres, décommenter les lignes ci-dessous :
+  // const [activeFilter, setActiveFilter] = useState("all");
+  //
+  // Ajouter des boutons de filtrage dans le JSX :
+  // <div className="portfolio__filters">
+  //   <button onClick={() => setActiveFilter("all")}>Tous</button>
+  //   <button onClick={() => setActiveFilter("Scholar")}>Formation</button>
+  //   <button onClick={() => setActiveFilter("Personal")}>Personnel</button>
+  // </div>
+  //
+  // Utiliser filteredProjects au lieu de featuredProjects dans le .map()
+  // ===================================
 
   // Hook de détection de la direction du scroll
   const scrollDirection = useScrollDirection();
@@ -28,15 +46,19 @@ function Portfolio() {
     );
   }
 
-  // Projets filtrés
+  // Récupération des projets featured (affichés dans cette section)
   const featuredProjects = allProjects.filter(
     (project) => project?.featured === true
   );
 
-  const filteredProjects =
-    activeFilter === "all"
-      ? featuredProjects
-      : featuredProjects.filter((project) => project.category === activeFilter);
+  // ===================================
+  // 🔮 FUTURE : Logique de filtrage (actuellement non utilisée)
+  // ===================================
+  // const filteredProjects =
+  //   activeFilter === "all"
+  //     ? featuredProjects
+  //     : featuredProjects.filter((project) => project.category === activeFilter);
+  // ===================================
 
   return (
     <section id="portfolio" className="portfolio">
@@ -55,33 +77,10 @@ function Portfolio() {
           </FadeInScrollDirection>
         </div>
 
-        {/* DEBUG INFO (à retirer après) */}
-        {filteredProjects.length === 0 && (
-          <div
-            style={{
-              padding: "2rem",
-              background: "#fff3cd",
-              color: "#856404",
-              borderRadius: "8px",
-              margin: "0 auto 2rem",
-              maxWidth: "800px",
-            }}
-          >
-            <p>
-              <strong>⚠️ Aucun projet trouvé</strong>
-            </p>
-            <p>Total projets : {allProjects.length}</p>
-            <p>Projets featured : {featuredProjects.length}</p>
-            <p>
-              Vérifiez que vos projets ont bien <code>featured: true</code>
-            </p>
-          </div>
-        )}
-
         {/* GRILLE DE PROJETS */}
         <div className="portfolio__grid">
-          {filteredProjects.length > 0 ? (
-            filteredProjects.map((project) => {
+          {featuredProjects.length > 0 ? (
+            featuredProjects.map((project) => {
               // SÉCURITÉ : Ne rendre que si project existe
               if (!project) {
                 console.warn("⚠️ Undefined project in array");
@@ -97,7 +96,7 @@ function Portfolio() {
                 padding: "2rem",
               }}
             >
-              Aucun projet à afficher pour le moment.
+              Aucun projet featured à afficher pour le moment.
             </p>
           )}
         </div>

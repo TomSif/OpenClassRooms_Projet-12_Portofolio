@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://thomas-sifferle.com/sitemap.xml
+Sitemap: https://www.thomas-sifferle.com/sitemap.xml

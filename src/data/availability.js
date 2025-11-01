@@ -21,7 +21,7 @@ export const AVAILABILITY_STATUS = {
     borderColor: "#f59e0b",
     text: "Bientôt disponible",
     subtitle:
-      "Disponible à partir de janvier 2025\nOuvert aux CDI • Alternance",
+      "Disponible à partir de février 2025\nOuvert aux CDI • Alternance",
   },
   unavailable: {
     color: "error", // Rouge

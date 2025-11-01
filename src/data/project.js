@@ -281,12 +281,7 @@ export const allProjects = [
             },
             stateManagement: {
               title: "Gestion d'État",
-              items: [
-                "Redux Toolkit",
-                "RTK Query (option)",
-                "Redux Persist",
-                "Redux DevTools",
-              ],
+              items: ["Redux Toolkit", "Redux Persist", "Redux DevTools"],
             },
             backend: {
               title: "Backend & API",
@@ -836,7 +831,7 @@ export const allProjects = [
 
     description: "Création photomontage pour les réseaux sociaux.",
 
-    // ⚠️ Tu PEUX ajouter des technos pour GraphicDesign si pertinent
+    // ajouter des technos pour GraphicDesign si pertinent
     technologies: [TECH_NAMES.PHOTOSHOP, TECH_NAMES.ILLUSTRATOR],
 
     details: {
@@ -849,7 +844,7 @@ export const allProjects = [
     },
   },
 
-  // ... AJOUTE TES AUTRES PROJETS ICI
+  // ... AJOUTER LES AUTRES PROJETS ICI
 ];
 
 // ===================================

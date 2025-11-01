@@ -163,8 +163,8 @@ const ProjectPage = () => {
           </div>
         </header>
 
-        {/* GALERIE PLEINE LARGEUR */}
-        {gallery && gallery.length > 0 && (
+        {/* GALERIE PLEINE LARGEUR - Projets Code uniquement */}
+        {isCodeProject && gallery && gallery.length > 0 && (
           <div className="project-page__gallery">
             <div className="lightbox-gallery">
               <div className="lightbox-gallery__main">
