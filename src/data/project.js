@@ -549,6 +549,7 @@ export const allProjects = [
   {
     id: 20,
     featured: false,
+    date: "2024-06",
     title: "Calculatrice de pourboires",
     category: "Personal",
 
@@ -572,6 +573,7 @@ export const allProjects = [
   {
     id: 21,
     featured: false,
+    date: "2024-07",
     title: "E-commerce product page",
     category: "Personal",
 
@@ -596,6 +598,7 @@ export const allProjects = [
   {
     id: 22,
     featured: false,
+    date: "2024-09",
     title: "News homepage",
 
     category: "Personal",
@@ -620,6 +623,7 @@ export const allProjects = [
   {
     id: 23,
     featured: false,
+    date: "2024-10",
     title: "Bookmark",
 
     category: "Personal",
@@ -645,6 +649,7 @@ export const allProjects = [
   {
     id: 24,
     featured: false,
+    date: "2024-11",
     title: "Loopstudios",
     category: "Personal",
 
@@ -668,6 +673,7 @@ export const allProjects = [
   {
     id: 25,
     featured: false,
+    date: "2026-03",
     title: "Space-tourism",
     category: "Personal",
 
@@ -841,6 +847,131 @@ export const allProjects = [
         "/images/travaux/graphic-3.webp",
         "/images/travaux/graphic-4.webp",
       ],
+    },
+  },
+
+  // ==========================================
+  // 💻 PROJETS FRONTEND MENTOR 2026 (TypeScript)
+  // ==========================================
+
+  {
+    id: 26,
+    featured: false,
+    date: "2026-05-28",
+    title: "Memory Game",
+    category: "Personal",
+
+    thumbnail: "/images/travaux/2026/personal-memory-game-1-thumb.webp",
+
+    description:
+      "Jeu de mémoire React/TypeScript avec sélection de thème, grille configurable et gestion d'état global via Zustand.",
+
+    technologies: [TECH_NAMES.REACT, TECH_NAMES.TYPESCRIPT, TECH_NAMES.TAILWIND],
+
+    details: {
+      gallery: [
+        "/images/travaux/2026/personal-memory-game-1.webp",
+        "/images/travaux/2026/personal-memory-game-2.webp",
+        "/images/travaux/2026/personal-memory-game-3.webp",
+      ],
+      github: "https://github.com/TomSif/Front-end_Mentor_Memory-Game",
+      live: "https://front-end-mentor-memory-game.vercel.app/",
+    },
+  },
+
+  {
+    id: 27,
+    featured: false,
+    date: "2026-05-11",
+    title: "REST Countries API",
+    category: "Personal",
+
+    thumbnail: "/images/travaux/2026/personal-rest-countries-1-thumb.webp",
+
+    description:
+      "Application de recherche de pays avec dark mode, filtres par région et page de détail via l'API REST Countries.",
+
+    technologies: [TECH_NAMES.REACT, TECH_NAMES.TYPESCRIPT, TECH_NAMES.TAILWIND],
+
+    details: {
+      gallery: [
+        "/images/travaux/2026/personal-rest-countries-1.webp",
+        "/images/travaux/2026/personal-rest-countries-2.webp",
+      ],
+      github: "https://github.com/TomSif/Front-end_Mentor_Rest_Countries_API",
+      live: "https://front-end-mentor-rest-countries-api-omega.vercel.app/",
+    },
+  },
+
+  {
+    id: 28,
+    featured: false,
+    date: "2026-05-02",
+    title: "Mortgage Repayment Calculator",
+    category: "Personal",
+
+    thumbnail: "/images/travaux/2026/personal-mortgage-calculator-1-thumb.webp",
+
+    description:
+      "Calculatrice de remboursement hypothécaire avec validation de formulaire, calcul dynamique des mensualités et design responsive.",
+
+    technologies: [TECH_NAMES.REACT, TECH_NAMES.TYPESCRIPT, TECH_NAMES.TAILWIND],
+
+    details: {
+      gallery: [
+        "/images/travaux/2026/personal-mortgage-calculator-1.webp",
+        "/images/travaux/2026/personal-mortgage-calculator-2.webp",
+      ],
+      github: "https://github.com/TomSif/Front-end_Mentor_Mortgage_Repayement_Calculator",
+      live: "https://front-end-mentor-mortgage-repayemen.vercel.app/",
+    },
+  },
+
+  {
+    id: 29,
+    featured: false,
+    date: "2026-04-21",
+    title: "Product List with Cart",
+    category: "Personal",
+
+    thumbnail: "/images/travaux/2026/personal-product-list-1-thumb.webp",
+
+    description:
+      "Boutique de desserts avec gestion de panier, modale de confirmation de commande et layout adaptatif mobile/desktop.",
+
+    technologies: [TECH_NAMES.REACT, TECH_NAMES.TYPESCRIPT, TECH_NAMES.TAILWIND],
+
+    details: {
+      gallery: [
+        "/images/travaux/2026/personal-product-list-1.webp",
+        "/images/travaux/2026/personal-product-list-2.webp",
+      ],
+      github: "https://github.com/TomSif/Front-end_Mentor_Product-List/tree/main",
+      live: "https://front-end-mentor-product-list.vercel.app/",
+    },
+  },
+
+  {
+    id: 50,
+    featured: false,
+    date: "2026-04-20",
+    title: "Results Summary Component",
+    category: "Personal",
+
+    thumbnail: "/images/travaux/2026/personal-results-summary-1-thumb.webp",
+
+    description:
+      "Composant de résumé de score avec catégories colorées, scores détaillés et design adaptatif mobile/desktop.",
+
+    technologies: [TECH_NAMES.REACT, TECH_NAMES.TYPESCRIPT, TECH_NAMES.TAILWIND],
+
+    details: {
+      gallery: [
+        "/images/travaux/2026/personal-results-summary-1.webp",
+        "/images/travaux/2026/personal-results-summary-2.webp",
+      ],
+      github: "https://github.com/TomSif/Front-End_Mentor_Results-Summary-App/tree/main",
+      live: "https://front-end-mentor-results-summary-guq1w8dcc-tom-sifs-projects.vercel.app/",
     },
   },
 
