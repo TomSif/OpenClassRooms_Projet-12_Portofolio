@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import About from "../components/About";
+import Methodology from "../components/Methodology";
 import Portfolio from "../components/Portfolio";
 import Works from "../components/Works";
 import Contact from "../components/Contact";
@@ -35,6 +36,10 @@ const Home = () => {
 
       <section id="about" className="section section-light">
         <About />
+      </section>
+
+      <section id="methodology" className="section">
+        <Methodology />
       </section>
 
       <section id="portfolio" className="section">
