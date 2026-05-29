@@ -638,6 +638,52 @@
   }
 }
 
+// ===== DEVLOG / AUDIT BADGES =====
+.lightbox-devlogs {
+  display: flex;
+  gap: v.$spacing-2;
+  flex-wrap: wrap;
+  padding-top: v.$spacing-4;
+  border-top: 1px solid rgba(v.$color-text-primary, 0.1);
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    font-family: v.$font-accent;
+    font-size: v.$font-size-xs;
+    font-weight: v.$font-weight-bold;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: v.$border-radius-full;
+    padding: v.$spacing-1 v.$spacing-3;
+    cursor: pointer;
+    transition: all v.$transition-fast;
+    border: 1px solid transparent;
+
+    &--devlog {
+      color: v.$color-secondary;
+      background: rgba(v.$color-secondary, 0.08);
+      border-color: rgba(v.$color-secondary, 0.3);
+
+      &:hover {
+        background: rgba(v.$color-secondary, 0.18);
+        transform: translateY(-1px);
+      }
+    }
+
+    &--audit {
+      color: v.$color-success;
+      background: rgba(v.$color-success, 0.08);
+      border-color: rgba(v.$color-success, 0.3);
+
+      &:hover {
+        background: rgba(v.$color-success, 0.18);
+        transform: translateY(-1px);
+      }
+    }
+  }
+}
+
 // ===== CAPTION (projets visuels) =====
 .lightbox-caption {
   padding: v.$spacing-6;
