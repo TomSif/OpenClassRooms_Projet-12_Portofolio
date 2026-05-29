@@ -10,6 +10,7 @@ export const TECH_NAMES = {
   SASS: "Sass",
   TAILWIND: "Tailwind CSS",
   JAVASCRIPT: "JavaScript",
+  TYPESCRIPT: "TypeScript",
   REACT: "React",
   REDUX: "Redux",
 
