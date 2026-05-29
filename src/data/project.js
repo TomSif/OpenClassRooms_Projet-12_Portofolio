@@ -975,6 +975,150 @@ export const allProjects = [
     },
   },
 
+  {
+    id: 51,
+    featured: false,
+    date: "2026-03-01",
+    title: "Password Generator App",
+    category: "Personal",
+
+    thumbnail: "/images/travaux/2026/personal-password-generator-1-thumb.webp",
+
+    description:
+      "Générateur de mots de passe avec contrôle de longueur, sélection de caractères et indicateur de force.",
+
+    technologies: [TECH_NAMES.REACT, TECH_NAMES.TAILWIND],
+
+    details: {
+      gallery: [
+        "/images/travaux/2026/personal-password-generator-1.webp",
+      ],
+      github: "https://github.com/TomSif/Front-End_Mentor_Password-Generator_App",
+      live: "https://front-end-mentor-password-generator-ec4kzpda9-tom-sifs-projects.vercel.app/",
+    },
+  },
+
+  {
+    id: 52,
+    featured: false,
+    date: "2026-03-08",
+    title: "Frontend Quiz App",
+    category: "Personal",
+
+    thumbnail: "/images/travaux/2026/personal-quiz-app-1-thumb.webp",
+
+    description:
+      "Application de quiz interactif sur les technologies front-end avec sélection de thème et scoring.",
+
+    technologies: [TECH_NAMES.REACT, TECH_NAMES.TAILWIND],
+
+    details: {
+      gallery: [
+        "/images/travaux/2026/personal-quiz-app-1.webp",
+        "/images/travaux/2026/personal-quiz-app-2.webp",
+      ],
+      github: "https://github.com/TomSif/Front-end_Mentor_Quiz-App",
+      live: "https://quiz-app-omega-topaz.vercel.app/",
+    },
+  },
+
+  {
+    id: 53,
+    featured: false,
+    date: "2026-03-17",
+    title: "BMI Calculator",
+    category: "Personal",
+
+    thumbnail: "/images/travaux/2026/personal-bmi-calculator-1-thumb.webp",
+
+    description:
+      "Calculatrice d'indice de masse corporelle avec interprétation des résultats et conseils de santé.",
+
+    technologies: [TECH_NAMES.REACT, TECH_NAMES.TYPESCRIPT, TECH_NAMES.TAILWIND],
+
+    details: {
+      gallery: [
+        "/images/travaux/2026/personal-bmi-calculator-1.webp",
+        "/images/travaux/2026/personal-bmi-calculator-2.webp",
+        "/images/travaux/2026/personal-bmi-calculator-3.webp",
+      ],
+      github: "https://github.com/TomSif/Front-end_Mentor_BMI-Calculator",
+      live: "https://front-endmentorbmi-calculator.vercel.app/",
+    },
+  },
+
+  {
+    id: 54,
+    featured: false,
+    date: "2026-03-22",
+    title: "Tic Tac Toe",
+    category: "Personal",
+
+    thumbnail: "/images/travaux/2026/personal-tic-tac-toe-1-thumb.webp",
+
+    description:
+      "Jeu de morpion contre l'IA ou en multijoueur local, avec sélection de symbole et suivi des scores.",
+
+    technologies: [TECH_NAMES.REACT, TECH_NAMES.TYPESCRIPT, TECH_NAMES.TAILWIND],
+
+    details: {
+      gallery: [
+        "/images/travaux/2026/personal-tic-tac-toe-1.webp",
+        "/images/travaux/2026/personal-tic-tac-toe-2.webp",
+      ],
+      github: "https://github.com/TomSif/Front-end_Mentor_Tic-Tac-Toe",
+      live: "https://front-end-mentor-tic-tac-toe.vercel.app/",
+    },
+  },
+
+  {
+    id: 55,
+    featured: false,
+    date: "2026-04-08",
+    title: "Galleria Slideshow",
+    category: "Personal",
+
+    thumbnail: "/images/travaux/2026/personal-galleria-1-thumb.webp",
+
+    description:
+      "Galerie d'art avec navigation slideshow, pages de détail et transitions fluides via Framer Motion.",
+
+    technologies: [TECH_NAMES.REACT, TECH_NAMES.TYPESCRIPT, TECH_NAMES.TAILWIND],
+
+    details: {
+      gallery: [
+        "/images/travaux/2026/personal-galleria-1.webp",
+        "/images/travaux/2026/personal-galleria-2.webp",
+      ],
+      github: "https://github.com/TomSif/Front-end_Mentor_Galleria_Slide-show",
+      live: "https://front-end-mentor-galleria-slide-sho.vercel.app/",
+    },
+  },
+
+  {
+    id: 56,
+    featured: false,
+    date: "2026-04-17",
+    title: "Pomodoro App",
+    category: "Personal",
+
+    thumbnail: "/images/travaux/2026/personal-pomodoro-1-thumb.webp",
+
+    description:
+      "Timer Pomodoro avec cycles travail/pause configurables, sons d'alerte et interface minimaliste.",
+
+    technologies: [TECH_NAMES.REACT, TECH_NAMES.TYPESCRIPT, TECH_NAMES.TAILWIND],
+
+    details: {
+      gallery: [
+        "/images/travaux/2026/personal-pomodoro-1.webp",
+        "/images/travaux/2026/personal-pomodoro-2.webp",
+      ],
+      github: "https://github.com/TomSif/Front-end_Mentor_Pomodoro-App",
+      live: "https://front-end-mentor-pomodoro-app.vercel.app/",
+    },
+  },
+
   // ... AJOUTER LES AUTRES PROJETS ICI
 ];
 
