@@ -11,7 +11,8 @@ import {
   FaSass,
   FaNodeJs,
 } from "react-icons/fa";
-import { SiRedux } from "react-icons/si";
+import { SiRedux, SiTailwindcss, SiTypescript } from "react-icons/si";
+import { TbAtom2 } from "react-icons/tb";
 import { motion } from "framer-motion";
 
 const About = () => {
@@ -62,9 +63,9 @@ const About = () => {
               <p className="about__text">
                 Ma reconversion via <strong>OpenClassrooms</strong> (Bac+2
                 Intégrateur-Frontend) concrétise 25 ans de passion internet. Je
-                maîtrise <strong>React, JavaScript ES6, Sass</strong> et{" "}
+                maîtrise <strong>React, TypeScript, JavaScript ES6, Tailwind CSS</strong> et{" "}
                 <strong>Redux Toolkit</strong>, avec une expertise en{" "}
-                <strong>gestion d'état</strong> et{" "}
+                <strong>gestion d'état</strong> (Redux, Zustand) et{" "}
                 <strong>intégration d'API REST</strong>. Je travaille en{" "}
                 <strong>méthode agile</strong> et privilégie un code maintenable
                 et une <strong>culture du feedback</strong>.
@@ -200,6 +201,15 @@ const About = () => {
               </div>
               <div className="about__tech-icon">
                 <SiRedux className="about__tech-icon--redux" />
+              </div>
+              <div className="about__tech-icon">
+                <SiTypescript className="about__tech-icon--typescript" />
+              </div>
+              <div className="about__tech-icon">
+                <SiTailwindcss className="about__tech-icon--tailwind" />
+              </div>
+              <div className="about__tech-icon">
+                <TbAtom2 className="about__tech-icon--zustand" />
               </div>
             </div>
           </div>
