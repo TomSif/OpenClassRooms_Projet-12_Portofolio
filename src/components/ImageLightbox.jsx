@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
+import MarkdownModal from "./MarkdownModal";
 import {
   FaTimes,
   FaChevronLeft,
@@ -70,6 +71,7 @@ function ImageLightbox({ project, onClose }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isDeviceLandscape, setIsDeviceLandscape] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [markdownModal, setMarkdownModal] = useState(null);
 
   if (!project) return null;
 
@@ -80,7 +82,7 @@ function ImageLightbox({ project, onClose }) {
     technologies = [],
     details = {},
   } = project;
-  const { gallery = [], github, live } = details;
+  const { gallery = [], github, live, devlog, audit } = details;
 
   const categoryConfig = CATEGORY_CONFIG[category] || CATEGORY_CONFIG.Scholar;
   const isCodeProject = category === "Scholar" || category === "Personal";
@@ -206,6 +208,7 @@ function ImageLightbox({ project, onClose }) {
   }, []); // ← Tableau vide = s'exécute à l'ouverture/fermetur
 
   return (
+    <>
     <div
       className="lightbox-overlay"
       onClick={onClose}
@@ -354,6 +357,38 @@ function ImageLightbox({ project, onClose }) {
                   </a>
                 )}
               </div>
+
+              {/* Badges DEVLOG / AUDIT */}
+              {(devlog || audit) && (
+                <div className="lightbox-devlogs">
+                  {devlog && (
+                    <button
+                      className="lightbox-devlogs__badge lightbox-devlogs__badge--devlog"
+                      onClick={() =>
+                        setMarkdownModal({
+                          url: devlog,
+                          title: `DEVLOG — ${title}`,
+                        })
+                      }
+                    >
+                      DEVLOG
+                    </button>
+                  )}
+                  {audit && (
+                    <button
+                      className="lightbox-devlogs__badge lightbox-devlogs__badge--audit"
+                      onClick={() =>
+                        setMarkdownModal({
+                          url: audit,
+                          title: `AUDIT — ${title}`,
+                        })
+                      }
+                    >
+                      AUDIT
+                    </button>
+                  )}
+                </div>
+              )}
             </div>
           </div>
         )}
@@ -432,6 +467,15 @@ function ImageLightbox({ project, onClose }) {
         )}
       </div>
     </div>
+
+    {markdownModal && (
+      <MarkdownModal
+        url={markdownModal.url}
+        title={markdownModal.title}
+        onClose={() => setMarkdownModal(null)}
+      />
+    )}
+    </>
   );
 }
 
