@@ -46,7 +46,9 @@ function Works() {
 
   // Utiliser la fonction utilitaire du fichier projects.js
   // getProjectsByCategory retourne déjà les workProjects filtrés
-  const filteredProjects = getProjectsByCategory(activeFilter).slice(0, 6);
+  const filteredProjects = getProjectsByCategory(activeFilter)
+    .slice()
+    .sort((a, b) => (b.date || "").localeCompare(a.date || ""));
 
   return (
     <section className="works">
