@@ -14,16 +14,16 @@ import {
 // Configuration des catégories avec couleurs
 const CATEGORIES = [
   {
+    id: "Personal",
+    label: "Projets",
+    color: "#0088ff",
+    icon: <FaLaptopCode />,
+  },
+  {
     id: "Scholar",
     label: "Formation",
     color: "#fd853a",
     icon: <FaGraduationCap />,
-  },
-  {
-    id: "Personal",
-    label: "Personnel",
-    color: "#0088ff",
-    icon: <FaLaptopCode />,
   },
   {
     id: "Photography",
@@ -61,8 +61,9 @@ function Works() {
 
           <FadeInScrollDirection direction={scrollDirection} delay={0.2}>
             <p className="works__description">
-              Découvrez mes projets en développement web, photographie et design graphique.
-              Chaque travail représente un défi unique et une solution créative.
+              Découvrez mes projets en développement web, photographie et design
+              graphique. Chaque travail représente un défi unique et une
+              solution créative.
             </p>
           </FadeInScrollDirection>
         </header>
@@ -126,7 +127,9 @@ function Works() {
               </article>
             ))
           ) : (
-            <p className="works__empty">Aucun projet dans cette catégorie pour le moment.</p>
+            <p className="works__empty">
+              Aucun projet dans cette catégorie pour le moment.
+            </p>
           )}
         </div>
       </div>
