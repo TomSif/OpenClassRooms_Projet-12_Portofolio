@@ -40,7 +40,7 @@ const CATEGORIES = [
 ];
 
 function Works() {
-  const [activeFilter, setActiveFilter] = useState("Scholar");
+  const [activeFilter, setActiveFilter] = useState("Personal");
   const [selectedProject, setSelectedProject] = useState(null);
   const scrollDirection = useScrollDirection();
 
