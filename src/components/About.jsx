@@ -43,45 +43,48 @@ const About = () => {
             {/* Introduction */}
             <p className="about__intro">
               Bonjour, je suis Thomas Sifferle,{" "}
-              <strong>Développeur Front-End Junior</strong> de 46 ans spécialisé
-              en <strong>React</strong> et <strong>JavaScript</strong>,
-              passionné par la création d'
-              <strong>interfaces web performantes</strong> et{" "}
+              <strong>Développeur Front-End Junior</strong> spécialisé en{" "}
+              <strong>React</strong> et <strong>TypeScript</strong>, passionné
+              par la création d'
+              <strong>interfaces web modernes</strong>, performantes et{" "}
               <strong>accessibles</strong>.
             </p>
 
             <div className="about__content">
               <p className="about__text">
-                Mon parcours atypique mêle commerce tech (chef de rayon
-                informatique, Acheteur) et création multimédia : photographe
-                professionnel, graphiste (Photoshop, Illustrator, After Effects)
-                et producteur MAO. Ces années m'ont appris à{" "}
-                <strong>peaufiner chaque détail</strong> et à comprendre les
-                besoins utilisateurs, des compétences essentielles pour l'
-                <strong>intégration UX/UI</strong>.
-              </p>
-              <p className="about__text">
-                Ma reconversion via <strong>OpenClassrooms</strong> (Bac+2
-                Intégrateur-Frontend) concrétise 25 ans de passion internet. Je
-                maîtrise <strong>React, TypeScript, JavaScript ES6, Tailwind CSS</strong> et{" "}
+                Formé via <strong>OpenClassrooms</strong> (Bac+2
+                Intégrateur-Frontend) et en pratique continue sur{" "}
+                <strong>Frontend Mentor</strong>, je maîtrise{" "}
+                <strong>React 19, TypeScript, Tailwind CSS v4</strong> et{" "}
                 <strong>Redux Toolkit</strong>, avec une expertise en{" "}
-                <strong>gestion d'état</strong> (Redux, Zustand) et{" "}
+                <strong>gestion d'état</strong> (Zustand, Redux),{" "}
+                <strong>React Router</strong> et{" "}
                 <strong>intégration d'API REST</strong>. Je travaille en{" "}
-                <strong>méthode agile</strong> et privilégie un code maintenable
-                et une <strong>culture du feedback</strong>.
+                <strong>méthode agile</strong> et privilégie un code
+                maintenable, typé et bien structuré.
               </p>
               <p className="about__text">
-                Parmi mes réalisations : <strong>Argent Bank</strong>, une
-                application bancaire React avec{" "}
-                <strong>authentification JWT complète</strong>, architecture
-                Redux modulaire, et interfaces performantes (score Lighthouse
-                98/100). Et <strong>Sophie Bluel</strong>, un portfolio
-                dynamique avec manipulation du DOM, <strong>API REST</strong> et
-                système d'authentification.
+                Mes projets récents illustrent cette progression :{" "}
+                <strong>Memory Game</strong>, un jeu complet en TypeScript avec
+                gestion d'état global (Zustand), routing multi-pages et logique
+                complexe. <strong>REST Countries API</strong>, consommation
+                d'API externe avec dark mode et filtres dynamiques.{" "}
+                <strong>Galleria Slideshow</strong> et{" "}
+                <strong>Pomodoro App</strong>, des interfaces soignées avec
+                animations Framer Motion. Tous disponibles en{" "}
+                <strong>live sur Vercel</strong> et en open source sur GitHub.
+              </p>
+              <p className="about__text">
+                Mon parcours en création multimédia — photographe
+                professionnel, graphiste (Photoshop, Illustrator) et producteur
+                MAO — m'a forgé une <strong>sensibilité UX/UI</strong>{" "}
+                concrète : soin du détail visuel, lecture instinctive des
+                maquettes Figma et compréhension naturelle des besoins
+                utilisateurs.
               </p>
               <p className="about__highlight">
                 <strong>Autonome et rigoureux</strong>, j'apporte une
-                sensibilité créative unique à mes projets tout en respectant les
+                sensibilité créative à chaque projet tout en respectant les
                 bonnes pratiques (accessibilité WCAG, performance, SEO).
               </p>
               <p className="about__text">
@@ -94,9 +97,9 @@ const About = () => {
               </p>
               <p className="about__objective">
                 Mon objectif : contribuer à des{" "}
-                <strong>projets web à impact</strong> en apportant mon expertise
-                React et ma sensibilité UX/UI.
-              </p>{" "}
+                <strong>projets web à impact</strong> en apportant mon expertise{" "}
+                <strong>React/TypeScript</strong> et ma sensibilité UX/UI.
+              </p>
             </div>
           </div>
 
@@ -144,13 +147,6 @@ const About = () => {
                 </div>
               </div>
 
-              <div className="about__experience-item">
-                <span className="about__experience-year">15</span>
-                <div className="about__experience-content">
-                  <h4 className="about__experience-role">Cash-Express</h4>
-                  <p className="about__experience-subtitle">Acheteur</p>
-                </div>
-              </div>
             </div>
 
             {/* Boutons CTA */}
