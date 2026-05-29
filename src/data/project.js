@@ -876,6 +876,8 @@ export const allProjects = [
       ],
       github: "https://github.com/TomSif/Front-end_Mentor_Memory-Game",
       live: "https://front-end-mentor-memory-game.vercel.app/",
+      devlog: "/devlogs/memory-game/progression.md",
+      audit: "/devlogs/memory-game/rapport.md",
     },
   },
 
@@ -900,6 +902,8 @@ export const allProjects = [
       ],
       github: "https://github.com/TomSif/Front-end_Mentor_Rest_Countries_API",
       live: "https://front-end-mentor-rest-countries-api-omega.vercel.app/",
+      devlog: "/devlogs/rest-countries/progression.md",
+      audit: "/devlogs/rest-countries/rapport.md",
     },
   },
 
@@ -924,6 +928,8 @@ export const allProjects = [
       ],
       github: "https://github.com/TomSif/Front-end_Mentor_Mortgage_Repayement_Calculator",
       live: "https://front-end-mentor-mortgage-repayemen.vercel.app/",
+      devlog: "/devlogs/mortgage-calculator/progression.md",
+      audit: "/devlogs/mortgage-calculator/rapport.md",
     },
   },
 
@@ -948,6 +954,8 @@ export const allProjects = [
       ],
       github: "https://github.com/TomSif/Front-end_Mentor_Product-List/tree/main",
       live: "https://front-end-mentor-product-list.vercel.app/",
+      devlog: "/devlogs/product-list/progression.md",
+      audit: "/devlogs/product-list/rapport.md",
     },
   },
 
@@ -972,6 +980,8 @@ export const allProjects = [
       ],
       github: "https://github.com/TomSif/Front-End_Mentor_Results-Summary-App/tree/main",
       live: "https://front-end-mentor-results-summary-guq1w8dcc-tom-sifs-projects.vercel.app/",
+      devlog: "/devlogs/results-summary/progression.md",
+      audit: "/devlogs/results-summary/rapport.md",
     },
   },
 
@@ -995,6 +1005,7 @@ export const allProjects = [
       ],
       github: "https://github.com/TomSif/Front-End_Mentor_Password-Generator_App",
       live: "https://front-end-mentor-password-generator-ec4kzpda9-tom-sifs-projects.vercel.app/",
+      devlog: "/devlogs/password-generator/progression.md",
     },
   },
 
@@ -1019,6 +1030,7 @@ export const allProjects = [
       ],
       github: "https://github.com/TomSif/Front-end_Mentor_Quiz-App",
       live: "https://quiz-app-omega-topaz.vercel.app/",
+      devlog: "/devlogs/quiz-app/progression.md",
     },
   },
 
@@ -1044,6 +1056,7 @@ export const allProjects = [
       ],
       github: "https://github.com/TomSif/Front-end_Mentor_BMI-Calculator",
       live: "https://front-endmentorbmi-calculator.vercel.app/",
+      devlog: "/devlogs/bmi-calculator/progression.md",
     },
   },
 
@@ -1068,6 +1081,7 @@ export const allProjects = [
       ],
       github: "https://github.com/TomSif/Front-end_Mentor_Tic-Tac-Toe",
       live: "https://front-end-mentor-tic-tac-toe.vercel.app/",
+      devlog: "/devlogs/tic-tac-toe/progression.md",
     },
   },
 
@@ -1092,6 +1106,7 @@ export const allProjects = [
       ],
       github: "https://github.com/TomSif/Front-end_Mentor_Galleria_Slide-show",
       live: "https://front-end-mentor-galleria-slide-sho.vercel.app/",
+      devlog: "/devlogs/galleria/progression.md",
     },
   },
 
@@ -1116,6 +1131,8 @@ export const allProjects = [
       ],
       github: "https://github.com/TomSif/Front-end_Mentor_Pomodoro-App",
       live: "https://front-end-mentor-pomodoro-app.vercel.app/",
+      devlog: "/devlogs/pomodoro/progression.md",
+      audit: "/devlogs/pomodoro/rapport.md",
     },
   },
 
