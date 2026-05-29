@@ -93,10 +93,10 @@ const Navbar = () => {
             À Propos
           </a>
           <a href="#portfolio" className="navbar__nav-link">
-            Travaux Sélectionnés
+            Projets Sélectionnés
           </a>
           <a href="#works" className="navbar__nav-link">
-            Travaux
+            Projets
           </a>
         </div>
 
@@ -182,7 +182,7 @@ const Navbar = () => {
                   className="navbar__dropdown-link"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Travaux Sélectionnés
+                  Projets Sélectionnés
                 </a>
               </motion.li>
               <motion.li
@@ -197,7 +197,7 @@ const Navbar = () => {
                   className="navbar__dropdown-link"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Travaux
+                  Projets
                 </a>
               </motion.li>
             </motion.ul>
