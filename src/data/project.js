@@ -1136,6 +1136,60 @@ export const allProjects = [
     },
   },
 
+  {
+    id: 57,
+    featured: false,
+    date: "2026-06-16",
+    title: "Tip Calculator App",
+    category: "Personal",
+
+    thumbnail: "/images/travaux/2026/personal-tip-calculator-1-thumb.webp",
+
+    description:
+      "Calculatrice de pourboire React/TypeScript avec validation de formulaire, gestion d'input décimal et suite de tests Vitest + RTL complète.",
+
+    technologies: [TECH_NAMES.REACT, TECH_NAMES.TYPESCRIPT, TECH_NAMES.TAILWIND],
+
+    details: {
+      gallery: [
+        "/images/travaux/2026/personal-tip-calculator-1.webp",
+        "/images/travaux/2026/personal-tip-calculator-2.webp",
+        "/images/travaux/2026/personal-tip-calculator-3.webp",
+      ],
+      github: "https://github.com/TomSif/Front-end_Mentor_Tip_Calculator_with_Tests",
+      live: "https://front-end-mentor-tip-calculator-wit.vercel.app/",
+      devlog: "/devlogs/tip-calculator/progression.md",
+      audit: "/devlogs/tip-calculator/rapport.md",
+    },
+  },
+
+  {
+    id: 58,
+    featured: false,
+    date: "2026-07-11",
+    title: "Interactive Comments Section",
+    category: "Personal",
+
+    thumbnail: "/images/travaux/2026/personal-interactive-comments-1-thumb.webp",
+
+    description:
+      "Fil de commentaires full-stack avec réponses imbriquées, votes, édition et suppression — API REST Express/SQLite déployée sur Render, front React sur Vercel.",
+
+    technologies: [TECH_NAMES.REACT, TECH_NAMES.TYPESCRIPT, TECH_NAMES.TAILWIND],
+
+    details: {
+      gallery: [
+        "/images/travaux/2026/personal-interactive-comments-1.webp",
+        "/images/travaux/2026/personal-interactive-comments-2.webp",
+        "/images/travaux/2026/personal-interactive-comments-3.webp",
+      ],
+      github: "https://github.com/TomSif/Front-end_Mentor_Interactive_Comments_Full-Stack",
+      live: "https://front-end-mentor-interactive-commen-psi.vercel.app/",
+      devlog: "/devlogs/interactive-comments/progression.md",
+      audit: "/devlogs/interactive-comments/rapport.md",
+    },
+  },
+
   // ... AJOUTER LES AUTRES PROJETS ICI
 ];
 

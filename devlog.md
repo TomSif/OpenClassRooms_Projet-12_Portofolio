@@ -4,6 +4,46 @@
 
 ---
 
+## Session 2026-07-11 — Ajout de 2 projets FEM : Tip Calculator App & Interactive Comments Section
+
+### ✅ Étapes accomplies
+
+#### Sourcing
+
+- Repérage des deux projets Frontend Mentor les plus récents non encore présents sur le portfolio, par comparaison entre `Front-End_Mentor_2026/` (14 projets) et `public/devlogs/` (11 devlogs déjà publiés)
+- Identifié via mtime des `progression.md` : **Tip Calculator App** (clos le 2026-06-16, score FEM 8.5/10 "Exceptional") et **Interactive Comments Section** (clos le 2026-07-11, full-stack Express/SQLite)
+
+#### Devlogs
+
+- Copie de `progression.md` et `rapport.md` des deux projets vers `public/devlogs/tip-calculator/` et `public/devlogs/interactive-comments/`
+
+#### Images
+
+- Conversion via FFmpeg des screenshots PNG sources vers WebP (gallery 1280px de large, thumbnail 420×205px cropé `force_original_aspect_ratio=increase` + `crop`)
+- **Tip Calculator** (3 images) : `screenshot-desktop.png` → thumb + gallery 1, `screenshot-desktop-active.png` → gallery 2, `screenshot-mobile.png` → gallery 3
+- **Interactive Comments** (3 images) : `screenshot-desktop.png` (front/public/images/) → thumb + gallery 1, `screenshot-delete-modal.png` → gallery 2, `screenshot-mobile.png` → gallery 3
+- Fichiers créés dans `public/images/travaux/2026/` : `personal-tip-calculator-{1,2,3}.webp` + `-1-thumb`, `personal-interactive-comments-{1,2,3}.webp` + `-1-thumb`
+
+#### project.js
+
+- Ajout de l'entrée `id: 57` (Tip Calculator App) et `id: 58` (Interactive Comments Section), catégorie `Personal`, avec `devlog` + `audit` pointant vers les nouveaux dossiers
+- Liens `github`/`live` repris des README respectifs des deux projets (repos et déploiements Vercel confirmés via `git remote -v`)
+
+### 🧠 Décisions techniques notables
+
+| Décision | Raison |
+|----------|--------|
+| 3 images par projet (au lieu de 2 comme certains projets antérieurs) | Les deux projets ont des screenshots dédiés mobile + état actif/modal — plus de matière visuelle disponible que les projets plus anciens |
+| Repo Interactive Comments = monorepo `front/`+`back/` | Screenshots pris depuis `front/public/images/`, lien `live` pointe vers le déploiement Vercel du front (l'API Render n'a pas de vitrine visuelle) |
+| `rapport.md` copié tel quel (cumulatif) | Cohérent avec la convention déjà en place — clique sur AUDIT et voit tout l'historique de reviews jusqu'à ce projet |
+
+### ⚠️ Points fragiles / décisions provisoires
+
+- Aucun test de rendu effectué en local après l'ajout (`npm run dev` non lancé cette session) — à vérifier visuellement avant publication finale (cartes Works + lightbox + modales DEVLOG/AUDIT pour ces 2 nouveaux projets)
+- Le tri par `date` décroissant dans `Works.jsx` place Interactive Comments (2026-07-11) en tête et Tip Calculator (2026-06-16) juste après Memory Game (2026-05-28) — cohérent avec la logique déjà en place, non revérifié à l'écran
+
+---
+
 ## Session 2026-05-29 — Mise à jour majeure : projets FEM 2026 + section Démarche
 
 ### ✅ Étapes accomplies
